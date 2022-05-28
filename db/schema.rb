@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_28_110306) do
+ActiveRecord::Schema.define(version: 2022_05_28_115321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: :cascade do |t|
+    t.date "date"
+    t.boolean "approved"
+    t.bigint "user_id", null: false
+    t.bigint "pet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pet_id"], name: "index_applications_on_pet_id"
+    t.index ["user_id"], name: "index_applications_on_user_id"
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "adoption_status"
+    t.string "name"
+    t.string "species"
+    t.string "breed"
+    t.string "sex"
+    t.string "age"
+    t.string "colour"
+    t.text "description"
+    t.boolean "outdoor_space"
+    t.string "pet_friendly"
+    t.string "children_friendly"
+    t.integer "hours_alone"
+    t.text "medical_conditions"
+    t.bigint "shelter_info_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shelter_info_id"], name: "index_pets_on_shelter_info_id"
+  end
 
   create_table "shelter_infos", force: :cascade do |t|
     t.string "name"
@@ -38,5 +69,8 @@ ActiveRecord::Schema.define(version: 2022_05_28_110306) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applications", "pets"
+  add_foreign_key "applications", "users"
+  add_foreign_key "pets", "shelter_infos"
   add_foreign_key "shelter_infos", "users"
 end
