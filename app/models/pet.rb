@@ -21,4 +21,5 @@ class Pet < ApplicationRecord
   validates :medical_conditions, presence: true
 
   # has_many_attached :photo
+
 end
