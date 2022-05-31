@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_28_115321) do
+ActiveRecord::Schema.define(version: 2022_05_28_161127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,13 +40,13 @@ ActiveRecord::Schema.define(version: 2022_05_28_115321) do
     t.string "children_friendly"
     t.integer "hours_alone"
     t.text "medical_conditions"
-    t.bigint "shelter_info_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["shelter_info_id"], name: "index_pets_on_shelter_info_id"
+    t.bigint "shelter_id"
+    t.index ["shelter_id"], name: "index_pets_on_shelter_id"
   end
 
-  create_table "shelter_infos", force: :cascade do |t|
+  create_table "shelters", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.float "longitude"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2022_05_28_115321) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_shelter_infos_on_user_id"
+    t.index ["user_id"], name: "index_shelters_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,6 +71,5 @@ ActiveRecord::Schema.define(version: 2022_05_28_115321) do
 
   add_foreign_key "applications", "pets"
   add_foreign_key "applications", "users"
-  add_foreign_key "pets", "shelter_infos"
-  add_foreign_key "shelter_infos", "users"
+  add_foreign_key "shelters", "users"
 end

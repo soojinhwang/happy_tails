@@ -1,5 +1,5 @@
 class Pet < ApplicationRecord
-  belongs_to :shelter_info
+  belongs_to :shelter
 
   validates :name, presence: true, length: { minimum: 2 }
 
@@ -21,4 +21,5 @@ class Pet < ApplicationRecord
   validates :medical_conditions, presence: true
 
   # has_many_attached :photo
+
 end
