@@ -2,8 +2,9 @@ class SheltersController < ApplicationController
   #skip_before_action :authenticate_user!, only: [:index, :show]
   #before_action :set_shelter, only: [ :show, :edit, :update, :destroy ]
 
-  #def index
-  #end
+  def index
+    @shelters = Shelter.all
+  end
 
   #def show
   #end
