@@ -11,39 +11,41 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
-#   def new
-#     @pet = Pet.new
-#   end
+  def new
+    @pet = Pet.new
+  end
 
-#   def create
-#     @pet = Pet.new(pet_params)
-#     @pet.user = current_user
-#     if @pet.save
-#       redirect_to pet_path(@pet)
-#     else
-#       render :new
-#     end
+  def create
+    @pet = Pet.new(pet_params)
+    @pet.user = current_user
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
+  end
 
-#     def edit
-#     end
+  def edit
 
-#     def update
-#       @pet.update(pet_params)
-#       redirect_to pet_path(@pet)
-#     end
+  end
 
-#     def destroy
-#       @pet.destroy
-#       redirect_to pets_path
-#     end
+  def update
+    @pet.update(pet_params)
+    redirect_to pet_path(@pet)
+  end
 
-# private
+  def destroy
+    @pet.destroy
+    redirect_to pets_path
+  end
 
-#     def set_pet
-#       @pet = Pet.find(params[:id])
-#     end
+private
 
-#     def pet_params
-#       params.require(:pet).permit(:name, :species, :description, :location, :breed, :sex, :age, :colour, :medical_conditions,:hours_alone, :children_friendly )
-#     end
+  def set_pet
+    @pet = Pet.find(params[:id])
+  end
+
+  def pet_params
+    params.require(:pet).permit(:adoption_status, :name, :species, :description, :location, :breed, :sex, :age, :colour, :medical_conditions,:hours_alone, :children_friendly )
+  end
 end

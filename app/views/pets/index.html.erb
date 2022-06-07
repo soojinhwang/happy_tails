@@ -1,1 +1,14 @@
 <h1> Pets Index Page</h1>
+
+
+
+<% @pets.each do |pet| %>
+
+  <%= pet.name %>
+  <%= pet.age %>
+  <%= pet.description %>
+  <%= pet.adoption_status %>
+
+  <hr>
+
+<% end %>
