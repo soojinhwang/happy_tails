@@ -1,0 +1,39 @@
+.footer {
+  background-color: $light-gray;
+  height: 120px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-logo {
+  height: 80px;
+}
+
+.footer-social a {
+  color: $dark-gray;
+  text-decoration: none;
+  font-size: 32px;
+  padding: 0px 12px;
+}
+
+.footer-social a:hover {
+  color: $gray;
+  transition: 0.5s;
+}
+
+.footer-copyright {
+
+  p {
+    color: $dark-gray;
+    margin: 0px;
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+}
