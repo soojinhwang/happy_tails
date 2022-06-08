@@ -1,0 +1,12 @@
+<%# <% if current_user.shelter == "true" %>
+
+  <div class="container">
+
+    <h1> Listing a shelter </h1>
+
+    <%= simple_form_for (@shelter) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+    <% end  %>
+  </div>
+<%# <% end %>

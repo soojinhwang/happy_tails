@@ -1,30 +1,42 @@
 class SheltersController < ApplicationController
   #skip_before_action :authenticate_user!, only: [:index, :show]
-  #before_action :set_shelter, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_shelter, only: [ :show ]
 
   def index
     @shelters = Shelter.all
+
   end
 
-  #def show
-  #end
 
-  #def new
-  #end
+  def show
 
-  #def update
-  #end
+  end
 
-  #def destroy
-  #end
 
-  #private
+  def new
+    @shelter = Shelter.new
+  end
 
-  #def set_shelter
-    #@shelter = Shelter.find(params[:id])
-  #end
+  def create
+    @shelter = Shelter.new(shelter_params)
+    @shelter.user = current_user
 
-  #def shelter_params
-    #params.require(:shelter).permit(:name, :address)
-  #end
+    if @shelter.save
+      redirect_to shelter_path(@shelter)
+    else
+      render :new
+    end
+
+  end
+
+
+  private
+
+  def set_shelter
+    @shelter = Shelter.find(params[:id])
+  end
+
+  def shelter_params
+    params.require(:shelter).permit(:name, :address)
+  end
 end
