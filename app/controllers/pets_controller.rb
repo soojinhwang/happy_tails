@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+
+  before_action :set_pet, only: [ :show, :edit, :update, :detroy ]
   def index
     if params[:query].present?
       @pets = Pet.where(name: params[:query])
@@ -8,7 +10,7 @@ class PetsController < ApplicationController
   end
 
   def show
-    @pet = Pet.find(params[:id])
+
   end
 
   def new
@@ -17,7 +19,7 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
-    @pet.user = current_user
+    @pet.shelter = current_user.shelter
     if @pet.save
       redirect_to pet_path(@pet)
     else
@@ -39,7 +41,7 @@ class PetsController < ApplicationController
     redirect_to pets_path
   end
 
-private
+ private
 
   def set_pet
     @pet = Pet.find(params[:id])

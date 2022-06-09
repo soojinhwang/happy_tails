@@ -1,0 +1,22 @@
+<h1> Update Pets Details </h1>
+
+<div class="container">
+
+  <%= simple_form_for (@pet) do |f|%>
+    <%= f.input :adoption_status, :collection => ["Available", "Reserved", "Adopted"] %>
+    <%= f.input :name %>
+    <%= f.input :species, :collection => ["Cat", "Dog"] %>
+    <%= f.input :breed %>
+    <%= f.input :sex, :collection => ["Male", "Female"] %>
+    <%= f.input :age %>
+    <%= f.input :colour %>
+    <%= f.input :description %>
+    <%= f.input :outdoor_space %>
+    <%= f.input :pet_friendly %>
+    <%= f.input :children_friendly %>
+    <%= f.input :hours_alone %>
+    <%= f.input :medical_conditions %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
