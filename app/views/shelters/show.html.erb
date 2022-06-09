@@ -1,0 +1,9 @@
+<h1> Shelter </h1>
+
+<%= @shelter.name %>
+<%= @shelter.address %>
+<%= link_to "All Shelters", shelters_path %>
+<%= link_to "Delete Shelter", shelter_path(@shelter),
+                                      method: :delete,
+                                      data: { confirm: "Are you sure you want to delete this shelter?" }
+                                      %>
