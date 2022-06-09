@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2022_06_07_184121) do
     t.string "first_name"
     t.string "last_name"
     t.integer "age"
-    t.boolean "shelter"
+    # t.boolean "shelter"
     t.text "biography"
     t.string "type_of_dwelling"
     t.boolean "outdoor_space"
