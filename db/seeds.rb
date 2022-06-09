@@ -8,13 +8,13 @@
 
 puts "creating user who is a shelter... "
 
-User.create!(email: "shelter2022@gmail.com",
+user1 = User.create!(email: "shelter2022@gmail.com",
              password: "shelter2022",
              first_name: "Jane",
              last_name: "Hopper",
              age: 30,
-             shelter: true,
-             biography: "A shelter in Shoreditch looking to use Happy tails.",
+            #  shelter: true,
+             biography: "A shelter in Shoreditch looking to use Happy Tails.",
              type_of_dwelling: "House",
              outdoor_space: true,
              other_pets: "yes I have plenty",
@@ -24,6 +24,8 @@ User.create!(email: "shelter2022@gmail.com",
              )
 
 puts "user shelter created.."
+
+shelter1 = Shelter.create!
 
 # puts "creating pets.."
 
