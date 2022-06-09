@@ -5,14 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-puts "Cleaning database..."
+puts "Cleaning user database..."
 User.destroy_all
-Shelter.destroy_all
-Pet.destroy_all
-Application.destroy_all
 
-puts "creating users... "
+puts "Cleaning pet database..."
+Pet.destroy_all
+
+puts "Cleaning shelter database..."
+Shelter.destroy_all
+
+puts "Creating shelter user... "
 
 jane = User.create!(email: "jane@gmail.com",
                     password: "123456",
@@ -29,6 +31,8 @@ jane = User.create!(email: "jane@gmail.com",
 
 puts "Created jane"
 
+puts "Creating adopter user... "
+
 mike = User.create!(email: "mike@gmail.com",
                     password: "123456",
                     first_name: "Mike",
@@ -43,27 +47,77 @@ mike = User.create!(email: "mike@gmail.com",
                     previous_experience: "I've had dogs since I was 5.")
 
 puts "Created mike"
+
 puts "All users created"
 
-puts "creating users... "
 
-shoreditch = Shelter.create!()
+puts "Creating shelters... "
 
-# puts "creating pets.."
+shoreditch = Shelter.create!(name: "Shoreditch Rescue",
+                             address: "229 Bethnal Green Road, Tower Hamlets, London, E2 7DG, United Kingdom",
+                             description: "We are based in Shoreditch and rescue both dogs and cats in the East London area",
+                             user: jane)
 
-# Pet.create! m (adoption_status: "Available for adoption"
-#             name: "Pixel"
-#             species: "Dog"
-#             breed: "crossbreed"
-#             sex: "male"
-#              age: "six months"
-#              colour: "black"
-#              description: "Pixel is a typical playful pup who is a sweet little boy."
-#              outdoor_space: true
-#              pet_friendly: "Yes"
-#              children_friendly: "Yes"
-#              hours_alone: 3
-#              medical_conditions: "Good health condition"
-# )
+puts "Created shoreditch shelter"
 
-# puts "pet created.."
+puts "All shelters created"
+
+
+puts "Creating pets..."
+
+pixel = Pet.create!(adoption_status: "Available",
+                    name: "Pixel",
+                    specied: "Dog",
+                    breed: "Labrador Retriever",
+                    sex: "Male",
+                    age: "6 months",
+                    colour: "Black",
+                    description: "Pixel is a typical playful pup who is a sweet little boy.",
+                    outdoor_space: true,
+                    pet_friendly: "Yes",
+                    children_friendly: "Yes",
+                    medical_conditions: "In good health condition",
+                    shelter: shoreditch)
+
+puts "Created pixel"
+
+blanca = Pet.create!(adoption_status: "Available",
+                     name: "Blanca",
+                     specied: "Cat",
+                     breed: "Persian",
+                     sex: "Female",
+                     age: "1 year",
+                     colour: "White",
+                     description: "Blanca is very purry and has a soft meow. She craves attention and loves to be stroked and to curl up against her human.",
+                     outdoor_space: false,
+                     pet_friendly: "Only other cats",
+                     children_friendly: "OK with older childen",
+                     medical_conditions: "In good health condition",
+                     shelter: shoreditch)
+
+puts "Created blanca"
+
+laika = Pet.create!(adoption_status: "Available",
+                    name: "Laika",
+                    specied: "Dog",
+                    breed: "Border Collie",
+                    sex: "Female",
+                    age: "9 years",
+                    colour: "Black and white",
+                    description: "Intelligent and energetic dog despite her age. She loves walking.",
+                    outdoor_space: true,
+                    pet_friendly: "Only other dogs",
+                    children_friendly: "Yes",
+                    medical_conditions: "Needs medication once a day",
+                    shelter: shoreditch)
+
+puts "Created laika"
+
+
+require 'date'
+puts "Creating applications..."
+
+app1 = Application.create!(user: mike,
+                           pet: pixel,
+                           date: Date.today,
+                           approved: false)
