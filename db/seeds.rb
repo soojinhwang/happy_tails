@@ -24,3 +24,22 @@ User.create!(email: "shelter2022@gmail.com",
             )
 
 puts "user shelter created.."
+
+# puts "creating pets.."
+
+# Pet.create! m (adoption_status: "Available for adoption"
+#             name: "Pixel"
+#             species: "Dog"
+#             breed: "crossbreed"
+#             sex: "male"
+#              age: "six months"
+#              colour: "black"
+#              description: "Pixel is a typical playful pup who is a sweet little boy."
+#              outdoor_space: true
+#              pet_friendly: "Yes"
+#              children_friendly: "Yes"
+#              hours_alone: 3
+#              medical_conditions: "Good health condition"
+# )
+
+# puts "pet created.."
