@@ -14,7 +14,7 @@ puts "Cleaning shelter database..."
 Shelter.destroy_all
 
 puts "Cleaning pets database"
-Pet.detroy_all
+Pet.destroy_all
 
 puts "creating user who is a shelter... "
 
