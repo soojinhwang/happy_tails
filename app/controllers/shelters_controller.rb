@@ -26,7 +26,12 @@ class SheltersController < ApplicationController
     else
       render :new
     end
+  end
 
+  def destroy
+    @shelter = Shelter.find(params[:id])
+    @shelter.destroy
+    redirect_to shelters_path
   end
 
 
