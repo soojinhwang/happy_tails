@@ -6,14 +6,13 @@ class User < ApplicationRecord
 
   has_many :pets, through: :shelters
   has_one :shelter, dependent: :destroy
+  has_many :applications
 
   validates :email, presence: true
   validates :password, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :age, numericality: { only_integer: true }
-  validates :shelter, inclusion: { in: [true, false],
-                                   message: "%{value} is not a valid option" }
   validates :biography, length: { minimum: 10 }
   validates :type_of_dwelling, inclusion: { in: %w(House Flat Farm),
                                             message: "%{value} is not a valid type of dwelling" }
