@@ -23,7 +23,8 @@ jane = User.create!(email: "jane@gmail.com",
                     password: "123456",
                     first_name: "Jane",
                     last_name: "Hopper")
-
+file = URI.open('https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+jane.photo.attach(io: file, filename: 'jane_profile.png', content_type: 'image/jpg')
 puts "Created jane"
 
 puts "Creating adopter user... "
@@ -40,7 +41,8 @@ mike = User.create!(email: "mike@gmail.com",
                     children: "None",
                     hours_alone: 4,
                     previous_experience: "I've had dogs since I was 5 and am very experienced with them.")
-
+file = URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+mike.photo.attach(io: file, filename: 'mike_profile.png', content_type: 'image/jpg')
 puts "Created mike"
 puts "All users created"
 
