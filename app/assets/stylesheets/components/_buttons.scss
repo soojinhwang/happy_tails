@@ -1,0 +1,144 @@
+.btn-yellow {
+  color: $dark-gray;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  background-color: $yellow;
+  padding: 12px 32px;
+  border-radius: 24px;
+  width: fit-content;
+
+  &:hover {
+    color: #262626;
+    background-color: #EDC976;
+    transition: 0.8s;
+  }
+}
+
+.btn-yellow-border {
+  color: $yellow;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  padding: 12px 32px;
+  border: 3px solid $yellow;
+  border-radius: 24px;
+  width: fit-content;
+
+  &:hover {
+    color: #d2b36a;
+    border: 3px solid #d2b36a;
+    transition: 0.8s;
+  }
+}
+
+.btn-red {
+  color: $dark-gray;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  background-color: $red;
+  padding: 12px 32px;
+  border-radius: 24px;
+  width: fit-content;
+
+  &:hover {
+    color: #262626;
+    background-color: #dab0a5;
+    transition: 0.8s;
+  }
+}
+
+.btn-red-border {
+  color: $red;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  padding: 12px 32px;
+  border: 3px solid $red;
+  border-radius: 24px;
+  width: fit-content;
+
+  &:hover {
+    color: #D7B9B1;
+    border: 3px solid #D7B9B1;
+    transition: 0.8s;
+  }
+}
+
+.btn-blue {
+  color: $dark-gray;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  background-color: $blue;
+  padding: 12px 32px;
+  border-radius: 24px;
+  width: fit-content;
+
+  &:hover {
+    color: #262626;
+    background-color: #B0C3C7;
+    transition: 0.8s;
+  }
+}
+
+.btn-blue-border {
+  color: $blue;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  padding: 12px 32px;
+  border: 3px solid $blue;
+  border-radius: 24px;
+  width: fit-content;
+
+  &:hover {
+    color: #B0C3C7;
+    border: 3px solid #B0C3C7;
+    transition: 0.8s;
+  }
+}
+
+
+.btn-light-gray {
+  color: $dark-gray;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  background-color: $light-gray;
+  padding: 12px 32px;
+  border-radius: 24px;
+  width: fit-content;
+
+  &:hover {
+    color: #262626;
+    background-color: #BEBEBE;
+    transition: 0.8s;
+  }
+}
+
+.btn-light-gray-border {
+  color: $gray;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  padding: 12px 32px;
+  border: 3px solid $gray;
+  border-radius: 24px;
+  width: fit-content;
+
+  &:hover {
+    color: #333333;
+    border: 3px solid #333333;
+    transition: 0.8s;
+  }
+}
