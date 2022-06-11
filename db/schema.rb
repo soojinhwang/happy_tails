@@ -69,10 +69,6 @@ ActiveRecord::Schema.define(version: 2022_06_09_192416) do
     t.string "first_name"
     t.string "last_name"
     t.integer "age"
-<<<<<<< HEAD
-    # t.boolean "shelter"
-=======
->>>>>>> master
     t.text "biography"
     t.string "type_of_dwelling"
     t.boolean "outdoor_space"

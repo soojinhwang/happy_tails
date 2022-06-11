@@ -37,6 +37,7 @@ puts "user shelter created.."
 
 shelter1 = Shelter.create!( name: "Shoreditch Shelter",
   address: "Shoreditch Stables, North, 138 Kingsland Rd, London E2 8DY ",
+  description: "we are a new shelter based in Shoreditch!",
   user: User.first)
 
 puts "shelter created .."
