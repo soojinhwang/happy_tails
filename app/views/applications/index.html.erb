@@ -1,0 +1,12 @@
+<div class="continer">
+  <h1> All Pet Applications </h1>
+
+  <% @applications.each do |application| %>
+
+    <p> Pet: <%= link_to application.pet.name, pet_path(application.pet) %> </p> <br>
+    <%# <p> User: <%= link_to application.user.first_name, user_path(application.user) %> </p>
+    <p> User: <%= application.user.first_name %> </p>
+    <hr>
+  <% end  %>
+
+</div>
