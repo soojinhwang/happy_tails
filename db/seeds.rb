@@ -21,15 +21,7 @@ puts "Creating shelter user... "
 jane = User.create!(email: "jane@gmail.com",
                     password: "123456",
                     first_name: "Jane",
-                    last_name: "Hopper",
-                    age: 30,
-                    biography: "I'm a volunteer",
-                    type_of_dwelling: "House",
-                    outdoor_space: true,
-                    other_pets: "Yes, I have a dog",
-                    children: "None",
-                    hours_alone: 1,
-                    previous_experience: "Yes spent 10 years working with pets")
+                    last_name: "Hopper")
 
 puts "Created jane"
 
