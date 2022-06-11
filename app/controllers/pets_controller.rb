@@ -1,4 +1,7 @@
 class PetsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   before_action :set_pet, only: [ :show, :edit, :update, :detroy ]
 
   def index
@@ -9,7 +12,17 @@ class PetsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @application = Application.new
+    @user_has_applied = false
+    @pet.applications.each do |application|
+      if application.user == current_user
+        @user_has_applied = true
+        @user_application = application
+      end
+    end
+  end
+
 
   def new
     @pet = Pet.new
