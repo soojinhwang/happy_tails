@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
 
 puts "Cleaning user database..."
 User.destroy_all
@@ -72,6 +73,11 @@ pixel = Pet.create!(adoption_status: "Available",
                     medical_conditions: "In good health condition",
                     shelter: shoreditch)
 
+file = URI.open('https://i.pinimg.com/originals/00/b3/11/00b31198df2ec1d8089d0ba06c09705b.jpg')
+pixel.photos.attach(io: file, filename: 'pixel_1.png', content_type: 'image/jpg')
+file = URI.open('https://www.akc.org/wp-content/uploads/2020/09/Labrador-retriever-puppy-sitting-in-the-grass.jpeg')
+pixel.photos.attach(io: file, filename: 'pixel_2.png', content_type: 'image/jpg')
+
 puts "Created pixel"
 
 blanca = Pet.create!(adoption_status: "Available",
@@ -89,6 +95,13 @@ blanca = Pet.create!(adoption_status: "Available",
                      medical_conditions: "In good health condition",
                      shelter: shoreditch)
 
+file = URI.open('https://assets.pets4homes.co.uk/image/e5a10239-c642-49da-9e00-a1e7384f1e28/938x527/persian-cats-for-sale-3-year-old-persian-cat-lightfoot-green-preston-image-1.webp?width=1440')
+blanca.photos.attach(io: file, filename: 'blanca_1.png', content_type: 'image/jpg')
+file = URI.open('https://assets.pets4homes.co.uk/image/90aa3454-f641-491e-a17f-993d935c966e/938x527/persian-cats-for-sale-3-year-old-persian-cat-lightfoot-green-preston-image-2.webp?width=1440')
+blanca.photos.attach(io: file, filename: 'blanca_2.png', content_type: 'image/jpg')
+file = URI.open('https://assets.pets4homes.co.uk/image/47cb1f6d-acfc-40b1-a11a-28899a972c80/938x527/persian-cats-for-sale-3-year-old-persian-cat-lightfoot-green-preston-image-3.webp?width=1280')
+blanca.photos.attach(io: file, filename: 'blanca_3.png', content_type: 'image/jpg')
+
 puts "Created blanca"
 
 laika = Pet.create!(adoption_status: "Available",
@@ -105,6 +118,15 @@ laika = Pet.create!(adoption_status: "Available",
                     hours_alone: 4,
                     medical_conditions: "Needs medication once a day",
                     shelter: shoreditch)
+
+file = URI.open('https://www.dogstrust.org.uk/dogimages/1106219_oscar_20220530112142_oscarcollienew_800.jpg')
+laika.photos.attach(io: file, filename: 'laika_1.png', content_type: 'image/jpg')
+file = URI.open('https://www.dogstrust.org.uk/dogimages/1106219_oscar_20220529035536_oscarcollienew004_800.jpg')
+laika.photos.attach(io: file, filename: 'laika_2.png', content_type: 'image/jpg')
+file = URI.open('https://www.dogstrust.org.uk/dogimages/1106219_oscar_20220529035531_oscarcollienew001_800.jpg')
+laika.photos.attach(io: file, filename: 'laika_3.png', content_type: 'image/jpg')
+file = URI.open('https://www.dogstrust.org.uk/dogimages/1106219_oscar_20220529035533_oscarcollienew002_800.jpg')
+laika.photos.attach(io: file, filename: 'laika_4.png', content_type: 'image/jpg')
 
 puts "Created laika"
 puts "All pets created"
