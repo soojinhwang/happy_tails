@@ -12,8 +12,19 @@
   <p> Hours Alone: Can for left alone for <%= @pet.hours_alone %> hours.</p>
   <p> Medical Conditions: <%= @pet.medical_conditions %></p>
 
+  <% if current_user.shelter.blank? %>
+    <% if @user_has_applied %>
+      <div class="text-center">
+        <%= link_to "Cancel Application", application_path(@user_application), method: :delete,
+                        data: { confirm: "Are you sure you want to cancel your application for #{@pet.name}?"}%>
+      </div>
+    <% else %>
+      <%= render "application_form", pet: @pet %>
+    <% end %>
+  <% end %>
+
+
   <% if current_user.shelter == @pet.shelter %>
     <%= link_to "Edit pet", edit_pet_path(@pet)%>
   <% end %>
-
 </div>

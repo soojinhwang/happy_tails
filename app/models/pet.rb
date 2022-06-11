@@ -1,5 +1,6 @@
 class Pet < ApplicationRecord
   belongs_to :shelter
+  has_many :applications
 
   validates :name, presence: true, length: { minimum: 2 }
 
