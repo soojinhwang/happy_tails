@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   before_action :set_pet, only: [ :show, :edit, :update, :detroy ]
 
   def index
@@ -22,6 +23,7 @@ class PetsController < ApplicationController
     end
   end
 
+
   def new
     @pet = Pet.new
   end
@@ -36,9 +38,7 @@ class PetsController < ApplicationController
     end
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def update
     @pet.update(pet_params)
@@ -50,13 +50,28 @@ class PetsController < ApplicationController
     redirect_to pets_path
   end
 
- private
+  private
 
   def set_pet
     @pet = Pet.find(params[:id])
   end
 
   def pet_params
-    params.require(:pet).permit(:shelter_id, :adoption_status, :name, :species, :description, :location, :breed, :pet_friendly, :outdoor_space, :sex, :age, :colour, :medical_conditions,:hours_alone, :children_friendly)
+    params.require(:pet).permit(:shelter_id,
+                                :photos [],
+                                :adoption_status,
+                                :name,
+                                :species,
+                                :description,
+                                :location,
+                                :breed,
+                                :pet_friendly,
+                                :outdoor_space,
+                                :sex,
+                                :age,
+                                :colour,
+                                :medical_conditions,
+                                :hours_alone,
+                                :children_friendly)
   end
 end
