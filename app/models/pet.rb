@@ -5,7 +5,7 @@ class Pet < ApplicationRecord
 
   validates :description, presence: true, length: { minimum: 7 }
 
-  validates :shelter_info_id, presence: true
+  validates :shelter_id, presence: true
   validates :adoption_status, presence: true, inclusion: { in: ["Available", "Reserved", "Adopted"] }
   validates :species, presence: true, inclusion: { in: ["Cat", "Dog"],
                                                    message: "Only Cats or Dogs (for now!)" }
