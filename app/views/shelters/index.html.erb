@@ -1,9 +1,7 @@
 <h1> Shelters Index Page</h1>
 
-<% @shelters.each do |shelter| %>
+<%= @shelters.each do |shelter| %>
   Shelter name: <%= link_to shelter.name, shelter_path(shelter) %> <br>
   Shelter address: <%= shelter.address %>
-
   <hr>
-
 <% end %>
