@@ -57,7 +57,6 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:shelter_id,
-                                :photos [],
                                 :adoption_status,
                                 :name,
                                 :species,
@@ -71,6 +70,7 @@ class PetsController < ApplicationController
                                 :colour,
                                 :medical_conditions,
                                 :hours_alone,
-                                :children_friendly)
+                                :children_friendly,
+                                photos: [])
   end
 end
