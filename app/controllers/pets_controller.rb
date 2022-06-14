@@ -23,7 +23,6 @@ class PetsController < ApplicationController
     end
   end
 
-
   def new
     @pet = Pet.new
   end
