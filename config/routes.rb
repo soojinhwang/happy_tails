@@ -6,11 +6,10 @@ Rails.application.routes.draw do
   patch '/profile', action: :update, controller: 'users'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :pets do
-    resources :applications
+    resources :applications, except: [ :destroy, :index ]
   end
 
   resources :shelters
   resources :users, only: [ :edit, :update, :show ]
- # get 'users/:id/edit_bio', to: 'users#edit_bio'
-  #patch 'users/:id', to: 'users#update'
+  resources :applications, only: [ :destroy, :index ]
 end

@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :pets, through: :shelters
   has_one :shelter, dependent: :destroy
   has_many :applications
+  has_one_attached :photo
 
   validates :email, presence: true
   #validates :password, presence: true
