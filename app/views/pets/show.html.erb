@@ -20,6 +20,11 @@
   <p> Hours Alone: Can for left alone for <%= @pet.hours_alone %> hours.</p>
   <p> Medical Conditions: <%= @pet.medical_conditions %></p>
 
+
+   <%= link_to "Back to pets", pets_path, class: "title-buttons" %>
+
+
+
   <% if current_user.shelter.blank? %>
     <% if @user_has_applied %>
       <div class="text-center">
