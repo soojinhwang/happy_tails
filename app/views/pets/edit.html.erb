@@ -1,4 +1,4 @@
-<h1> Update Pets Details </h1>
+<h1>Update Pet Details</h1>
 
 <div class="container">
 
@@ -16,7 +16,8 @@
     <%= f.input :children_friendly %>
     <%= f.input :hours_alone %>
     <%= f.input :medical_conditions %>
-    <%= f.submit, class: 'btn-red' %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit class: 'btn-red' %>
   <% end %>
 
 </div>
