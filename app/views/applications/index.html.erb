@@ -6,6 +6,8 @@
     <% if pet.applications.exists?%>
 
 
+
+
         <h2 > <%= link_to pet.name, pet_path(pet) %> </h2>
 
         <% if pet.photos.attached? %>

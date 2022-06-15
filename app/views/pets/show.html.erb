@@ -19,12 +19,12 @@
   <p> Age: <%= @pet.age %></p>
   <p> Description: <%= @pet.description %></p>
   <p> Outdoor Space: <%= @pet.outdoor_space %></p>
-  <p> Children Friendly <%= @pet.children_friendly %></p>
+  <p> Children Friendly: <%= @pet.children_friendly %></p>
   <p> Pet Friendly: <%= @pet.pet_friendly %></p>
-  <p> Hours Alone: Can for left alone for <%= @pet.hours_alone %> hours.</p>
+  <p> Hours Alone: Can be left alone for <%= @pet.hours_alone %> hours.</p>
   <p> Medical Conditions: <%= @pet.medical_conditions %></p>
 
-  <% if current_user&.shelter&.blank? %>
+  <% if user_signed_in? == false || current_user.shelter.blank? %>
     <% if @user_has_applied %>
       <div class="text-center">
         <%= link_to "Cancel Application", application_path(@user_application), method: :delete,
@@ -36,7 +36,9 @@
   <% end %>
 
 
-  <% if current_user&.shelter == @pet.shelter %>
-    <%= link_to "Edit pet", edit_pet_path(@pet)%>
+  <% if user_signed_in? && current_user.shelter == @pet.shelter %>
+    <div class="text-center">
+     <%= link_to "Edit pet", edit_pet_path(@pet)%>
+    </div>
   <% end %>
 </div>
