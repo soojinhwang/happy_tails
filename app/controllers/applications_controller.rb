@@ -6,7 +6,9 @@ class ApplicationsController < ApplicationController
 
   def index
     @applications = Application.all
+    @pets = Pet.all
   end
+
   def create
     @application = Application.new
     @application.date = Time.now.to_date
