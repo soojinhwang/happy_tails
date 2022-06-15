@@ -14,6 +14,7 @@
       <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
   <% end %>
 
+  <p>Shelter: <%= @pet.shelter.name %></p>
   <p> Breed: <%= @pet.breed %></p>
   <p> Sex: <%= @pet.sex %></p>
   <p> Age: <%= @pet.age %></p>
@@ -21,7 +22,7 @@
   <p> Outdoor Space: <%= @pet.outdoor_space %></p>
   <p> Children Friendly <%= @pet.children_friendly %></p>
   <p> Pet Friendly: <%= @pet.pet_friendly %></p>
-  <p> Hours Alone: Can for left alone for <%= @pet.hours_alone %> hours.</p>
+  <p> Hours Alone: Can for left alone for <%= @pet.hours_alone %> hours</p>
   <p> Medical Conditions: <%= @pet.medical_conditions %></p>
 
   <% if current_user&.shelter&.blank? %>
