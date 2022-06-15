@@ -5,8 +5,12 @@
         <h1><em>We modernise the pet adoption process</em></h1>
         <p>Connecting awesome animal shelters with people looking to give animals a second chance</p>
         <div class="banner-text-buttons">
-          <%= link_to "FIND A PET", pets_path, class: "btn-red" %>
-          <%= link_to "LIST A PET", new_pet_path, class: "btn-gray-border" %>
+          <% if !user_signed_in? || current_user.shelter.present? %>
+            <%= link_to "FIND A PET", pets_path, class: "btn-red" %>
+            <%= link_to "LIST A PET", new_pet_path, class: "btn-gray-border" %>
+          <% else %>
+            <%= link_to "FIND A PET", pets_path, class: "btn-red" %>
+          <% end %>
         </div>
       </div>
       <%= image_tag "homepage_cat_dog.png" %>
