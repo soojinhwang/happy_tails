@@ -1,7 +1,30 @@
-
-<h1>Pages#home</h1>
-
-<div class=”container”>
-<h1>Happy Tails</h1>
-
+<div class="container">
+  <div class="home-container">
+    <div class="banner">
+      <div class="banner-text">
+        <h1><em>We modernise the pet adoption process</em></h1>
+        <p>Connecting awesome animal shelters with people looking to give animals a second chance</p>
+        <div class="banner-text-buttons">
+          <%= link_to "FIND A PET", pets_path, class: "btn-red" %>
+          <%= link_to "LIST A PET", new_pet_path, class: "btn-gray-border" %>
+        </div>
+      </div>
+      <%= image_tag "homepage_cat_dog.png" %>
+    </div>
+    <div class="about-section">
+      <h3><em>How does it work?</em></h3>
+      <div class="about-users">
+        <div class="about-left">
+          <%= image_tag "homepage_shelter.png" %>
+          <h5><em>Shelters</em></h5>
+          <p>Register as an animal shelter, list pets for adoption and manage your shelter's applications.</p>
+        </div>
+        <div class="about-right">
+          <%= image_tag "homepage_adopt.png" %>
+          <h5><em>Adopters</em></h5>
+          <p>Create a profile, search for pets up for adoption in your area and register your interest.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

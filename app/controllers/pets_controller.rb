@@ -1,7 +1,6 @@
 class PetsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index, :show]
-
   before_action :set_pet, only: [ :show, :edit, :update, :detroy ]
 
   def index
@@ -22,7 +21,6 @@ class PetsController < ApplicationController
       end
     end
   end
-
 
   def new
     @pet = Pet.new
@@ -58,7 +56,6 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:shelter_id,
-                                :photos [],
                                 :adoption_status,
                                 :name,
                                 :species,
@@ -72,6 +69,7 @@ class PetsController < ApplicationController
                                 :colour,
                                 :medical_conditions,
                                 :hours_alone,
-                                :children_friendly)
+                                :children_friendly,
+                                photos: [])
   end
 end
