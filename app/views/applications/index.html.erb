@@ -19,7 +19,10 @@
 
 
       <% pet.applications.each do |application| %>
+
+
         <p> User ID: <%= application.user_id%> </p>
+        <%= cl_image_tag application.user.photo.key, height: 100, width: 100, crop: :fill %>
         <p> First Name: <%= application.user.first_name%> </p>
         <p> Last Name: <%= application.user.last_name %></p>
         <p> Age: <%= application.user.age %></p>
@@ -31,16 +34,3 @@
   <% end  %>
 
 </div>
-
-
-
-
- <%# <% @applications.each do |application| %>
-
-
-
-    <%# <p> Pet: <%= link_to application.pet.name, pet_path(application.pet) %> </p> <br>
-    <%# <p> User: <%= link_to application.user.first_name, user_path(application.user) %> </p>
-    <%# <p> User: <%= application.user.first_name %>
-    <%# <hr>
-  <% end  %>
