@@ -15,5 +15,4 @@ class PagesController < ApplicationController
   def my_applications
     @my_applications = current_user.applications
   end
-
 end
