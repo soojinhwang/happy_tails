@@ -14,7 +14,13 @@ class ApplicationsController < ApplicationController
   def show
 
     @application.pet = @pet
-    @application.approved = true
+
+
+    if @application.approved = true
+      @application.approved = false
+    else
+      @application.approved = true
+    end
 
     # if @application.save!
     #   redirect_to application_path(@application)
@@ -45,9 +51,8 @@ class ApplicationsController < ApplicationController
   end
 
   def update
-    @application.update
-    redirect_to applications_path #not sure where to redirect to as update is done by shelter user
-
+    @application.update(application_params)
+    redirect_to applications_path(@application)
   end
 
   def destroy
@@ -66,6 +71,10 @@ class ApplicationsController < ApplicationController
 
   def find_application
     @application = Application.find(params[:id])
+  end
+
+  def application_params
+    params.require(:application).permit(:approved)
   end
 
 end
