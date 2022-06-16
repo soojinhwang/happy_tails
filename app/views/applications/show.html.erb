@@ -25,23 +25,29 @@
   <p> Hours at home?: <%= @application.user.hours_alone %> </p>
 
 
-  <%= link_to "Back to #{@application.pet.name}'s applications", pet_applications_path(@application.pet) %>
+  <%= link_to "All applications for #{@application.pet.name}", pet_applications_path(@application.pet) %>
+   <br>
+  <% if @application.approved == false && @application.reviewed == false %>
 
-  <% if @application.approved == false %>
-
-
-      <div class="text-center">
-          <%= link_to "Cancel Application", application_path(@application), method: :delete,
-                          data: { confirm: "Are you sure you want to cancel your application for #{@application.pet.name}?"}%>
-      </div>
-
+     <br>
+      <%= render "reject_application", pet: @application.pet %>
+     <br>
       <%= render "approve_application", pet: @application.pet %>
+     <br>
 
-  <% else @application.approved == true %>
+  <% elsif @application.approved == true && @application.reviewed == true %>
     <br>
     <p> This application has been approved  </p>
 
     <%= render "undo_approve_application", pet: @application.pet %>
+    <br>
+
+  <% else @application.approved == false && @application.reviewed == true %>
+    <br>
+    <p> This application has been rejected  </p>
+
+    <%= render "unreject_application", pet: @application.pet %>
+    <br>
 
   <% end  %>
 

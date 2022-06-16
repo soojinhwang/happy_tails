@@ -1,7 +1,7 @@
 class ApplicationsController < ApplicationController
 
   before_action :find_pet, only: [ :index, :edit, :create ]
-  before_action :find_application, only: [ :edit, :show, :destroy, :update, :approve_application, :unapprove_application]
+  before_action :find_application, only: [ :edit, :show, :destroy, :update, :approve_application, :unapprove_application, :reject_application, :unreject_application]
 
 
   def index
@@ -34,6 +34,8 @@ class ApplicationsController < ApplicationController
     @application = Application.new
     @application.date = Time.now.to_date
     @application.approved = false
+    @application.approved = false
+
 
 
     @pet = Pet.find(params[:pet_id])
@@ -62,11 +64,19 @@ class ApplicationsController < ApplicationController
   end
 
   def approve_application
-    @application.update(approved: true)
+    @application.update(approved: true, reviewed: true)
   end
 
   def unapprove_application
-    @application.update(approved: false)
+    @application.update(approved: false, reviewed: false)
+  end
+
+  def reject_application
+    @application.update(approved: false, reviewed: true)
+  end
+
+  def unreject_application
+    @application.update(approved: false, reviewed: false)
   end
 
   private

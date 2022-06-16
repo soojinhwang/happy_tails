@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   resources :users, only: [ :edit, :update, :show ]
   patch '/approve_application/:id', action: :approve_application, controller: 'applications', as: :approve_application
   patch '/unapprove_application/:id', action: :unapprove_application, controller: 'applications', as: :unapprove_application
+  patch '/reject_application/:id', action: :reject_application, controller: 'applications', as: :reject_application
+  patch '/unreject_application/:id', action: :unreject_application, controller: 'applications', as: :unreject_application
+
 
 
 
