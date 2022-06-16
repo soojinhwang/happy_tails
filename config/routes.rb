@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get '/my_applications', to: 'pages#my_application'
+  get '/my_applications', to: 'pages#my_applications'
 
   get '/profile', action: :show, controller: 'users'
   get '/profile/details', action: :edit, controller: 'users'
