@@ -139,7 +139,7 @@ blanca = Pet.create!(adoption_status: "Available",
                      description: "Blanca is very purry and has a soft meow. She craves attention and loves to be stroked and to curl up against her human.",
                      outdoor_space: false,
                      pet_friendly: "Only other cats",
-                     children_friendly: "OK with older childen",
+                     children_friendly: "OK with older children",
                      hours_alone: 6,
                      medical_conditions: "In good health condition",
                      shelter: shoreditch)
