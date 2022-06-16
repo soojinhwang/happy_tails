@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :shelters
   resources :applications, only: [ :destroy, :index ]
 
+  resources :chatrooms, only: :show
+
 end
