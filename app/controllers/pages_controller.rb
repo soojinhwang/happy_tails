@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
 
-  def my_application
+  def my_applications
     @applications = Application.all
 
   end
