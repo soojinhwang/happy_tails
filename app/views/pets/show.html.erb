@@ -26,6 +26,8 @@
   <p> Hours Alone: Can be left alone for <%= @pet.hours_alone %> hours.</p>
   <p> Medical Conditions: <%= @pet.medical_conditions %></p>
 
+   <%= link_to "Back to Pets", pets_path, class: "title-buttons" %>
+
   <% if user_signed_in? == false || current_user.shelter.blank? %>
     <% if @user_has_applied %>
       <div class="text-center">
