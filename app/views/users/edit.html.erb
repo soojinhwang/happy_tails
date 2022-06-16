@@ -1,0 +1,18 @@
+<h1> Update Users Details </h1>
+
+<div class="container">
+
+      <%= simple_form_for(@user ) do |f|%>
+        <%= f.input :age %>
+        <%= f.input :biography %>
+        <%= f.input :type_of_dwelling %>
+        <%= f.input :outdoor_space %>
+        <%= f.input :other_pets %>
+        <%= f.input :children %>
+        <%= f.input :hours_alone %>
+        <%= f.input :previous_experience %>
+        <%= f.submit %>
+  <% end %>
+
+</div>
+<%console%>

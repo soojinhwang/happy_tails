@@ -4,12 +4,16 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.hidden_field :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+  <%= f.input :age,
+                hint: "Hey, how old are you?",
+                required: false,
+                input_html: { autocomplete: "your age" } %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
@@ -18,8 +22,9 @@
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
+                value: "123456",
                 hint: "we need your current password to confirm your changes",
-                required: true,
+                required: false,
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
