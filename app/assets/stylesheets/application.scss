@@ -9,10 +9,10 @@
 @import "font-awesome";
 
 // Your CSS partials
+@import "pages/home";
 @import "pages/index";
 
 @import "components/index";
+@import "components/navbar";
 @import "components/footer";
-
-
 @import "components/buttons";

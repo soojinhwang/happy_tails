@@ -16,7 +16,8 @@
     <%= f.input :children_friendly %>
     <%= f.input :hours_alone %>
     <%= f.input :medical_conditions %>
-    <%= f.submit %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit class: 'btn-red' %>
   <% end %>
 
 </div>

@@ -6,7 +6,9 @@
   text-decoration: none;
   background-color: $yellow;
   padding: 12px 32px;
-  border-radius: 24px;
+  border-radius: 32px;
+  border: none;
+  text-transform: uppercase;
   width: fit-content;
 
   &:hover {
@@ -24,8 +26,9 @@
   text-decoration: none;
   padding: 12px 32px;
   border: 3px solid $yellow;
-  border-radius: 24px;
+  border-radius: 32px;
   width: fit-content;
+  text-transform: uppercase;
 
   &:hover {
     color: #d2b36a;
@@ -42,8 +45,10 @@
   text-decoration: none;
   background-color: $red;
   padding: 12px 32px;
-  border-radius: 24px;
+  border-radius: 32px;
   width: fit-content;
+  border: none;
+  text-transform: uppercase;
 
   &:hover {
     color: #262626;
@@ -60,8 +65,9 @@
   text-decoration: none;
   padding: 12px 32px;
   border: 3px solid $red;
-  border-radius: 24px;
+  border-radius: 32px;
   width: fit-content;
+  text-transform: uppercase;
 
   &:hover {
     color: #D7B9B1;
@@ -78,8 +84,10 @@
   text-decoration: none;
   background-color: $blue;
   padding: 12px 32px;
-  border-radius: 24px;
+  border-radius: 32px;
   width: fit-content;
+  border: none;
+  text-transform: uppercase;
 
   &:hover {
     color: #262626;
@@ -96,8 +104,9 @@
   text-decoration: none;
   padding: 12px 32px;
   border: 3px solid $blue;
-  border-radius: 24px;
+  border-radius: 32px;
   width: fit-content;
+  text-transform: uppercase;
 
   &:hover {
     color: #B0C3C7;
@@ -115,8 +124,10 @@
   text-decoration: none;
   background-color: $light-gray;
   padding: 12px 32px;
-  border-radius: 24px;
+  border-radius: 32px;
   width: fit-content;
+  border: none;
+  text-transform: uppercase;
 
   &:hover {
     color: #262626;
@@ -125,7 +136,7 @@
   }
 }
 
-.btn-light-gray-border {
+.btn-gray-border {
   color: $gray;
   font-weight: 700;
   font-size: 16px;
@@ -133,8 +144,9 @@
   text-decoration: none;
   padding: 12px 32px;
   border: 3px solid $gray;
-  border-radius: 24px;
+  border-radius: 32px;
   width: fit-content;
+  text-transform: uppercase;
 
   &:hover {
     color: #333333;

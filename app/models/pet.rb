@@ -4,7 +4,6 @@ class Pet < ApplicationRecord
 
   has_many_attached :photos
 
-
   validates :name, presence: true, length: { minimum: 2 }
   validates :description, presence: true, length: { minimum: 7 }
   validates :shelter_id, presence: true
