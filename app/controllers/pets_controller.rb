@@ -1,5 +1,4 @@
 class PetsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_pet, only: [ :show, :edit, :update, :destroy ]
 
@@ -41,7 +40,11 @@ class PetsController < ApplicationController
 
   def update
     @pet.update(pet_params)
-    redirect_to pet_path(@pet)
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
   end
 
   def destroy
