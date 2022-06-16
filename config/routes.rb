@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/my_applications', to: 'pages#my_applications'
+  get '/my_pets', to: 'pages#my_pets'
 
   get '/profile', action: :show, controller: 'users'
   get '/profile/details', action: :edit, controller: 'users'

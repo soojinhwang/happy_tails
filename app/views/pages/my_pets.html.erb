@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h1> My listed pets </h1>
+
+  <% @my_pets.each do |pet| %>
+
+    <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
+    <p> Age: <%= pet.age %> </p> <br>
+    <p> Description: <%= pet.description %> </p> <br>
+    <p> Adoption Status: <%= pet.adoption_status %> </p>
+
+    <hr>
+  <% end %>
+
+</div>
