@@ -1,12 +1,18 @@
 class ApplicationsController < ApplicationController
 
-  before_action :find_pet, only: [ :create ]
-  before_action :find_application, only: [ :destroy, :update]
+  before_action :find_pet, only: [:index, :show, :create ]
+  before_action :find_application, only: [ :show, :destroy, :update]
 
 
   def index
     @applications = Application.all
     @pets = Pet.all
+
+  end
+
+  def show
+
+
   end
 
   def create
