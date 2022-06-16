@@ -11,6 +11,14 @@ class ApplicationsController < ApplicationController
   end
 
   def show
+    @application.pet = @pet
+    @application.approved = true
+
+   # if @application.save!
+   #   redirect_to application_path(@application)
+   # else
+   #   redirect_to application_path(@application), alert: @application.errors.full_messages
+   # end
 
 
   end
