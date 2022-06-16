@@ -1,25 +1,26 @@
 class ApplicationsController < ApplicationController
 
-  before_action :find_pet, only: [:index, :show, :create ]
-  before_action :find_application, only: [ :show, :destroy, :update]
+  before_action :find_pet, only: [ :index, :edit, :show, :create ]
+  before_action :find_application, only: [ :edit, :show, :destroy, :update]
 
 
   def index
-    @applications = Application.all
+    # @applications = Application.all
     @pets = Pet.all
+
 
   end
 
   def show
+
     @application.pet = @pet
     @application.approved = true
 
-   # if @application.save!
-   #   redirect_to application_path(@application)
-   # else
-   #   redirect_to application_path(@application), alert: @application.errors.full_messages
-   # end
-
+    # if @application.save!
+    #   redirect_to application_path(@application)
+    # else
+    #   redirect_to application_path(@application), alert: @application.errors.full_messages
+    # end
 
   end
 
@@ -45,7 +46,7 @@ class ApplicationsController < ApplicationController
 
   def update
     @application.update
-    redirect_to pet_path() #not sure where to redirect to as update is done by shelter user
+    redirect_to applications_path #not sure where to redirect to as update is done by shelter user
 
   end
 
