@@ -17,11 +17,11 @@
         <%= link_to "LIST A PET", new_pet_path, class: "btn-yellow" %>
         <div class="nav-item dropdown">
           <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :thumb,
-                                                   class: "avatar dropdown-toggle",
-                                                   id: "navbarDropdown",
-                                                   data: { bs_toggle: "dropdown" },
-                                                   'aria-haspopup': true,
-                                                   'aria-expanded': false %>
+                                                  class: "avatar dropdown-toggle",
+                                                  id: "navbarDropdown",
+                                                  data: { bs_toggle: "dropdown" },
+                                                  'aria-haspopup': true,
+                                                  'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <!-- The paths for the below need to be worked out properly in the routes etc (currently all link to pets index) -->
             <%= link_to "Profile", pets_path, class: "dropdown-item" %>
