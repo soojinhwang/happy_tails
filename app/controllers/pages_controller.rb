@@ -4,15 +4,16 @@ class PagesController < ApplicationController
   def home
   end
 
-
-  def my_applications
-    @applications = Application.all
-
-  end
-
-
   #   def profile
   #     @user = current_user
   #   end
+
+  def my_pets
+    @my_pets = current_user.shelter.pets
+  end
+
+  def my_applications
+    @my_applications = current_user.applications
+  end
 
 end

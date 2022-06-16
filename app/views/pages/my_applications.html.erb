@@ -2,7 +2,7 @@
 
 
   <h1> My Applications </h1>
-  <%  @applications.each do |application| %>
+  <%  @my_applications.each do |application| %>
     <%if application.user == current_user %>
         <% if application.pet.photos.attached? %>
           <% application.pet.photos.each do |photo| %>
