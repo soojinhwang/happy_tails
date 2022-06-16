@@ -4,5 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def my_application
+    @applications = Application.all
+
+  end
 
 end
