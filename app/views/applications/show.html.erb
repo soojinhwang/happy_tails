@@ -25,7 +25,7 @@
   <p> Hours at home?: <%= @application.user.hours_alone %> </p>
 
 
-
+  <%= link_to "Back to #{@application.pet.name}'s applications", pet_applications_path(@application.pet) %>
 
   <% if @application.approved == false %>
 

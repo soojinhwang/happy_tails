@@ -1,7 +1,7 @@
 class ApplicationsController < ApplicationController
 
-  before_action :find_pet, only: [ :index, :edit, :show, :create ]
-  before_action :find_application, only: [ :edit, :show, :destroy, :update]
+  before_action :find_pet, only: [ :index, :edit, :create ]
+  before_action :find_application, only: [ :edit, :show, :destroy, :update, :approve_application, :unapprove_application]
 
 
   def index
@@ -13,14 +13,14 @@ class ApplicationsController < ApplicationController
 
   def show
 
-    @application.pet = @pet
+    @pet = @application.pet
 
 
-    if @application.approved = true
-      @application.approved = false
-    else
-      @application.approved = true
-    end
+    # if @application.approved = true
+    #   @application.approved = false
+    # else
+    #   @application.approved = true
+    # end
 
     # if @application.save!
     #   redirect_to application_path(@application)
@@ -59,6 +59,14 @@ class ApplicationsController < ApplicationController
     @pet = @application.pet
     @application.destroy
     redirect_to pet_path(@pet)
+  end
+
+  def approve_application
+    @application.update(approved: true)
+  end
+
+  def unapprove_application
+    @application.update(approved: false)
   end
 
   private

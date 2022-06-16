@@ -11,12 +11,15 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :pets do
-    resources :applications, except: [ :destroy ]
+    resources :applications, except: [ :destroy, :show ]
   end
 
   resources :shelters
-  resources :applications, only: [ :destroy ]
+  resources :applications, only: [ :destroy, :show ]
   resources :users, only: [ :edit, :update, :show ]
+  patch '/approve_application/:id', action: :approve_application, controller: 'applications', as: :approve_application
+  patch '/unapprove_application/:id', action: :unapprove_application, controller: 'applications', as: :unapprove_application
+
 
 
 end
