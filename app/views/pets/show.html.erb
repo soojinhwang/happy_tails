@@ -29,6 +29,7 @@
    <%= link_to "Back to Pets", pets_path, class: "title-buttons" %>
 
   <% if user_signed_in? == false || current_user.shelter.blank? %>
+    <%= link_to "View my applications", my_applications_path, class: "title-buttons" %>
     <% if @user_has_applied %>
       <div class="text-center">
         <%= link_to "Cancel Application", application_path(@user_application), method: :delete,
