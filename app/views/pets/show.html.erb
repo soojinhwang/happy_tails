@@ -43,7 +43,7 @@
 
   <% if user_signed_in? && current_user.shelter == @pet.shelter %>
     <div class="text-center">
-    <%= link_to "Edit pet", edit_pet_path(@pet)%>
+     <%= link_to "Edit pet", edit_pet_path(@pet)%>
     </div>
     <%= link_to "View pet applications", pet_applications_path(@pet)%>
   <% end %>

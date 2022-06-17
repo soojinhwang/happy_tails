@@ -2,14 +2,55 @@
 
   <h1> My listed pets </h1>
 
-  <% @my_pets.each do |pet| %>
+  <% @available_pets = @my_pets.select { |pet| (pet.adoption_status == "Available")} %>
 
-    <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
-    <p> Age: <%= pet.age %> </p> <br>
-    <p> Description: <%= pet.description %> </p> <br>
-    <p> Adoption Status: <%= pet.adoption_status %> </p>
+  <%  if @available_pets.any? %>
 
-    <hr>
+    <h2> Available <h2>
+
+    <% @my_pets.each do |pet| %>
+      <% if pet.adoption_status == "Available" %>
+        <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
+        <p> Age: <%= pet.age %> </p> <br>
+        <p> Description: <%= pet.description %> </p> <br>
+        <p> Adoption Status: <%= pet.adoption_status %> </p>
+        <hr>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% @reserved_pets = @my_pets.select { |pet| (pet.adoption_status == "Reserved")} %>
+
+  <%  if @reserved_pets.any? %>
+
+    <h2> Reserved pets <h2>
+
+    <% @my_pets.each do |pet| %>
+      <% if pet.adoption_status == "Reserved" %>
+        <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
+        <p> Age: <%= pet.age %> </p> <br>
+        <p> Description: <%= pet.description %> </p> <br>
+        <p> Adoption Status: <%= pet.adoption_status %> </p>
+        <hr>
+      <% end %>
+    <% end %>
+  <% end %>
+
+   <% @adopted_pets = @my_pets.select { |pet| (pet.adoption_status == "Adopted")} %>
+
+  <%  if @reserved_pets.any? %>
+
+    <h2> Adopted pets <h2>
+
+    <% @my_pets.each do |pet| %>
+      <% if pet.adoption_status == "Adopted" %>
+        <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
+        <p> Age: <%= pet.age %> </p> <br>
+        <p> Description: <%= pet.description %> </p> <br>
+        <p> Adoption Status: <%= pet.adoption_status %> </p>
+        <hr>
+      <% end %>
+    <% end %>
   <% end %>
 
 </div>

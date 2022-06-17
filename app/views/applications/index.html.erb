@@ -32,7 +32,13 @@
         <p> First Name: <%= application.user.first_name%> </p>
         <p> Last Name: <%= application.user.last_name %></p>
         <p> Age: <%= application.user.age %></p>
-        <p> Application Status: <%= application.approved ? "Approved" : "In Process" %></p>
+        <p> Application status: <% if application.approved == false && application.reviewed == false %>
+                                      Application in progress
+                                <% elsif application.approved == true && application.reviewed == true %>
+                                      Application Accepted
+                                <% else application.approved == false && application.reviewed == true %>
+                                      Application Declined
+                                <% end  %> </p>
         <%= link_to "View application", application_path(application) %>
 
         <hr>

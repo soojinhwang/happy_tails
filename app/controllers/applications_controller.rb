@@ -34,7 +34,7 @@ class ApplicationsController < ApplicationController
     @application = Application.new
     @application.date = Time.now.to_date
     @application.approved = false
-    @application.approved = false
+    @application.reviewed = false
 
 
 
@@ -91,8 +91,8 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
   end
 
-  def application_params
-    params.require(:application).permit(:approved)
-  end
+  # def application_params
+  #   params.require(:application).permit(:approved)
+  # end
 
 end
