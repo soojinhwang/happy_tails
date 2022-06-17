@@ -31,20 +31,26 @@
 
   <% if user_signed_in? == false || current_user.shelter.blank? %>
     <%= link_to "View my applications", my_applications_path, class: "title-buttons" %>
-    <% if @user_has_applied %>
+
+    <% if @pet.adoption_status == "Adopted" %>
       <div class="text-center">
-        <%= link_to "Cancel Application", application_path(@user_application), method: :delete,
-                        data: { confirm: "Are you sure you want to cancel your application for #{@pet.name}?"}%>
+       <p> <%= @pet.name%> has already found a home! </p>
       </div>
     <% else %>
-      <%= render "application_form", pet: @pet %>
+      <% if @user_has_applied %>
+        <div class="text-center">
+          <%= link_to "Cancel Application", application_path(@user_application), method: :delete,
+                          data: { confirm: "Are you sure you want to cancel your application for #{@pet.name}?"}%>
+        </div>
+      <% else %>
+       <%= render "application_form", pet: @pet %>
+      <% end %>
     <% end %>
-  <% end %>
-
   <% if user_signed_in? && current_user.shelter == @pet.shelter %>
-    <div class="text-center">
-     <%= link_to "Edit pet", edit_pet_path(@pet)%>
-    </div>
-    <%= link_to "View pet applications", pet_applications_path(@pet)%>
-  <% end %>
+      <div class="text-center">
+      <%= link_to "Edit pet", edit_pet_path(@pet)%>
+      </div>
+      <%= link_to "View pet applications", pet_applications_path(@pet)%>
+   <% end %>
+ <% end  %>
 </div>
