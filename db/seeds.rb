@@ -17,6 +17,10 @@ Pet.destroy_all
 puts "Cleaning shelter database..."
 Shelter.destroy_all
 
+puts "Cleaning application database..."
+Application.destroy_all
+
+
 puts "Creating shelter user... "
 
 jane = User.create!(email: "jane@gmail.com",
@@ -340,11 +344,13 @@ puts "Creating applications..."
 app1 = Application.create!(user: mike,
                            pet: pixel,
                            date: Date.today,
-                           approved: false)
+                           approved: false,
+                           reviewed: false)
 
 app2 = Application.create!(user: jenny,
                            pet: memphis,
                            date: Date.today,
-                           approved: false)
+                           approved: false,
+                           reviewed: false)
 
 puts "All applications created"

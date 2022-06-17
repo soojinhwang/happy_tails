@@ -7,7 +7,29 @@ class PetsController < ApplicationController
       @pets = Pet.where(name: params[:query])
     else
       @pets = Pet.all
+
+       @pets.each do |pet|
+         pet.applications.any? do |application|
+            if application.approved == true
+             application.pet.adoption_status = "Adopted"
+            end
+         end
+      end
+
     end
+
+
+
+
+    #  @unique_approve = accepted.uniq
+
+    #  @unique_approve.each do |pet|
+    #   pet.adoption_status = "Adopted"
+    #  end
+
+
+
+
   end
 
   def show
@@ -19,6 +41,19 @@ class PetsController < ApplicationController
         @user_application = application
       end
     end
+
+
+
+     @pet.applications.any? do |application|
+      if application.approved == true
+        application.pet.adoption_status = "Adopted"
+      end
+     end
+
+
+
+
+
   end
 
   def new
