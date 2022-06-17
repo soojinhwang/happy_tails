@@ -1,33 +1,18 @@
 class ApplicationsController < ApplicationController
 
-  before_action :find_pet, only: [ :index, :edit, :create ]
-  before_action :find_application, only: [ :edit, :show, :destroy, :update, :approve_application, :unapprove_application, :reject_application, :unreject_application]
+  before_action :find_pet, only: [ :index, :create ]
+  before_action :find_application, only: [ :show, :destroy, :approve_application, :unapprove_application, :reject_application, :unreject_application]
 
 
   def index
-    # @applications = Application.all
     @pets = Pet.all
-
-
   end
 
   def show
-
     @pet = @application.pet
-
-
-    # if @application.approved = true
-    #   @application.approved = false
-    # else
-    #   @application.approved = true
-    # end
-
-    # if @application.save!
-    #   redirect_to application_path(@application)
-    # else
-    #   redirect_to application_path(@application), alert: @application.errors.full_messages
-    # end
-
+    if @application.approved == true
+      @application.pet.adoption_status = "Adopted"
+    end
   end
 
   def create
@@ -48,14 +33,8 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  def edit
 
-  end
 
-  def update
-    @application.update(application_params)
-    redirect_to applications_path(@application)
-  end
 
   def destroy
     @pet = @application.pet
@@ -91,8 +70,5 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
   end
 
-  # def application_params
-  #   params.require(:application).permit(:approved)
-  # end
 
 end

@@ -4,9 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  #   def profile
-  #     @user = current_user
-  #   end
 
   def my_pets
     @my_pets = current_user.shelter.pets
@@ -18,9 +15,6 @@ class PagesController < ApplicationController
          end
       end
    end
-
-
-
   end
 
   def my_applications
