@@ -4,7 +4,9 @@ class PetsController < ApplicationController
 
   def index
     if params[:query].present?
-      @pets = Pet.where(name: params[:query])
+      @pets = Pet.search_by_name_and_species(params[:query])
+      @pets = @pets.where("adoption_status = ?", params[:adoption_status]) if params[:adoption_status].present? && params[:adoption_status] != ""
+
     else
       @pets = Pet.all
     end

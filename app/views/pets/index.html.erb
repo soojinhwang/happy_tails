@@ -3,13 +3,14 @@
 
   <h1> All pets </h1>
 
+   <%= render 'shared/search', class: "pets-search-bar"%>
+
   <% @pets.each do |pet| %>
 
     <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
     <p> Age: <%= pet.age %> </p> <br>
     <p> Description: <%= pet.description %> </p> <br>
     <p> Adoption Status: <%= pet.adoption_status %> </p>
-
     <hr>
   <% end %>
 

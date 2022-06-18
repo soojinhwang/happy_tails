@@ -1,8 +1,15 @@
 class Pet < ApplicationRecord
   belongs_to :shelter
   has_many :applications
-
   has_many_attached :photos
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_species,
+    against: [ :adoption_status, :name, :species, :breed, :sex, :colour, :description, :pet_friendly, :children_friendly, :medical_conditions ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 
   validates :name, presence: true, length: { minimum: 2 }
   validates :description, presence: true, length: { minimum: 7 }
