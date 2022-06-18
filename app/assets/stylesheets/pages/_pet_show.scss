@@ -1,0 +1,34 @@
+@media(max-width: 500px) {
+}
+
+.pet-container {
+  height: 100%;
+  width: 80vw;
+}
+
+.pet-navigation-top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+
+.pet-navigation-top h6 {
+  font-family: 'Lexend';
+  font-weight: 400;
+  font-size: 16px;
+  color: $gray;
+  text-decoration: none;
+}
+
+.pet-nav-item {
+  font-family: 'Lexend';
+  font-weight: 400;
+  font-size: 16px;
+  color: $gray;
+  text-decoration: none;
+
+  &:hover {
+    color: $dark-gray;
+  }
+}
