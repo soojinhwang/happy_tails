@@ -1,5 +1,5 @@
-<div class="messages" data-chatroom-subscription-target="messages">
-  <% @chatroom.messages.each do |message| %>
+<div class="messages" data-conversation-subscription-target="messages">
+  <% @conversation.messages.each do |message| %>
     <%= render "messages/message", message: message %>
   <% end %>
 </div>

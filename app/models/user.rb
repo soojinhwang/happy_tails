@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_one :shelter, dependent: :destroy
   has_many :applications
   has_one_attached :photo
+  has_many :messages, dependent: :destroy
+  has_many :conversations, through: :messages, dependent: :destroy
 
   validates :email, presence: true
   validates :password, presence: true
