@@ -9,6 +9,5 @@ class AddDetailsToUsers < ActiveRecord::Migration[6.1]
     add_column :users, :children, :string
     add_column :users, :hours_alone, :integer
     add_column :users, :previous_experience, :text
-
   end
 end
