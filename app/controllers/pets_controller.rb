@@ -5,6 +5,15 @@ class PetsController < ApplicationController
   def index
     if params[:query].present?
       @pets = Pet.where(name: params[:query])
+
+      @pets.each do |pet|
+        pet.applications.any? do |application|
+           if application.approved == true
+            application.pet.adoption_status = "Adopted"
+           end
+        end
+     end
+
     else
       @pets = Pet.all
 
