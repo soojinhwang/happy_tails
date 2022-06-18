@@ -7,6 +7,8 @@
   background-color: $yellow;
   padding: 12px 32px;
   border-radius: 32px;
+  border: none;
+  text-transform: uppercase;
   width: fit-content;
 
   &:hover {
@@ -26,6 +28,7 @@
   border: 3px solid $yellow;
   border-radius: 32px;
   width: fit-content;
+  text-transform: uppercase;
 
   &:hover {
     color: #d2b36a;
@@ -44,6 +47,8 @@
   padding: 12px 32px;
   border-radius: 32px;
   width: fit-content;
+  border: none;
+  text-transform: uppercase;
 
   &:hover {
     color: #262626;
@@ -62,6 +67,7 @@
   border: 3px solid $red;
   border-radius: 32px;
   width: fit-content;
+  text-transform: uppercase;
 
   &:hover {
     color: #D7B9B1;
@@ -80,6 +86,8 @@
   padding: 12px 32px;
   border-radius: 32px;
   width: fit-content;
+  border: none;
+  text-transform: uppercase;
 
   &:hover {
     color: #262626;
@@ -98,6 +106,7 @@
   border: 3px solid $blue;
   border-radius: 32px;
   width: fit-content;
+  text-transform: uppercase;
 
   &:hover {
     color: #B0C3C7;
@@ -117,6 +126,8 @@
   padding: 12px 32px;
   border-radius: 32px;
   width: fit-content;
+  border: none;
+  text-transform: uppercase;
 
   &:hover {
     color: #262626;
@@ -135,6 +146,7 @@
   border: 3px solid $gray;
   border-radius: 32px;
   width: fit-content;
+  text-transform: uppercase;
 
   &:hover {
     color: #333333;

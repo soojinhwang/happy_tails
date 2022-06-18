@@ -1,0 +1,30 @@
+<div class="container">
+
+
+  <h1> My Applications </h1>
+  <%  @my_applications.each do |application| %>
+
+        <% if application.pet.photos.attached? %>
+          <% application.pet.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
+        <% end %>
+
+      <h3> <%= link_to application.pet.name, pet_path(application.pet) %> </h3>
+      <p> Breed: <%= application.pet.breed %></p>
+      <p> Sex: <%= application.pet.sex %></p>
+      <p> Age: <%= application.pet.age %></p>
+      <p> Description: <%= application.pet.description %></p>
+      <p> Application date: <%= application.date %></p>
+      <p> Application status: <% if application.approved == false && application.reviewed == false %>
+                                      Application in progress
+                                <% elsif application.approved == true && application.reviewed == true %>
+                                      Application Accepted
+                                <% else application.approved == false && application.reviewed == true %>
+                                      Application Declined
+                                <% end  %> </p>
+      <hr>
+  <% end %>
+</div>

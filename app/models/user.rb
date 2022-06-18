@@ -20,7 +20,7 @@ class User < ApplicationRecord
                                             message: "%{value} is not a valid type of dwelling" },
                                unless: ->(x) { x.type_of_dwelling.blank? }
   validates :outdoor_space, inclusion: { in: [true, false],
-                                          message: "%{value} is not a valid option" },
+                                         message: "%{value} is not a valid option" },
                             unless: ->(x) { x.outdoor_space.blank? }
   validates  :hours_alone, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 24 },
                            unless: ->(x) { x.hours_alone.blank? }

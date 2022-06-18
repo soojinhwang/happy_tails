@@ -14,17 +14,23 @@
       <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
   <% end %>
 
+  <p> Adoption status: <%= @pet.adoption_status %></p>
+  <p>Shelter: <%= @pet.shelter.name %></p>
   <p> Breed: <%= @pet.breed %></p>
   <p> Sex: <%= @pet.sex %></p>
   <p> Age: <%= @pet.age %></p>
   <p> Description: <%= @pet.description %></p>
   <p> Outdoor Space: <%= @pet.outdoor_space %></p>
-  <p> Children Friendly <%= @pet.children_friendly %></p>
+  <p> Children Friendly: <%= @pet.children_friendly %></p>
   <p> Pet Friendly: <%= @pet.pet_friendly %></p>
-  <p> Hours Alone: Can for left alone for <%= @pet.hours_alone %> hours.</p>
+  <p> Hours Alone: Can be left alone for <%= @pet.hours_alone %> hours.</p>
   <p> Medical Conditions: <%= @pet.medical_conditions %></p>
 
-  <% if current_user&.shelter&.blank? %>
+
+  <%= link_to "Back to Pets", pets_path, class: "title-buttons" %>
+
+  <% if user_signed_in? == false || current_user.shelter.blank? %>
+    <%= link_to "View my applications", my_applications_path, class: "title-buttons" %>
     <% if @user_has_applied %>
       <div class="text-center">
         <%= link_to "Cancel Application", application_path(@user_application), method: :delete,
@@ -35,8 +41,10 @@
     <% end %>
   <% end %>
 
-
-  <% if current_user&.shelter == @pet.shelter %>
-    <%= link_to "Edit pet", edit_pet_path(@pet)%>
+  <% if user_signed_in? && current_user.shelter == @pet.shelter %>
+    <div class="text-center">
+     <%= link_to "Edit pet", edit_pet_path(@pet)%>
+    </div>
+    <%= link_to "View pet applications", pet_applications_path(@pet)%>
   <% end %>
 </div>

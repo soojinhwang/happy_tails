@@ -1,0 +1,56 @@
+
+<div class="container">
+  <h2> Pet Details </h2>
+  <h3> <%= @application.pet.name %> </h3>
+  <p> Age: <%= @application.pet.age %> </p>
+  <p> Sex: <%= @application.pet.sex %> </p>
+  <p> Descritpion: <%= @application.pet.description %> </p>
+  <p> Outdoor Space:<%= @application.pet.outdoor_space %> </p>
+  <p> Pet Friendly?:<%= @application.pet.pet_friendly %> </p>
+  <p> Children Friendly?: <%= @application.pet.children_friendly %> </p>
+  <p> Maximum hour alone?:<%= @application.pet.hours_alone %> </p>
+  <p> Medical Condition: <%= @application.pet.medical_conditions %> </p>
+
+
+  <h2> User Details </h2>
+
+  <p> First Name: <%= @application.user.first_name %> </p>
+  <p> Last Name: <%= @application.user.last_name %></p>
+  <p> Age: <%= @application.user.age %> </p>
+  <p> Biography: <%= @application.user.biography %> </p>
+  <p> Type of dwelling: <%= @application.user.type_of_dwelling %> </p>
+  <p> Outdoor space?: <%= @application.user.outdoor_space %> </p>
+  <p> Other pets?: <%= @application.user.other_pets %> </p>
+  <p> Children?: <%= @application.user.children %> </p>
+  <p> Hours at home?: <%= @application.user.hours_alone %> </p>
+
+
+  <%= link_to "All applications for #{@application.pet.name}", pet_applications_path(@application.pet) %>
+   <br>
+  <% if @application.approved == false && @application.reviewed == false %>
+
+     <br>
+      <%= render "reject_application", pet: @application.pet %>
+     <br>
+      <%= render "approve_application", pet: @application.pet %>
+     <br>
+
+  <% elsif @application.approved == true && @application.reviewed == true %>
+    <br>
+    <p> This application has been approved  </p>
+
+    <%= render "undo_approve_application", pet: @application.pet %>
+    <br>
+
+  <% else @application.approved == false && @application.reviewed == true %>
+    <br>
+    <p> This application has been rejected  </p>
+
+    <%= render "unreject_application", pet: @application.pet %>
+    <br>
+
+  <% end  %>
+
+
+
+</div>

@@ -1,14 +1,21 @@
 class PetsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
-
-  before_action :set_pet, only: [ :show, :edit, :update, :detroy ]
+  before_action :set_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
     if params[:query].present?
       @pets = Pet.where(name: params[:query])
     else
       @pets = Pet.all
+
+       @pets.each do |pet|
+         pet.applications.any? do |application|
+            if application.approved == true
+             application.pet.adoption_status = "Adopted"
+            end
+         end
+      end
+
     end
   end
 
@@ -21,8 +28,13 @@ class PetsController < ApplicationController
         @user_application = application
       end
     end
-  end
+     @pet.applications.any? do |application|
+      if application.approved == true
+        application.pet.adoption_status = "Adopted"
+      end
+     end
 
+  end
 
   def new
     @pet = Pet.new
@@ -38,11 +50,16 @@ class PetsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @pet.update(pet_params)
-    redirect_to pet_path(@pet)
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -58,7 +75,6 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:shelter_id,
-                                :photos [],
                                 :adoption_status,
                                 :name,
                                 :species,
@@ -72,6 +88,7 @@ class PetsController < ApplicationController
                                 :colour,
                                 :medical_conditions,
                                 :hours_alone,
-                                :children_friendly)
+                                :children_friendly,
+                                photos: [])
   end
 end
