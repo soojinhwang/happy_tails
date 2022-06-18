@@ -1,14 +1,30 @@
 class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_pet, only: [ :show, :edit, :update, :detroy ]
+  before_action :set_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
     if params[:query].present?
+
       @pets = Pet.search_by_name_and_species(params[:query])
       @pets = @pets.where("adoption_status = ?", params[:adoption_status]) if params[:adoption_status].present? && params[:adoption_status] != ""
-
+      @pets.each do |pet|
+        pet.applications.any? do |application|
+           if application.approved == true
+            application.pet.adoption_status = "Adopted"
+           end
+        end
+     end
     else
       @pets = Pet.all
+
+       @pets.each do |pet|
+         pet.applications.any? do |application|
+            if application.approved == true
+             application.pet.adoption_status = "Adopted"
+            end
+         end
+      end
+
     end
   end
 
@@ -21,6 +37,12 @@ class PetsController < ApplicationController
         @user_application = application
       end
     end
+     @pet.applications.any? do |application|
+      if application.approved == true
+        application.pet.adoption_status = "Adopted"
+      end
+     end
+
   end
 
   def new
@@ -37,7 +59,8 @@ class PetsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @pet.update(pet_params)

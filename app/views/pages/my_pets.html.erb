@@ -1,17 +1,14 @@
-
 <div class="container">
 
-  <h1> All pets </h1>
+  <h1> My listed pets </h1>
 
-   <%= render 'shared/search', class: "pets-search-bar"%>
-
-  <% @available_pets = @pets.select { |pet| (pet.adoption_status == "Available")} %>
+  <% @available_pets = @my_pets.select { |pet| (pet.adoption_status == "Available")} %>
 
   <%  if @available_pets.any? %>
 
     <h2> Available <h2>
 
-    <% @pets.each do |pet| %>
+    <% @my_pets.each do |pet| %>
       <% if pet.adoption_status == "Available" %>
         <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
         <p> Age: <%= pet.age %> </p> <br>
@@ -22,13 +19,13 @@
     <% end %>
   <% end %>
 
-  <% @reserved_pets = @pets.select { |pet| (pet.adoption_status == "Reserved")} %>
+  <% @reserved_pets = @my_pets.select { |pet| (pet.adoption_status == "Reserved")} %>
 
   <%  if @reserved_pets.any? %>
 
     <h2> Reserved pets <h2>
 
-    <% @pets.each do |pet| %>
+    <% @my_pets.each do |pet| %>
       <% if pet.adoption_status == "Reserved" %>
         <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
         <p> Age: <%= pet.age %> </p> <br>
@@ -39,13 +36,13 @@
     <% end %>
   <% end %>
 
-   <% @adopted_pets = @pets.select { |pet| (pet.adoption_status == "Adopted")} %>
+   <% @adopted_pets = @my_pets.select { |pet| (pet.adoption_status == "Adopted")} %>
 
   <%  if @reserved_pets.any? %>
 
     <h2> Adopted pets <h2>
 
-    <% @pets.each do |pet| %>
+    <% @my_pets.each do |pet| %>
       <% if pet.adoption_status == "Adopted" %>
         <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
         <p> Age: <%= pet.age %> </p> <br>
@@ -55,7 +52,5 @@
       <% end %>
     <% end %>
   <% end %>
-
-</div>
 
 </div>

@@ -1,0 +1,10 @@
+<div class="container">
+ <%# simple_form_for [@pet, @application] do |f|%>
+     <%# <div class="text-center"> %>
+       <%# f.submit "Approve application", class: 'btn-red' %>
+     <%# </div> %>
+ <%#end %>
+ <%= link_to "Approve Application", approve_application_path(@application), method: :patch,
+                          data: { confirm: "Are you sure you want to approve #{@application.user.first_name}'s application for #{@application.pet.name}?"}, class: 'btn-red', remote: true %>
+
+</div>
