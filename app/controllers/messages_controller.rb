@@ -21,11 +21,3 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content)
   end
 end
-
-# if @message.save
-#   ConversationChannel.broadcast_to(
-#     @conversation,
-#     render_to_string(partial: "message", locals: {message: @message})
-#   )
-#   head :ok
-# else
