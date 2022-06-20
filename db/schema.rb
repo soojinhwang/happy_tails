@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 2022_06_18_095539) do
     t.boolean "outdoor_space"
     t.integer "hours_alone"
     t.text "previous_experience"
+    t.string "nickname"
     t.string "occupation"
     t.boolean "other_cats"
     t.boolean "other_dogs"
