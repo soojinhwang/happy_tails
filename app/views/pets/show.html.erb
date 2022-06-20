@@ -48,3 +48,22 @@
     <%= link_to "View pet applications", pet_applications_path(@pet)%>
   <% end %>
 </div>
+
+
+<div class="adopter_card">
+    <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :thumb %>
+  <div class="card_infos">
+    <div class="card_infos_text">
+      <h2>NAME OF PET</h2>
+      <h2>NAME OF SHELTER</h2>
+      <h2>APPLCATION CREATED ON:
+      <br>XX XX XX</h2>
+    </div>
+    <div class="card_buttons">
+      <%= link_to "VIEW PET", pets_path, class: "btn-yellow" %>
+      <%= link_to "VIEW SHELTER", pets_path, class: "btn-red" %>
+      <%= link_to "MESSAGE SHELTER", pets_path, class: "btn-blue" %>
+      <%= link_to "CANCEL APPLICATION", pets_path, class: "btn-light-gray" %>
+    </div>
+  </div>
+</div>

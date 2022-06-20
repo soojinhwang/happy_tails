@@ -1,0 +1,162 @@
+.shelter_card {
+  overflow: hidden;
+  height: 460px;
+  width: 300px;
+  background: white;
+  box-shadow: 0px 4px 12px rgba(63, 63, 63, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.adopter_card {
+  overflow: hidden;
+  height: 460px;
+  width: 300px;
+  background: white;
+  box-shadow: 0px 4px 12px rgba(63, 63, 63, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.shelter_card img {
+  height: 120px;
+  width: 120px;
+  border: 3px solid $gray;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adopter_card img {
+  height: 120px;
+  width: 120px;
+  border: 3px solid $gray;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card_infos_text h2{
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+  text-align: center;
+  color: #3F3F3F;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+
+.card_ .card_infos {
+  padding: 16px;
+
+}
+
+.btn-yellow {
+  color: $dark-gray;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  background-color: $yellow;
+  padding: 12px 32px;
+  border-radius: 32px;
+  border: none;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-top: 8px;
+  margin-bottom: 2px;
+
+  &:hover {
+    color: #262626;
+    background-color: #EDC976;
+    transition: 0.8s;
+  }
+}
+
+.btn-red {
+  color: $dark-gray;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  background-color: $red;
+  padding: 12px 32px;
+  border-radius: 32px;
+  width: fit-content;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  &:hover {
+    color: #262626;
+    background-color: #dab0a5;
+    transition: 0.8s;
+  }
+}
+
+.btn-blue {
+  color: $dark-gray;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  background-color: $blue;
+  padding: 12px 32px;
+  border-radius: 32px;
+  width: fit-content;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 8px;
+  margin-bottom: 2px;
+
+  &:hover {
+    color: #262626;
+    background-color: #B0C3C7;
+    transition: 0.8s;
+  }
+}
+
+.btn-light-gray {
+  color: $dark-gray;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Lexend';
+  text-decoration: none;
+  background-color: $light-gray;
+  padding: 12px 32px;
+  border-radius: 32px;
+  width: fit-content;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 8px;
+  margin-bottom: 2px;
+
+  &:hover {
+    color: #262626;
+    background-color: #BEBEBE;
+    transition: 0.8s;
+  }
+}
