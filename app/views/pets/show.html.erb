@@ -54,8 +54,8 @@
       <p><%= @pet.description %></p>
     </div>
     <div class="pet-applications">
-      <% if user_signed_in? == false || current_user.shelter.blank? %>
-        <h3><em><%= link_to "View my applications", my_applications_path, class: "title-buttons" %></em></h3>
+      <% if user_signed_in? && current_user.shelter == @pet.shelter %>
+        <h3><em><%= link_to "Pet Applications", pet_applications_path(@pet)%></em></h3>
         <!-- Render Joe's application cards here -->
 
       <% end %>
