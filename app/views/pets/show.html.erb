@@ -6,9 +6,59 @@
   <div class="pet-container">
     <div class="pet-navigation-top">
       <div class="pet-navigation-top-left">
-      <h6><%= link_to "HOME", root_path, class: "pet-nav-item" %>  >   <%= link_to "PETS", pets_path, class: "pet-nav-item" %>  > <%= @pet.name.upcase %></h6>
+      <h6><%= link_to "HOME", root_path, class: "pet-nav-item" %>&emsp;>&emsp;<%= link_to "PETS", pets_path, class: "pet-nav-item" %>&emsp;>&emsp;<%= @pet.name.upcase %></h6>
       </div>
       <h6><%= link_to "BACK TO PETS", pets_path, class: "pet-nav-item" %></h6>
+    </div>
+    <div class="pet-title-status">
+      <h1><em><%= @pet.name %></em></h1>
+      <% if @pet.adoption_status == "Available" %>
+        <h2 class="pet-status-available"><%= @pet.adoption_status %></h2>
+      <% elsif @pet.adoption_status == "Adopted" %>
+        <h2 class="pet-status-adopted"><%= @pet.adoption_status %></h2>
+      <% else %>
+        <h2 class="pet-status-reserved"><%= @pet.adoption_status %></h2>
+      <% end %>
+    </div>
+    <div class="pet-images-shelter-info">
+      <!-- Carousel currently not working, need further look at it -->
+      <%= render 'pet_image_carousel', class: "carousel slide" %>
+      <div class="pet-shelter-info">
+        <% if current_user == @pet.shelter.user %>
+          <%= render 'shelter_info_card', class: "shelter-info-card" %>
+          <%= link_to "EDIT PET", edit_pet_path(@pet), class: "btn-light-gray" %>
+        <% elsif user_signed_in? && %>
+          <%= render 'shelter_info_card', class: "shelter-info-card" %>
+        <% else %>
+            <%= render 'shelter_info_card', class: "shelter-info-card" %>
+            <%= render "application_form", pet: @pet %>
+        <% end %>
+      </div>
+    </div>
+    <div class="pet-details">
+      <div class="pet-details-list">
+        <ul>
+          <li class="pet-details-item"><h6>AGE</h6> <p><%= @pet.age %></p></li>
+          <li class="pet-details-item"><h6>SEX</h6> <p><%= @pet.sex %></p></li>
+          <li class="pet-details-item"><h6>BREED</h6> <p><%= @pet.breed %></p></li>
+          <li class="pet-details-item"><h6>COLOUR</h6> <p><%= @pet.colour %></p></li>
+          <li class="pet-details-item"><h6>GARDEN REQUIRED?</h6> <p><%= @pet.outdoor_space %></p></li>
+          <li class="pet-details-item"><h6>CAN LIVE WITH CATS?</h6> <p><%= @pet.other_cats %></p></li>
+          <li class="pet-details-item"><h6>CAN LIVE WITH DOGS?</h6> <p><%= @pet.other_dogs %></p></li>
+          <li class="pet-details-item"><h6>CAN LIVE WITH CHILDREN?</h6> <p><%= @pet.children %></p></li>
+          <li class="pet-details-item"><h6>CAN BE LEFT ALONE FOR</h6> <p><%= @pet.hours_alone %> a day</p></li>
+          <li class="pet-details-item"><h6>MEDICAL CONDITIONS</h6> <p><%= @pet.medical_conditions %> a day</p></li>
+        </ul>
+      </div>
+      <h3><em>More about <%= @pet.name %></em></h3>
+      <p><%= @pet.description %></p>
+    </div>
+    <div class="pet-applications">
+      <% if user_signed_in? == false || current_user.shelter.blank? %>
+        <h3><em><%= link_to "View my applications", my_applications_path, class: "title-buttons" %></em></h3>
+        <!-- Render Joe's application cards here -->
+
+      <% end %>
     </div>
   </div>
 </div>
@@ -23,22 +73,6 @@
       <% else %>
         <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
     <% end %>
-
-    <p> Adoption status: <%= @pet.adoption_status %></p>
-    <p>Shelter: <%= @pet.shelter.name %></p>
-    <p> Breed: <%= @pet.breed %></p>
-    <p> Sex: <%= @pet.sex %></p>
-    <p> Age: <%= @pet.age %></p>
-    <p> Description: <%= @pet.description %></p>
-    <p> Outdoor Space: <%= @pet.outdoor_space %></p>
-    <p> Children Friendly: <%= @pet.children %></p>
-    <p> Cat Friendly: <%= @pet.other_cats %></p>
-    <p> Dog Friendly: <%= @pet.other_dogs %></p>
-    <p> Hours Alone: Can be left alone for <%= @pet.hours_alone %> hours.</p>
-    <p> Medical Conditions: <%= @pet.medical_conditions %></p>
-
-
-    <%= link_to "Back to Pets", pets_path, class: "title-buttons" %>
 
     <% if user_signed_in? == false || current_user.shelter.blank? %>
         <%= link_to "View my applications", my_applications_path, class: "title-buttons" %>

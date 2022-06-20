@@ -37,12 +37,12 @@ class PetsController < ApplicationController
         @user_application = application
       end
     end
-     @pet.applications.any? do |application|
+    @pet.applications.any? do |application|
       if application.approved == true
         application.pet.adoption_status = "Adopted"
       end
-     end
-
+    end
+    # @conversation = Conversation.new
   end
 
   def new
