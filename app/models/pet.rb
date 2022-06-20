@@ -15,8 +15,9 @@ class Pet < ApplicationRecord
   validates :age, presence: true
   validates :colour, presence: true
   validates :outdoor_space, inclusion: { in: [true, false] }
-  validates :pet_friendly, presence: true
-  validates :children_friendly, presence: true
+  validates :other_cats, inclusion: { in: [true, false] }
+  validates :other_dogs, inclusion: { in: [true, false] }
+  validates :children, inclusion: { in: [true, false] }
   validates :hours_alone, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 20 }
   validates :medical_conditions, presence: true
 end
