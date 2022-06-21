@@ -21,12 +21,4 @@ Rails.application.routes.draw do
   patch '/unapprove_application/:id', action: :unapprove_application, controller: 'applications', as: :unapprove_application
   patch '/reject_application/:id', action: :reject_application, controller: 'applications', as: :reject_application
   patch '/unreject_application/:id', action: :unreject_application, controller: 'applications', as: :unreject_application
-
-
-
-
-  resources :chatrooms, only: [:index, :show, :new, :create] do
-    resources :messages, only: :create
-  end
-
 end
