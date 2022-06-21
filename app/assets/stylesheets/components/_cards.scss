@@ -1,3 +1,104 @@
+// Pet Card
+.pet_card {
+  width: 360px;
+  height: 360px;
+  box-shadow: 0px 4px 12px rgba(63, 63, 63, 0.3);
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.pet_card_hero{
+  width: 360px;
+  height: 234px;
+  background-size: cover;
+  border-radius: 8px 8px 0px 0px
+}
+
+.pet_card_hero_text_available{
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  background: #97B8A5;
+  border-radius: 8px 0px 0px 0px;
+  color: #FFFFFF;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pet_card_hero_text_reserved{
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  background: #FFD87E;
+  border-radius: 8px 0px 0px 0px;
+  color: #FFFFFF;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pet_card_hero_text_adopted{
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  background: #F18B7E;
+  border-radius: 8px 0px 0px 0px;
+  color: #FFFFFF;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pet_card_info{
+  padding:10px;
+}
+
+.pet_card_info_name {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #3F3F3F;
+  padding: 0px 8px;
+}
+
+.pet_card_info_text {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3F3F3F;
+  padding: 0px 8px;
+}
+.bottom_section{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.pet_card_icons {
+  i {
+    font-size: 24px;
+  }
+}
+
+// Shelter Card
 .shelter_card {
   overflow: hidden;
   height: 460px;
@@ -11,6 +112,18 @@
   flex-direction: column;
 }
 
+.shelter_card img {
+  height: 120px;
+  width: 120px;
+  border: 3px solid $gray;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+//Adopter Card
 .adopter_card {
   overflow: hidden;
   height: 460px;
@@ -22,35 +135,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.pet_card {
-  width: 360px;
-  height: 360px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 12px rgba(63, 63, 63, 0.3);
-  border-radius: 8px;
-}
-
-.pet_card_hero{
-  width: 360px;
-  height: 234px;
-  background-size: cover;
-  border-radius: 8px 8px 0px 0px
-}
-
-.pet_card_hero > h2{
-  color: #FFFFFF;
-}
-
-.shelter_card img {
-  height: 120px;
-  width: 120px;
-  border: 3px solid $gray;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .adopter_card img {
@@ -69,25 +153,7 @@
   align-items: center;
 }
 
-.pet_card_info_name {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 32px;
-/* identical to box height */
-  color: #3F3F3F;
-}
 
-.pet_card_info_text {
-  font-family: 'Lexend';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-/* identical to box height */
-color: #3F3F3F;
-}
 .card_text {
   display: flex;
   flex-direction: column;
