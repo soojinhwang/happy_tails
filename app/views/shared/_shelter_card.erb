@@ -1,0 +1,15 @@
+<div class="shelter_card">
+    <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :thumb %>
+  <div class="card_infos">
+    <div class="card_infos_text">
+      <h2> <%=current_user.first_name %> </h2>
+      <h2>APPLCATION CREATED ON:
+      <br>XX XX XX</h2>
+    </div>
+    <div class="card_buttons">
+      <%= link_to "VIEW APPLICATION", pets_path, class: "btn-yellow" %>
+      <%= link_to "VIEW PROFILE", pets_path, class: "btn-red" %>
+      <%= link_to "MESSAGE NAME", pets_path, class: "btn-blue" %>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-
+@import "config/form_page";
 // External libraries
 @import "bootstrap/scss/bootstrap";
 // @import "font-awesome-sprockets";
@@ -12,9 +12,11 @@
 @import "pages/home";
 @import "pages/index";
 @import "pages/pet_show";
+@import "pets/new";
 
 @import "components/index";
 @import "components/navbar";
 @import "components/footer";
 @import "components/buttons";
 @import "components/shelter_info_card";
+@import "components/cards";
