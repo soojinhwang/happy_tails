@@ -3,29 +3,36 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    if params[:query].present?
+    #if  params[:query].present?
+      @pets = Pet.all
+      @pets = @pets.search_by_name_and_species(params[:query]) if params[:query].present?
+      @pets = @pets.where("adoption_status =  ? ", params[:adoption_status]) if params[:adoption_status].present?
+      @pets = @pets.where("species =  ? ", params[:species]) if params[:species].present?
+      @pets = @pets.where("outdoor_space =  ? ", params[:outdoor_space]) if params[:outdoor_space].present?
+      @pets = @pets.where("other_cats =  ? ", params[:other_cats]) if params[:other_cats].present?
+      @pets = @pets.where("other_dogs =  ? ", params[:other_dogs]) if params[:other_dogs].present?
+      @pets = @pets.where("children =  ? ", params[:children]) if params[:children].present?
 
-      @pets = Pet.search_by_name_and_species(params[:query])
-      @pets = @pets.where("adoption_status = ?", params[:adoption_status]) if params[:adoption_status].present? && params[:adoption_status] != ""
       @pets.each do |pet|
         pet.applications.any? do |application|
            if application.approved == true
             application.pet.adoption_status = "Adopted"
            end
         end
-     end
-    else
-      @pets = Pet.all
-
-       @pets.each do |pet|
-         pet.applications.any? do |application|
-            if application.approved == true
-             application.pet.adoption_status = "Adopted"
-            end
-         end
       end
 
-    end
+    # else
+    #   @pets = Pet.all
+
+    #    @pets.each do |pet|
+    #      pet.applications.any? do |application|
+    #         if application.approved == true
+    #          application.pet.adoption_status = "Adopted"
+    #         end
+    #      end
+    #   end
+
+    #end
   end
 
   def show
