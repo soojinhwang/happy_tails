@@ -1,0 +1,9 @@
+<div class="shelter-info-card-container">
+  <%= cl_image_tag @pet.shelter.user.photo.key, height: 80, width: 80, crop: :thumb %>
+  <h3><em><%= @pet.shelter.user.first_name %> at <%= @pet.shelter.name %></em></h3>
+  <p><%= @pet.name %> has been listed by <%= @pet.shelter.name %>. Register your interest in <%= @pet.name %> or contact <%= @pet.shelter.user.first_name %> to find out more about <%= @pet.name %>.</p>
+  <% if current_user != @pet.shelter.user %>
+  <!-- The root for the below needs to be changed once the messaging branch has been merged -->
+    <%= link_to "MESSAGE", root_path, class: "btn-blue" %>
+<% end %>
+</div>

@@ -1,0 +1,35 @@
+.shelter-info-card-container {
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba($color: #3F3F3F4D, $alpha: 0.3);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding:32px 24px;
+
+  h3 {
+    font-family: 'Playfair Display';
+    font-weight: 600;
+    font-size: 36px;
+    color: $dark-gray;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  p {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-gray;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+.shelter-info-card-container img {
+  height: 120px;
+  width: 120px;
+  border: 1px solid $dark-gray;
+  border-radius: 50%;
+}

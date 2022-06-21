@@ -318,39 +318,33 @@ memphis.photos.attach(io: file, filename: 'memphis_6.jpg', content_type: 'image/
 
 puts "Created memphis"
 
-callie = Pet.create!(adoption_status: "Available",
-                     name: "Callie",
-                     species: "Cat",
-                     breed: "Domestic Shorthair",
-                     sex: "Female",
-                     age: "1 year",
-                     colour: "Tabby",
-                     description: "Callie is a sweet and sensitive cat, but can get quite nervous. She need a bit more time to be socialised with children and other animals. Callie is happy to live with teenagers but not young children.",
-                     outdoor_space: true,
-                     other_cats: false,
-                     other_dogs: false,
-                     children: true,
-                     hours_alone: 4,
-                     medical_conditions: "None known",
-                     shelter: city)
+abla = Pet.create!(adoption_status: "Available",
+                   name: "Abla",
+                   species: "Cat",
+                   breed: "Domestic Shorthair",
+                   sex: "Female",
+                   age: "8 years",
+                   colour: "Calico",
+                   description: "Abla is quirky and vocal and has lots of fun to bring to her new family. Abla is a bit chunky so her new people will need to keep an eye on her food, and encourage her to move around. She loves to play and chase toys. She can live with older children and teenagers.",
+                   outdoor_space: true,
+                   other_cats: false,
+                   other_dogs: false,
+                   children: true,
+                   hours_alone: 6,
+                   medical_conditions: "None known",
+                   shelter: city)
 
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7eEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_1.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7jEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_2.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7tEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_3.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7yEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_4.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB83EAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_5.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB6jEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_6.jpg', content_type: 'image/jpg')
-
-puts "Created callie"
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001F1KdEAK.jpeg')
+abla.photos.attach(io: file, filename: 'abla_1.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001F1KdEAK.jpeg')
+abla.photos.attach(io: file, filename: 'abla_2.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001F1KiEAK.jpeg')
+abla.photos.attach(io: file, filename: 'abla_3.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001F1L7EAK.jpeg')
+abla.photos.attach(io: file, filename: 'abla_4.jpg', content_type: 'image/jpg')
+puts "Created abla"
 
 puts "All pets created"
-
 
 require 'date'
 puts "Creating applications..."
