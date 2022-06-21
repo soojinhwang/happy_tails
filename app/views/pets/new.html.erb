@@ -1,29 +1,28 @@
 <div class="container">
-
-  <div class="list_pet_header">
-    <h1 class="list_pet_header_title"><em> Listing a Pet </em></h1>
-    <h2 class="list_pet_header_description">Please enter the details of the pet below</h2>
-  </div>
-
-  <div class="form_container">
-    <%= simple_form_for (@pet) do |f|%>
-    <div class="form_items">
-      <div class="col"><%= f.input :adoption_status, :collection => ["Available", "Reserved", "Adopted"] %></div>
-      <div class="col"><%= f.input :name %></div>
-      <div class="col"><%= f.input :species, :collection => ["Cat", "Dog"] %></div>
-      <div class="col"><%= f.input :breed %></div>
-      <div class="col"><%= f.input :sex, :collection => ["Male", "Female"] %></div>
-      <div class="col"><%= f.input :age %></div>
-      <div class="col"><%= f.input :colour %></div>
-      <div class="col"><%= f.input :description %></div>
-      <div class="col"><%= f.input :outdoor_space, :collection => ["Yes", "No"] %></div>
-      <div class="col"><%= f.input :hours_alone %></div>
-      <div class="col"><%= f.input :medical_conditions %></div>
-      <div class="col"><%= f.input :photos, as: :file, input_html: { multiple: true } %></div>
-      <div class="col"><%= f.submit class: 'btn-yellow' %></div>
-      <%# <%= f.input :pet_friendly %>
-      <%# <%= f.input :children_friendly %>
-    <% end %>
+ <div class="row justify-content-center">
+    <h1 class = "form-heading"> List a pet for adoption </h1>
+    <p class = "form-paragraph"> Please enter the details of the pet below</p>
+    <div class="form-container">
+      <%= simple_form_for (@pet) do |f|%>
+      <span class="form-tags"> <%= f.input :name, label: "Name" %> </span>
+      <span class="form-tags"> <%= f.input :species, :collection => ["Cat", "Dog"], placeholder: 'Cat or Dog dropdown menu' %> </span>
+      <span class="form-tags"> <%= f.input :breed %> </span>
+      <span class="form-tags"> <%= f.input :sex, :collection => ["Male", "Female"] %> </span>
+      <span class="form-tags"> <%= f.input :age %> </span>
+      <span class= "form-tags"> <%= f.input :adoption_status, :collection => ["Available", "Reserved", "Adopted"], placeholder: 'Dropdown menu (default available)' %> </span>
+      <span class="form-tags"> <%= f.input :colour %> </span>
+      <span class="form-tags"> <%= f.input :outdoor_space, label: "Do they need an outdoor space?" %> </span>
+      <span class="form-tags"> <%= f.input :description %> </span>
+      <span class="form-tags"> <%= f.input :other_cats, label: "Can they live with other dogs?" %> </span>
+      <span class="form-tags"> <%= f.input :other_dogs, label: "Can they live with other dogs?" %> </span>
+      <span class="form-tags"> <%= f.input :children, label: "Can they live with children?" %> </span>
+      <span class="form-tags"> <%= f.input :hours_alone, label: "AVG. hours pet will be alone" %> </span>
+      <span class="form-tags"> <%= f.input :medical_conditions %> </span>
+      <span class="form-tags"> <%= f.input :photos, as: :file, input_html: { multiple: true } %> </span>
+      <div class="row justify-content-center">
+        <%= f.submit class: "btn-yellow" %> </span>
+      </div>
+      <% end %>
     </div>
-  </div>
+ </div>
 </div>
