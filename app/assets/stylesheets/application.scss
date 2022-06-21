@@ -2,7 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-
+@import "config/form_page";
 // External libraries
 @import "bootstrap/scss/bootstrap";
 // @import "font-awesome-sprockets";
@@ -11,9 +11,12 @@
 // Your CSS partials
 @import "pages/home";
 @import "pages/index";
+@import "pets/new";
+@import "pets/index";
 
 @import "components/index";
 @import "components/navbar";
 @import "components/footer";
 @import "components/buttons";
-@import "config/form_page";
+
+@import "components/cards";
