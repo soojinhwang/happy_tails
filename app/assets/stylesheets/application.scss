@@ -11,9 +11,11 @@
 // Your CSS partials
 @import "pages/home";
 @import "pages/index";
-@import "pages/pet_new";
+@import "pets/new";
+@import "pets/index";
 
 @import "components/index";
 @import "components/navbar";
 @import "components/footer";
 @import "components/buttons";
+@import "components/cards";

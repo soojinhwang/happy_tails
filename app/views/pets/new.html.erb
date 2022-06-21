@@ -1,28 +1,29 @@
 <div class="container">
 
   <div class="list_pet_header">
-    <h1 class="list_pet_header_title"> Listing a Pet </h1>
+    <h1 class="list_pet_header_title"><em> Listing a Pet </em></h1>
     <h2 class="list_pet_header_description">Please enter the details of the pet below</h2>
   </div>
 
   <div class="form_container">
     <%= simple_form_for (@pet) do |f|%>
-      <%= f.input :adoption_status, :collection => ["Available", "Reserved", "Adopted"] %>
-      <%= f.input :name %>
-      <%= f.input :species, :collection => ["Cat", "Dog"] %>
-      <%= f.input :breed %>
-      <%= f.input :sex, :collection => ["Male", "Female"] %>
-      <%= f.input :age %>
-      <%= f.input :colour %>
-      <%= f.input :description %>
-      <%= f.input :outdoor_space, :collection => ["Yes", "No"] %>
-      <%# <%= f.input :pet_friendly %> %>
-      <%# <%= f.input :children_friendly %> %>
-      <%= f.input :hours_alone %>
-      <%= f.input :medical_conditions %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit class: 'btn-red' %>
+    <div class="form_items">
+      <div class="col"><%= f.input :adoption_status, :collection => ["Available", "Reserved", "Adopted"] %></div>
+      <div class="col"><%= f.input :name %></div>
+      <div class="col"><%= f.input :species, :collection => ["Cat", "Dog"] %></div>
+      <div class="col"><%= f.input :breed %></div>
+      <div class="col"><%= f.input :sex, :collection => ["Male", "Female"] %></div>
+      <div class="col"><%= f.input :age %></div>
+      <div class="col"><%= f.input :colour %></div>
+      <div class="col"><%= f.input :description %></div>
+      <div class="col"><%= f.input :outdoor_space, :collection => ["Yes", "No"] %></div>
+      <div class="col"><%= f.input :hours_alone %></div>
+      <div class="col"><%= f.input :medical_conditions %></div>
+      <div class="col"><%= f.input :photos, as: :file, input_html: { multiple: true } %></div>
+      <div class="col"><%= f.submit class: 'btn-yellow' %></div>
+      <%# <%= f.input :pet_friendly %>
+      <%# <%= f.input :children_friendly %>
     <% end %>
-
+    </div>
   </div>
-<div>
+</div>
