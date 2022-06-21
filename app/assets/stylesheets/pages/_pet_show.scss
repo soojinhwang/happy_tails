@@ -70,7 +70,7 @@
   font-family: 'Lexend';
   font-weight: 700;
   font-size: 24px;
-  color: $orange;
+  color: $yellow;
   margin-bottom: 0px;
   text-transform: uppercase;
 }
@@ -86,13 +86,21 @@
 
 .pet-images-shelter-info {
  display: flex;
- margin-right: 0px;
- margin-bottom: 80px;
+//  margin-right: 0px;
+//  margin-bottom: 80px;
+
+  p{
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
 }
 
 .carousel {
   // width: 80vw;
-  flex-grow: 1;
+  // flex-grow: 1;
 }
 
 .pet-shelter-info {
@@ -104,15 +112,21 @@
   height: 100%;
 
   .btn-light-gray {
-    margin-top: 40px;
+    // margin-top: 40px;
   }
 
   .btn-yellow {
-    margin-top: 40px;
+    // margin-top: 40px;
+  }
+
+  .btn-blue {
+    // margin-top: 40px;
   }
 }
 
 .pet-details {
+  width: 100%;
+  margin-top: 40px;
 
   h3 {
     font-family: 'Playfair Display';
@@ -132,8 +146,15 @@
   }
 }
 
-.pet-details-list {
+.pet-details-table {
+  width: 100%;
 
+  tr {
+    height: 40px;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    vertical-align: middle;
+  }
 }
 
 .pet-details-item {
@@ -143,13 +164,22 @@
     font-weight: 600;
     font-size: 16px;
     color: $dark-gray;
+    margin-bottom: 0px;
+  }
+
+  p {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
   }
 }
 
 .pet-applications {
   margin-top: 40px;
 
-  h3 {
+h3 {
     font-family: 'Playfair Display';
     font-weight: 600;
     font-size: 36px;
