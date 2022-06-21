@@ -22,7 +22,7 @@
     </div>
     <div class="pet-images-shelter-info">
       <!-- Carousel currently not working properly, need further look at it -->
-      <%= render 'pet_image_carousel', class: "carousel" %>
+      <%= render 'pet_image_carousel' %>
       <div class="pet-shelter-info">
         <% if current_user == @pet.shelter.user %>
           <%= render 'shelter_info_card', class: "shelter-info-card" %>
