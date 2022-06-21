@@ -21,9 +21,10 @@
   <p> Age: <%= @pet.age %></p>
   <p> Description: <%= @pet.description %></p>
   <p> Outdoor Space: <%= @pet.outdoor_space %></p>
-  <p> Children Friendly: <%= @pet.children_friendly %></p>
-  <p> Pet Friendly: <%= @pet.pet_friendly %></p>
   <p> Hours Alone: Can be left alone for <%= @pet.hours_alone %> hours.</p>
+  <p> Friendly with Cats : <%= @pet.other_cats ? "Yes" : "No" %></p>
+  <p> Friendly with Dogs : <%= @pet.other_dogs ? "Yes" : "No" %></p>
+  <p> Required Outdoor pace: <%= @pet.outdoor_space ? "Yes" : "No" %></p>
   <p> Medical Conditions: <%= @pet.medical_conditions %></p>
 
 

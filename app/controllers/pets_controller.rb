@@ -97,14 +97,14 @@ class PetsController < ApplicationController
                                 :description,
                                 :location,
                                 :breed,
-                                :pet_friendly,
                                 :outdoor_space,
                                 :sex,
                                 :age,
                                 :colour,
                                 :medical_conditions,
                                 :hours_alone,
-                                :children_friendly,
+                                :other_cats,
+                                :other_dogs,
                                 photos: [])
   end
 end

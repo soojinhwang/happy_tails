@@ -1,0 +1,79 @@
+.form-heading {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: $dark-gray;
+  margin-top: 20px;
+}
+
+.form-paragraph {
+font-family: 'Lexend';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+text-align: center;
+
+color: $dark-gray;
+}
+
+.form-container {
+  // position: absolute;
+  width: 900px;
+  height: 100%;
+  left: calc(50% - 1120px/2);
+  top: 244px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(63, 63, 63, 0.3);
+  border-radius: 16px;
+  padding: 30px 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.form-tags {
+// position: absolute;
+left: 13.89%;
+right: 82.71%;
+top: 27.73%;
+bottom: 70.31%;
+
+font-family: 'Lexend';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+
+/* identical to box height */
+
+// display: flex;
+// align-items: center;
+text-transform: uppercase;
+}
+
+.form-control {
+  background: #FFFFFF;
+  border: 1px solid #3F3F3F;
+  border-radius: 8px;
+}
+
+// .form-select {
+//   background: #FFFFFF;
+//   border: 1px solid #3F3F3F;
+//   border-radius: 8px;
+// }
+
+#pet_name {
+  background: #FFFFFF;
+  border: 1px solid #3F3F3F;
+  border-radius: 8px;
+}
