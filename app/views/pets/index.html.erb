@@ -3,6 +3,8 @@
 
   <h1> All pets </h1>
 
+   <%= render 'shared/search', class: "pets-search-bar"%>
+
   <% @available_pets = @pets.select { |pet| (pet.adoption_status == "Available")} %>
 
   <%  if @available_pets.any? %>
