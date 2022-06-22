@@ -100,10 +100,48 @@ text-transform: uppercase;
 }
 
 .form-flex > div {
-  margin: 10px;
+  margin: 20px;
 }
 
-.form-col-left{
+
+.form-col-left {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-col-center {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-col-right {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#pet_description {
+  height: 140px;
+}
+
+#pet_medical_conditions {
+  height: 110px;
+}
+
+#pet_species {
+  color: gray;
+
+}
+
+#pet_adoption_status {
+  color: gray;
+}
+
+#pet_photos {
+  color: gray;
 }
