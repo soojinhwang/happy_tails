@@ -8,13 +8,17 @@
       <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
   <% end %>
 
-  <p> Age: <%= @user.age %></p>
-  <p> Biography: <%= @user.biography %></p>
-  <p> Type of dwelling: <%= @user.type_of_dwelling %></p>
-  <p> Outdoor Space: <%= @user.outdoor_space %></p>
-  <p> Other pets: <%= @user.other_pets %></p>
-  <p> Children: <%= @user.children%></p>
-  <p> Hours alone: I could leave my pet alone for <%= @user.hours_alone %> hours.</p>
-  <p> Previous experience: <%= @user.children%></p>
+  <p> First Name: <%= @user.first_name %> </p>
+  <p> Last Name: <%= @user.last_name %></p>
+  <p> Age: <%= @user.age %> </p>
+  <p> Biography: <%= @user.biography %> </p>
+  <p> Occupation: <%= @user.occupation %> </p>
+  <p> Type of dwelling: <%= @user.type_of_dwelling %> </p>
+  <p> Outdoor space?: <%= @user.outdoor_space %> </p>
+  <p> Other cats: <%= @user.other_cats ? "Yes" : "No" %> </p>
+  <p> Other dogs?: <%= @user.other_dogs ? "Yes" : "No" %> </p>
+  <p> Children?: <%= @user.children ? "Yes" : "No" %> </p>
+  <p> Hours at home?: <%= @user.hours_alone %> </p>
+  <p> Previous experience: <%= @user.previous_experience%></p>
   <a class="btn btn-ghost" href="#">Edit</a>
 </div>
