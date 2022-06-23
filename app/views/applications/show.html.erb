@@ -2,14 +2,19 @@
 <div class="container">
   <h2> Pet Details </h2>
   <h3> <%= @application.pet.name %> </h3>
-  <p> Age: <%= @application.pet.age %> </p>
-  <p> Sex: <%= @application.pet.sex %> </p>
-  <p> Descritpion: <%= @application.pet.description %> </p>
-  <p> Outdoor Space:<%= @application.pet.outdoor_space %> </p>
-  <p> Pet Friendly?:<%= @application.pet.pet_friendly </p> %>
-  <p> Children Friendly?: <%= @application.pet.children_friendly %> </p>
-  <p> Maximum hour alone?:<%= @application.pet.hours_alone %> </p>
-  <p> Medical Condition: <%= @application.pet.medical_conditions %> </p>
+  <p> Shelter: <%= @pet.shelter.name %></p>
+  <p> Species: <%= @pet.species %></p>
+  <p> Breed: <%= @pet.breed %></p>
+  <p> Sex: <%= @pet.sex %></p>
+  <p> Age: <%= @pet.age %></p>
+  <p> Description: <%= @pet.description %></p>
+  <p> Outdoor space: <%= @pet.outdoor_space %></p>
+  <p> Hours alone: <%= @pet.hours_alone %></p>
+  <p> Children friendly: <%= @pet.children ? "Yes" : "No" %></p>
+  <p> Can they live with other cats?: <%= @pet.other_cats ? "Yes" : "No" %></p>
+  <p> Can they live with other cats?: <%= @pet.other_dogs ? "Yes" : "No" %></p>
+  <p> Hours Alone: Can be left alone for <%= @pet.hours_alone %> hours</p>
+  <p> Medical Conditions: <%= @pet.medical_conditions %></p>
 
 
   <h2> User Details </h2>
@@ -18,10 +23,12 @@
   <p> Last Name: <%= @application.user.last_name %></p>
   <p> Age: <%= @application.user.age %> </p>
   <p> Biography: <%= @application.user.biography %> </p>
+  <p> Occupation: <%= @application.user.occupation %> </p>
   <p> Type of dwelling: <%= @application.user.type_of_dwelling %> </p>
   <p> Outdoor space?: <%= @application.user.outdoor_space %> </p>
-  <p> Other pets?: <%= @application.user.other_pets %> </p>
-  <p> Children?: <%= @application.user.children %> </p>
+  <p> Other cats: <%= @application.user.other_cats ? "Yes" : "No" %> </p>
+  <p> Other dogs?: <%= @application.user.other_dogs ? "Yes" : "No" %> </p>
+  <p> Children?: <%= @application.user.children ? "Yes" : "No" %> </p>
   <p> Hours at home?: <%= @application.user.hours_alone %> </p>
 
 
