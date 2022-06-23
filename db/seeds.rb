@@ -8,17 +8,19 @@
 
 require "open-uri"
 
-puts "Cleaning user database..."
-User.destroy_all
+
+puts "Cleaning application database..."
+Application.destroy_all
 
 puts "Cleaning pet database..."
 Pet.destroy_all
 
+puts "Cleaning user database..."
+User.destroy_all
+
+
 puts "Cleaning shelter database..."
 Shelter.destroy_all
-
-puts "Cleaning application database..."
-Application.destroy_all
 
 
 puts "Creating shelter user... "
@@ -181,18 +183,17 @@ muffin = Pet.create!(adoption_status: "Adopted",
                      medical_conditions: "In good health condition",
                      shelter: shoreditch)
 
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFNEA4.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/Renee-Goertz.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_1.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFwEAO.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/Aunetti-Smith.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_2.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFXEA4.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/2-sleeping-chi-pups.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_3.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFhEAO.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/Adela-Mendoza.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_4.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFmEAO.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/Amahra-Davis.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_5.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFrEAO.jpeg')
-muffin.photos.attach(io: file, filename: 'muffin_6.jpg', content_type: 'image/jpg')
+
 
 puts "Created muffin"
 
@@ -334,18 +335,12 @@ callie = Pet.create!(adoption_status: "Available",
                      medical_conditions: "None known",
                      shelter: city)
 
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7eEAG.jpeg')
+file = URI.open('https://i2.wp.com/media.globalnews.ca/videostatic/news/75w540vbff-15930nuwa4/Loli.jpg?w=1040&quality=70&strip=all')
 callie.photos.attach(io: file, filename: 'callie_1.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7jEAG.jpeg')
+file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2UHiK_Yb5QVAIvucEn_CveGoeUtSnMrwecQ4qX8AiZpqAZI9sMovNI4Tk0tby0fcgyRE&usqp=CAU')
 callie.photos.attach(io: file, filename: 'callie_2.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7tEAG.jpeg')
+file = URI.open('https://www.creativefabrica.com/wp-content/uploads/2020/08/20/ADORABLE-BROWN-TABBY-CAT-Graphics-5051701-1.jpg')
 callie.photos.attach(io: file, filename: 'callie_3.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7yEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_4.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB83EAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_5.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB6jEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_6.jpg', content_type: 'image/jpg')
 
 puts "Created callie"
 
