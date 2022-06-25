@@ -1,5 +1,6 @@
 .search-component{
   display: flex;
+
 }
 
 .input-width {
@@ -12,6 +13,11 @@
 
 }
 
+.form-control::placeholder {
+  color: black;
+
+}
+
 .btn.btn-primary {
-  color: white;
+  color: black;
 }

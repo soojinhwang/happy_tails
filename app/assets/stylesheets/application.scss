@@ -12,7 +12,10 @@
 @import "pages/home";
 @import "pages/index";
 @import "pages/pet_show";
+@import "pages/pets_index";
+
 @import "pets/new";
+
 
 @import "components/index";
 @import "components/navbar";
@@ -23,4 +26,3 @@
 @import "components/pet_image_carousel";
 @import  "components/search";
 @import "components/filters";
-@import "components/button_search"
