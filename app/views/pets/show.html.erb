@@ -21,7 +21,6 @@
       <% end %>
     </div>
     <div class="pet-images-shelter-info">
-      <!-- Carousel currently not working properly, need further look at it -->
       <%= render 'pet_image_carousel' %>
       <div class="pet-shelter-info">
         <% if current_user == @pet.shelter.user %>
@@ -33,7 +32,7 @@
                               data: { confirm: "Are you sure you want to cancel your application for #{@pet.name}?"}, class: "btn-red" %>
         <% elsif @pet.adoption_status == "Adopted" %>
           <%= render 'shelter_info_card', class: "shelter-info-card" %>
-          <p><%= @pet.name%> has already found a home!</p>
+          <p><em><%= @pet.name%> has already found a home!</em></p>
         <% else %>
             <%= render 'shelter_info_card', class: "shelter-info-card" %>
             <%= render "application_form", pet: @pet %>
@@ -45,7 +44,7 @@
         <tr class="pet-details-item">
           <td><i class="fa-solid fa-hourglass"></i></td>
           <td><h6>AGE</h6></td>
-          <td style="width:22vw"><p><%= @pet.age %></p></td>
+          <td style="width:25vw"><p><%= @pet.age %></p></td>
           <td><i class="fa-solid fa-cat"></i></td>
           <td><h6>CAN LIVE WITH CATS?</h6></td>
           <td><p><%= @pet.other_cats ? "Yes" : "No" %></p></td>
@@ -94,14 +93,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-    <% if @pet.photos.attached? %>
-      <% @pet.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <% else %>
-        <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
-    <% end %>
