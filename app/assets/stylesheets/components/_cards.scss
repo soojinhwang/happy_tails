@@ -131,14 +131,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: space-around;
-  text-decoration: none;
   transition: 0.3s ease-in-out;
+  padding: 40px 24px;
+  margin-right: 24px;
 
   &:hover {
     transform: scale(1.02);
-    text-decoration: none;
   }
+
 
   h2 {
     font-family: 'Playfair Display';
@@ -147,7 +147,6 @@
     font-size: 24px;
     color: $dark-gray;
     text-align: center;
-    text-decoration: none;
   }
 
   p {
@@ -157,8 +156,8 @@
     color: $dark-gray;
     line-height: 20px;
     text-align: center;
-    text-decoration: none;
     margin-top: 12px;
+    margin-bottom: 0px;
   }
 }
 
@@ -166,7 +165,6 @@
   height: 120px;
   border: 3px solid $gray;
   border-radius: 50%;
-  margin-top: 40px;
   margin-bottom: 16px;
 }
 
@@ -222,93 +220,4 @@
 
 .card_ .card_infos {
   padding: 16px;
-
 }
-
-// .btn-yellow {
-//   color: $dark-gray;
-//   font-weight: 700;
-//   font-size: 16px;
-//   font-family: 'Lexend';
-//   text-decoration: none;
-//   background-color: $yellow;
-//   padding: 12px 32px;
-//   border-radius: 32px;
-//   border: none;
-//   text-transform: uppercase;
-//   width: fit-content;
-//   margin-top: 8px;
-//   margin-bottom: 2px;
-
-//   &:hover {
-//     color: #262626;
-//     background-color: #EDC976;
-//     transition: 0.8s;
-//   }
-// }
-
-
-// .btn-red {
-//   color: $dark-gray;
-//   font-weight: 700;
-//   font-size: 16px;
-//   font-family: 'Lexend';
-//   text-decoration: none;
-//   background-color: $red;
-//   padding: 12px 32px;
-//   border-radius: 32px;
-//   width: fit-content;
-//   border: none;
-//   text-transform: uppercase;
-//   margin-top: 8px;
-//   margin-bottom: 2px;
-//   &:hover {
-//     color: #262626;
-//     background-color: #dab0a5;
-//     transition: 0.8s;
-//   }
-// }
-
-// .btn-blue {
-//   color: $dark-gray;
-//   font-weight: 700;
-//   font-size: 16px;
-//   font-family: 'Lexend';
-//   text-decoration: none;
-//   background-color: $blue;
-//   padding: 12px 32px;
-//   border-radius: 32px;
-//   width: fit-content;
-//   border: none;
-//   text-transform: uppercase;
-//   margin-top: 8px;
-//   margin-bottom: 2px;
-
-//   &:hover {
-//     color: #262626;
-//     background-color: #B0C3C7;
-//     transition: 0.8s;
-//   }
-// }
-
-// .btn-light-gray {
-//   color: $dark-gray;
-//   font-weight: 700;
-//   font-size: 16px;
-//   font-family: 'Lexend';
-//   text-decoration: none;
-//   background-color: $light-gray;
-//   padding: 12px 32px;
-//   border-radius: 32px;
-//   width: fit-content;
-//   border: none;
-//   text-transform: uppercase;
-//   margin-top: 8px;
-//   margin-bottom: 2px;
-
-//   &:hover {
-//     color: #262626;
-//     background-color: #BEBEBE;
-//     transition: 0.8s;
-//   }
-// }
