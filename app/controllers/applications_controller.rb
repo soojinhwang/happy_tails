@@ -21,6 +21,8 @@ class ApplicationsController < ApplicationController
     @application.approved = false
     @application.reviewed = false
 
+
+
     @pet = Pet.find(params[:pet_id])
     @application.pet = @pet
     @application.user = current_user
