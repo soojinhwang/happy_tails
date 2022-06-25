@@ -131,18 +131,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: space-around;
-  text-decoration: none;
   transition: 0.3s ease-in-out;
+  padding: 40px 24px;
+  margin-right: 24px;
 
   &:hover {
     transform: scale(1.02);
-    text-decoration: none;
   }
 
-  .card_infos_text {
-    text-decoration: none;
-  }
 
   h2 {
     font-family: 'Playfair Display';
@@ -151,7 +147,6 @@
     font-size: 24px;
     color: $dark-gray;
     text-align: center;
-    text-decoration: none;
   }
 
   p {
@@ -161,8 +156,8 @@
     color: $dark-gray;
     line-height: 20px;
     text-align: center;
-    text-decoration: none;
     margin-top: 12px;
+    margin-bottom: 0px;
   }
 }
 
@@ -170,7 +165,6 @@
   height: 120px;
   border: 3px solid $gray;
   border-radius: 50%;
-  margin-top: 40px;
   margin-bottom: 16px;
 }
 
@@ -226,6 +220,7 @@
 
 .card_ .card_infos {
   padding: 16px;
+<<<<<<< HEAD
 
 }
 
@@ -316,3 +311,6 @@
 //     transition: 0.8s;
 //   }
 // }
+=======
+}
+>>>>>>> 2b1a06871b04513d26f32a9f9fbff41476ac769f

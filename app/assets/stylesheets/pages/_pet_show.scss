@@ -1,0 +1,191 @@
+@media(max-width: 500px) {
+}
+
+.pet-container {
+  height: 100%;
+  width: 80vw;
+}
+
+.pet-navigation-top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+
+.pet-navigation-top h6 {
+  font-family: 'Lexend';
+  font-weight: 400;
+  font-size: 16px;
+  color: $gray;
+  text-decoration: none;
+}
+
+.pet-nav-item {
+  font-family: 'Lexend';
+  font-weight: 400;
+  font-size: 16px;
+  color: $gray;
+  text-decoration: none;
+
+  &:hover {
+    color: $dark-gray;
+  }
+}
+
+.pet-title-status {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 32px;
+
+  h1 {
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: 48px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    font-family: 'Lexend';
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+  }
+}
+
+.pet-status-available {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 24px;
+  color: $green;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.pet-status-reserved {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 24px;
+  color: $yellow;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.pet-status-adopted {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 24px;
+  color: $dark-red;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.pet-images-shelter-info {
+  display: flex;
+  justify-content: space-between;
+//  margin-right: 0px;
+//  margin-bottom: 80px;
+
+  p{
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
+}
+
+.pet-shelter-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 24px;
+
+  p {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
+}
+
+.pet-details {
+  width: 100%;
+  margin-top: 40px;
+
+  h3 {
+    font-family: 'Playfair Display';
+    font-weight: 600;
+    font-size: 36px;
+    color: $dark-gray;
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
+}
+
+.pet-details-table {
+  width: 100%;
+
+  tr {
+    height: 40px;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    vertical-align: middle;
+  }
+}
+
+.pet-details-item {
+
+  h6 {
+    font-family: 'Lexend';
+    font-weight: 600;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
+
+  p {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
+}
+
+.pet-applications {
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+h3 {
+    font-family: 'Playfair Display';
+    font-weight: 600;
+    font-size: 36px;
+    color: $dark-gray;
+    margin-bottom: 24px;
+    text-decoration: none;
+  }
+}
+
+.pet-application-card-container {
+  display: flex;
+
+
+  a {
+    text-decoration: none;
+  }
+}

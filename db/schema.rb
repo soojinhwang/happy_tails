@@ -55,6 +55,22 @@ ActiveRecord::Schema.define(version: 2022_06_18_095539) do
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string "adoption_status"
     t.string "name"
@@ -104,6 +120,7 @@ ActiveRecord::Schema.define(version: 2022_06_18_095539) do
     t.boolean "outdoor_space"
     t.integer "hours_alone"
     t.text "previous_experience"
+    t.string "nickname"
     t.string "occupation"
     t.boolean "other_cats"
     t.boolean "other_dogs"
@@ -116,5 +133,7 @@ ActiveRecord::Schema.define(version: 2022_06_18_095539) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "applications", "pets"
   add_foreign_key "applications", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "shelters", "users"
 end
