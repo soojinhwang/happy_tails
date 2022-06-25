@@ -82,13 +82,14 @@ ActiveRecord::Schema.define(version: 2022_06_18_133506) do
     t.string "colour"
     t.text "description"
     t.boolean "outdoor_space"
-    t.string "pet_friendly"
-    t.string "children_friendly"
     t.integer "hours_alone"
     t.text "medical_conditions"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "shelter_id"
+    t.boolean "other_cats"
+    t.boolean "other_dogs"
+    t.boolean "children"
     t.index ["shelter_id"], name: "index_pets_on_shelter_id"
   end
 
@@ -118,11 +119,12 @@ ActiveRecord::Schema.define(version: 2022_06_18_133506) do
     t.text "biography"
     t.string "type_of_dwelling"
     t.boolean "outdoor_space"
-    t.string "other_pets"
-    t.string "children"
     t.integer "hours_alone"
     t.text "previous_experience"
-    t.string "nickname"
+    t.string "occupation"
+    t.boolean "other_cats"
+    t.boolean "other_dogs"
+    t.boolean "children"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

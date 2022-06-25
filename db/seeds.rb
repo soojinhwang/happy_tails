@@ -8,17 +8,19 @@
 
 require "open-uri"
 
-puts "Cleaning user database..."
-User.destroy_all
+
+puts "Cleaning application database..."
+Application.destroy_all
 
 puts "Cleaning pet database..."
 Pet.destroy_all
 
+puts "Cleaning user database..."
+User.destroy_all
+
+
 puts "Cleaning shelter database..."
 Shelter.destroy_all
-
-puts "Cleaning application database..."
-Application.destroy_all
 
 
 puts "Creating shelter user... "
@@ -46,11 +48,13 @@ mike = User.create!(email: "mike@gmail.com",
                     first_name: "Mike",
                     last_name: "Smith",
                     age: "26",
+                    occupation: "Teacher",
                     biography: "My partner and I are looking for a dog to adopt.",
                     type_of_dwelling: "Flat",
                     outdoor_space: false,
-                    other_pets: "I have a cat",
-                    children: "None",
+                    other_cats: true,
+                    other_dogs: false,
+                    children: false,
                     hours_alone: 4,
                     previous_experience: "I've had dogs since I was 5 and am very experienced with them.")
 file = URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
@@ -62,11 +66,13 @@ jenny = User.create!(email: "jenny@gmail.com",
                      first_name: "Jenny",
                      last_name: "Hughes",
                      age: "40",
+                     occupation: "Architect",
                      biography: "My huband and I have two young children who are all very keen to adopt a young dog.",
                      type_of_dwelling: "House",
                      outdoor_space: true,
-                     other_pets: "None",
-                     children: "Two small children",
+                     other_cats: false,
+                     other_dogs: false,
+                     children: true,
                      hours_alone: 5,
                      previous_experience: "I've never had cats but my husband has had them all through his life.")
 file = URI.open('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
@@ -78,11 +84,13 @@ derek = User.create!(email: "derek@gmail.com",
                      first_name: "Derek",
                      last_name: "Zhang",
                      age: "32",
+                     occupation: "Software Developer",
                      biography: "I'm a freelancer who mostly works from home and I'm looking for a cat to adopt.",
                      type_of_dwelling: "Flat",
                      outdoor_space: true,
-                     other_pets: "None",
-                     children: "None",
+                     other_cats: false,
+                     other_dogs: false,
+                     children: false,
                      hours_alone: 2,
                      previous_experience: "Unfortunately, I've never had cats before.")
 file = URI.open('https://images.unsplash.com/photo-1584673392125-f91e13c6a3cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
@@ -120,8 +128,9 @@ pixel = Pet.create!(adoption_status: "Available",
                     colour: "Black",
                     description: "Pixel is a typical playful pup who is a sweet little boy.",
                     outdoor_space: true,
-                    pet_friendly: "Yes",
-                    children_friendly: "Yes",
+                    other_cats: true,
+                    other_dogs: true,
+                    children: true,
                     hours_alone: 2,
                     medical_conditions: "In good health condition",
                     shelter: shoreditch)
@@ -140,10 +149,11 @@ blanca = Pet.create!(adoption_status: "Available",
                      sex: "Female",
                      age: "1 year",
                      colour: "White",
-                     description: "Blanca is very purry and has a soft meow. She craves attention and loves to be stroked and to curl up against her human.",
+                     description: "Blanca is very purry and has a soft meow. She craves attention and loves to be stroked and to curl up against her human. She is OK to live with older children.",
                      outdoor_space: false,
-                     pet_friendly: "Only other cats",
-                     children_friendly: "OK with older children",
+                     other_cats: true,
+                     other_dogs: false,
+                     children: true,
                      hours_alone: 6,
                      medical_conditions: "In good health condition",
                      shelter: shoreditch)
@@ -166,24 +176,24 @@ muffin = Pet.create!(adoption_status: "Adopted",
                      colour: "Cream",
                      description: "Muffin came to us due to her owner's ill health. Muffin loves attention but can also be independent. She doesn't like loud noises so will need a relatively quiet home.",
                      outdoor_space: false,
-                     pet_friendly: "No",
-                     children_friendly: "No",
+                     other_cats: false,
+                     other_dogs: false,
+                     children: false,
                      hours_alone: 6,
                      medical_conditions: "In good health condition",
                      shelter: shoreditch)
 
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFNEA4.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/Renee-Goertz.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_1.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFwEAO.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/Aunetti-Smith.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_2.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFXEA4.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/2-sleeping-chi-pups.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_3.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFhEAO.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/Adela-Mendoza.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_4.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFmEAO.jpeg')
+file = URI.open('https://ilovemychi.com/wp-content/uploads/2015/03/Amahra-Davis.jpg.webp')
 muffin.photos.attach(io: file, filename: 'muffin_5.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FJFrEAO.jpeg')
-muffin.photos.attach(io: file, filename: 'muffin_6.jpg', content_type: 'image/jpg')
+
 
 puts "Created muffin"
 
@@ -196,8 +206,9 @@ spike = Pet.create!(adoption_status: "Reserved",
                     colour: "Black and white",
                     description: "Spike is a very active and independent cat, who used to live on a farm so he's used to exploring outdoors. He is very affectionate and loves to be petted.",
                     outdoor_space: true,
-                    pet_friendly: "Yes",
-                    children_friendly: "Yes",
+                    other_cats: true,
+                    other_dogs: true,
+                    children: true,
                     hours_alone: 8,
                     medical_conditions: "None known",
                     shelter: shoreditch)
@@ -228,8 +239,9 @@ laika = Pet.create!(adoption_status: "Available",
                     colour: "Black and white",
                     description: "Intelligent and energetic dog despite her age. She loves walking.",
                     outdoor_space: true,
-                    pet_friendly: "Only other dogs",
-                    children_friendly: "Yes",
+                    other_cats: false,
+                    other_dogs: true,
+                    children: true,
                     hours_alone: 4,
                     medical_conditions: "Needs medication once a day",
                     shelter: city)
@@ -254,8 +266,9 @@ luna = Pet.create!(adoption_status: "Adopted",
                    colour: "Black and white",
                    description: "Luna is a chilled cat who is affectionate and will purr a lot, although she can get overexcited. She's not very motivated by food but will still meow for it.",
                    outdoor_space: false,
-                   pet_friendly: "No",
-                   children_friendly: "Yes",
+                   other_cats: false,
+                   other_dogs: false,
+                   children: true,
                    hours_alone: 6,
                    medical_conditions: "She has heart murmurs which need to be checked up at the vet regularly",
                    shelter: city)
@@ -284,8 +297,9 @@ memphis = Pet.create!(adoption_status: "Reserved",
                       colour: "Grey",
                       description: "Memphis is a very nice young dog who came to us as a stray, and he has become friendly and sociable.",
                       outdoor_space: true,
-                      pet_friendly: "Yes",
-                      children_friendly: "Can live with young children",
+                      other_cats: true,
+                      other_dogs: true,
+                      children: true,
                       hours_alone: 3,
                       medical_conditions: "None known",
                       shelter: city)
@@ -305,38 +319,33 @@ memphis.photos.attach(io: file, filename: 'memphis_6.jpg', content_type: 'image/
 
 puts "Created memphis"
 
-callie = Pet.create!(adoption_status: "Available",
-                     name: "Callie",
-                     species: "Cat",
-                     breed: "Domestic Shorthair",
-                     sex: "Female",
-                     age: "1 year",
-                     colour: "Tabby",
-                     description: "Callie is a sweet and sensitive cat, but can get quite nervous. She need a bit more time to be socialised with children and other animals.",
-                     outdoor_space: true,
-                     pet_friendly: "No",
-                     children_friendly: "Can live with teenagers",
-                     hours_alone: 4,
-                     medical_conditions: "None known",
-                     shelter: city)
+abla = Pet.create!(adoption_status: "Available",
+                   name: "Abla",
+                   species: "Cat",
+                   breed: "Domestic Shorthair",
+                   sex: "Female",
+                   age: "8 years",
+                   colour: "Calico",
+                   description: "Abla is quirky and vocal and has lots of fun to bring to her new family. Abla is a bit chunky so her new people will need to keep an eye on her food, and encourage her to move around. She loves to play and chase toys. She can live with older children and teenagers.",
+                   outdoor_space: true,
+                   other_cats: false,
+                   other_dogs: false,
+                   children: true,
+                   hours_alone: 6,
+                   medical_conditions: "None known",
+                   shelter: city)
 
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7eEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_1.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7jEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_2.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7tEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_3.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB7yEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_4.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB83EAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_5.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FB6jEAG.jpeg')
-callie.photos.attach(io: file, filename: 'callie_6.jpg', content_type: 'image/jpg')
-
-puts "Created callie"
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001F1KdEAK.jpeg')
+abla.photos.attach(io: file, filename: 'abla_1.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001F1KdEAK.jpeg')
+abla.photos.attach(io: file, filename: 'abla_2.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001F1KiEAK.jpeg')
+abla.photos.attach(io: file, filename: 'abla_3.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001F1L7EAK.jpeg')
+abla.photos.attach(io: file, filename: 'abla_4.jpg', content_type: 'image/jpg')
+puts "Created abla"
 
 puts "All pets created"
-
 
 require 'date'
 puts "Creating applications..."

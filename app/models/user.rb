@@ -17,6 +17,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   validates :age, numericality: { only_integer: true }, unless: ->(x) { x.age.blank? }
+  validates :occupation, length: { minimum: 2 }, unless: ->(x) { x.occupation.blank? }
   validates :biography, length: { minimum: 10 }, unless: ->(x) { x.biography.blank? }
   validates :type_of_dwelling, inclusion: { in: %w(House Flat Farm),
                                             message: "%{value} is not a valid type of dwelling" },
@@ -24,7 +25,10 @@ class User < ApplicationRecord
   validates :outdoor_space, inclusion: { in: [true, false],
                                          message: "%{value} is not a valid option" },
                             unless: ->(x) { x.outdoor_space.blank? }
-  validates  :hours_alone, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 24 },
-                           unless: ->(x) { x.hours_alone.blank? }
-  validates  :previous_experience, length: { minimum: 10 }, unless: ->(x) { x.previous_experience.blank? }
+  validates :hours_alone, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 24 },
+                          unless: ->(x) { x.hours_alone.blank? }
+  validates :previous_experience, length: { minimum: 10 }, unless: ->(x) { x.previous_experience.blank? }
+  validates :other_cats, presence: true, unless: ->(x) { x.other_cats.blank? }
+  validates :other_dogs, presence: true, unless: ->(x) { x.other_dogs.blank? }
+  validates :children, presence: true, unless: ->(x) { x.children.blank? }
 end
