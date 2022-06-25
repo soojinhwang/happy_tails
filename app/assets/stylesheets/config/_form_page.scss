@@ -28,7 +28,7 @@ color: $dark-gray;
 
 .form-container {
   // position: absolute;
-  width: 900px;
+  width: 1500px;
   height: 100%;
   left: calc(50% - 1120px/2);
   top: 244px;
@@ -43,21 +43,22 @@ color: $dark-gray;
 
 .form-tags {
 // position: absolute;
-left: 13.89%;
-right: 82.71%;
-top: 27.73%;
-bottom: 70.31%;
+// left: 13.89%;
+// right: 82.71%;
+// top: 27.73%;
+// bottom: 70.31%;
 
 font-family: 'Lexend';
 font-style: normal;
 font-weight: 700;
 font-size: 16px;
+text-transform: uppercase;
 
 /* identical to box height */
 
 // display: flex;
 // align-items: center;
-text-transform: uppercase;
+
 }
 
 .form-control {
@@ -66,14 +67,81 @@ text-transform: uppercase;
   border-radius: 8px;
 }
 
-// .form-select {
-//   background: #FFFFFF;
-//   border: 1px solid #3F3F3F;
-//   border-radius: 8px;
-// }
+.form-select {
+
+  border-radius: 8px;
+}
 
 #pet_name {
   background: #FFFFFF;
   border: 1px solid #3F3F3F;
   border-radius: 8px;
+}
+
+#new_pet > div > label {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+
+.form-flex {
+  display: flex;
+  justify-content: space-between;
+  label {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
+
+.form-flex > div {
+  margin: 20px;
+}
+
+
+.form-col-left {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-col-center {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-col-right {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#pet_description {
+  height: 140px;
+}
+
+#pet_medical_conditions {
+  height: 110px;
+}
+
+#pet_species {
+  color: gray;
+
+}
+
+#pet_adoption_status {
+  color: gray;
+}
+
+#pet_photos {
+  color: gray;
 }

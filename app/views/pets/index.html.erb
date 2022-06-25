@@ -1,59 +1,184 @@
 
 <div class="container">
 
-  <h1> All pets </h1>
+  <h1> Meet our animals </h1>
+
+   <%= render 'shared/search', class: "pets-search-bar"%>
 
   <% @available_pets = @pets.select { |pet| (pet.adoption_status == "Available")} %>
 
   <%  if @available_pets.any? %>
 
-    <h2> Available <h2>
+            <% @pets.each do |pet| %>
+              <% if pet.adoption_status == "Available" %>
+                <div class="pet_card">
 
-    <% @pets.each do |pet| %>
-      <% if pet.adoption_status == "Available" %>
-        <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
-        <p> Age: <%= pet.age %> </p> <br>
-        <p> Description: <%= pet.description %> </p> <br>
-        <p> Adoption Status: <%= pet.adoption_status %> </p>
-        <hr>
-      <% end %>
-    <% end %>
+                  <% if pet.photos.attached? %>
+                    <% pic_url = cl_image_path pet.photos.first.key %>
+                      <div class="pet_card_hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= pic_url %>')">
+                  <% else %>
+                   <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
+                  <% end %>
+
+                      <h2 class="pet_card_hero_text_available">AVAILABLE</h2>
+                  </div>
+                    <div class="pet_card_info">
+                      <h2 class="pet_card_info_name"><%= link_to pet.name, pet_path(pet) %></h2>
+                        <div class="pet_card_info_text">
+                          <h5> <strong><%= pet.age %></strong> </h5>
+                            <div class="bottom_section">
+                              <h5><strong><%= pet.breed %></strong></h5>
+
+                              <div class="pet_card_icons">
+
+                                <% if pet.outdoor_space  %>
+                                  <i class="fa-brands fa-pagelines"></i>
+                                <% else %>
+                                  <i class="fa-brands fa-pagelines opaque-icon"></i>
+                                <% end %>
+
+                                <% if pet.other_cats %>
+                                  <i class="fa-solid fa-cat"></i>
+                                <% else %>
+                                  <i class="fa-solid fa-cat opaque-icon"></i>
+                                <% end %>
+
+                                <% if pet.other_dogs %>
+                                  <i class="fa-solid fa-dog"></i>
+                                <% else %>
+                                  <i class="fa-solid fa-dog opaque-icon"></i>
+                                <% end %>
+
+                                <% if pet.children %>
+                                  <i class="fa-solid fa-child"></i>
+                                <% else %>
+                                  <i class="fa-solid fa-child opaque-icon"></i>
+                                <% end %>
+
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <% end %>
+            <% end %>
   <% end %>
 
   <% @reserved_pets = @pets.select { |pet| (pet.adoption_status == "Reserved")} %>
 
   <%  if @reserved_pets.any? %>
 
-    <h2> Reserved pets <h2>
 
-    <% @pets.each do |pet| %>
-      <% if pet.adoption_status == "Reserved" %>
-        <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
-        <p> Age: <%= pet.age %> </p> <br>
-        <p> Description: <%= pet.description %> </p> <br>
-        <p> Adoption Status: <%= pet.adoption_status %> </p>
-        <hr>
-      <% end %>
-    <% end %>
+<% @pets.each do |pet| %>
+              <% if pet.adoption_status == "Reserved" %>
+                <div class="pet_card">
+
+                  <% if pet.photos.attached? %>
+                    <% pic_url = cl_image_path pet.photos.first.key %>
+                      <div class="pet_card_hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= pic_url %>')">
+                  <% else %>
+                   <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
+                  <% end %>
+
+                      <h2 class="pet_card_hero_text_reserved">RESERVED</h2>
+                  </div>
+                    <div class="pet_card_info">
+                      <h2 class="pet_card_info_name"><%= link_to pet.name, pet_path(pet) %></h2>
+                        <div class="pet_card_info_text">
+                          <h5> <strong><%= pet.age %></strong> </h5>
+                            <div class="bottom_section">
+                              <h5><strong><%= pet.breed %></strong></h5>
+
+                              <div class="pet_card_icons">
+                              <% if pet.outdoor_space  %>
+                                <i class="fa-brands fa-pagelines"></i>
+                              <% else %>
+                                <i class="fa-brands fa-pagelines opaque-icon"></i>
+                              <% end %>
+
+                              <% if pet.other_cats %>
+                                <i class="fa-solid fa-cat"></i>
+                              <% else %>
+                                <i class="fa-solid fa-cat opaque-icon"></i>
+                              <% end %>
+
+                              <% if pet.other_dogs %>
+                                <i class="fa-solid fa-dog"></i>
+                              <% else %>
+                                <i class="fa-solid fa-dog opaque-icon"></i>
+                              <% end %>
+
+                              <% if pet.children %>
+                                <i class="fa-solid fa-child"></i>
+                              <% else %>
+                                <i class="fa-solid fa-child opaque-icon"></i>
+                              <% end %>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <% end %>
+            <% end %>
   <% end %>
 
    <% @adopted_pets = @pets.select { |pet| (pet.adoption_status == "Adopted")} %>
 
   <%  if @reserved_pets.any? %>
 
-    <h2> Adopted pets <h2>
 
-    <% @pets.each do |pet| %>
-      <% if pet.adoption_status == "Adopted" %>
-        <h2> <%= link_to pet.name, pet_path(pet) %> </h2> <br>
-        <p> Age: <%= pet.age %> </p> <br>
-        <p> Description: <%= pet.description %> </p> <br>
-        <p> Adoption Status: <%= pet.adoption_status %> </p>
-        <hr>
-      <% end %>
-    <% end %>
+
+<% @pets.each do |pet| %>
+              <% if pet.adoption_status == "Adopted" %>
+                <div class="pet_card">
+
+                  <% if pet.photos.attached? %>
+                    <% pic_url = cl_image_path pet.photos.first.key %>
+                      <div class="pet_card_hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= pic_url %>')">
+                  <% else %>
+                   <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
+                  <% end %>
+
+                      <h2 class="pet_card_hero_text_adopted">ADOPTED</h2>
+                  </div>
+                    <div class="pet_card_info">
+                      <h2 class="pet_card_info_name"><%= link_to pet.name, pet_path(pet) %></h2>
+                        <div class="pet_card_info_text">
+                          <h5> <strong><%= pet.age %></strong> </h5>
+                            <div class="bottom_section">
+                              <h5><strong><%= pet.breed %></strong></h5>
+
+                              <div class="pet_card_icons">
+                              <% if pet.outdoor_space  %>
+                                <i class="fa-brands fa-pagelines"></i>
+                              <% else %>
+                                <i class="fa-brands fa-pagelines opaque-icon"></i>
+                              <% end %>
+
+                              <% if pet.other_cats %>
+                                <i class="fa-solid fa-cat"></i>
+                              <% else %>
+                                <i class="fa-solid fa-cat opaque-icon"></i>
+                              <% end %>
+
+                              <% if pet.other_dogs %>
+                                <i class="fa-solid fa-dog"></i>
+                              <% else %>
+                                <i class="fa-solid fa-dog opaque-icon"></i>
+                              <% end %>
+
+                              <% if pet.children %>
+                                <i class="fa-solid fa-child"></i>
+                              <% else %>
+                                <i class="fa-solid fa-child opaque-icon"></i>
+                              <% end %>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <% end %>
+            <% end %>
   <% end %>
-
 </div>
-
 </div>
