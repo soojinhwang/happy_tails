@@ -1,0 +1,98 @@
+.application-show-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.application-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px 0 40px;
+
+}
+
+.pet-application-cards {
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(63, 63, 63, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+
+
+  // margin: 10px;
+
+
+
+  h2 {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 48px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #3F3F3F;
+  }
+
+  h3 {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 48px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #3F3F3F;
+  }
+
+}
+
+.application-show-heading {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 64px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: #3F3F3F;
+
+}
+
+.application-justify-center {
+  text-align: center;
+  display: flex;
+
+}
+
+.application-button-margin {
+  margin: 50px 0;
+}
+
+.application-align-item-center {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+}
+
+.application_profile_picture {
+  display: flex;
+  justify-content: center;
+  img {
+    height: 120px;
+    width: 120px;
+    border: 3px solid $gray;
+    border-radius: 50%;
+
+  }
+}

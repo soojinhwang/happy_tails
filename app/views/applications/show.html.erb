@@ -1,62 +1,88 @@
 
-<div class="container">
-  <h2> Pet Details </h2>
-  <h3> <%= @application.pet.name %> </h3>
-  <p> Shelter: <%= @pet.shelter.name %></p>
-  <p> Species: <%= @pet.species %></p>
-  <p> Breed: <%= @pet.breed %></p>
-  <p> Sex: <%= @pet.sex %></p>
-  <p> Age: <%= @pet.age %></p>
-  <p> Description: <%= @pet.description %></p>
-  <p> Outdoor space: <%= @pet.outdoor_space %></p>
-  <p> Hours alone: <%= @pet.hours_alone %></p>
-  <p> Children friendly: <%= @pet.children ? "Yes" : "No" %></p>
-  <p> Can they live with other cats?: <%= @pet.other_cats ? "Yes" : "No" %></p>
-  <p> Can they live with other cats?: <%= @pet.other_dogs ? "Yes" : "No" %></p>
-  <p> Hours Alone: Can be left alone for <%= @pet.hours_alone %> hours</p>
-  <p> Medical Conditions: <%= @pet.medical_conditions %></p>
+<div class="application-show-container">
+  <h1 class = "application-show-heading"> Application on <%= @application.pet.name %> </h1>
+   <div class = "application-align-item-center">
+      <div class="application-justify-center">
+        <div class= "application-button-margin">
+          <%= link_to "Back to #{@application.pet.name}",
+          pet_path(@application.pet), class: 'btn-red' %>
+        </div>
+      </div>
+
+      <% if @application.approved == false && @application.reviewed == false %>
+        <div class="application-justify-center">
+
+            <div class= "application-button-margin">
+              <%= render "approve_application", pet: @application.pet %>
+            </div>
+            <div class= "application-button-margin">
+              <%= render "reject_application", pet: @application.pet %>
+            </div>
+        </div>
+      <% elsif @application.approved == true && @application.reviewed == true %>
+        <div class="application-justify-center">
+          <%# <div class="application-button-margin">
+            <p> This application has been approved  </p>
+          </div> %>
+          <div class="application-button-margin">
+            <%= render "undo_approve_application", pet: @application.pet %>
+          </div>
+        </div>
 
 
-  <h2> User Details </h2>
+      <% else @application.approved == false && @application.reviewed == true %>
+        <div class="application-justify-center">
+          <%# <div class="application-button-margin">
+            <p> This application has been rejected  </p>
+          </div> %>
+          <div class="application-button-margin">
+            <%= render "unreject_application", pet: @application.pet %>
+          </div>
+        </div>
+      <% end  %>
+    </div>
+  <div class = "application-flex">
 
-  <p> First Name: <%= @application.user.first_name %> </p>
-  <p> Last Name: <%= @application.user.last_name %></p>
-  <p> Age: <%= @application.user.age %> </p>
-  <p> Biography: <%= @application.user.biography %> </p>
-  <p> Occupation: <%= @application.user.occupation %> </p>
-  <p> Type of dwelling: <%= @application.user.type_of_dwelling %> </p>
-  <p> Outdoor space?: <%= @application.user.outdoor_space %> </p>
-  <p> Other cats: <%= @application.user.other_cats ? "Yes" : "No" %> </p>
-  <p> Other dogs?: <%= @application.user.other_dogs ? "Yes" : "No" %> </p>
-  <p> Children?: <%= @application.user.children ? "Yes" : "No" %> </p>
-  <p> Hours at home?: <%= @application.user.hours_alone %> </p>
+    <div class = "pet-application-cards">
+      <h2> Pet Details </h2>
+      <div class = "application_profile_picture ">
+        <%= cl_image_tag @application.pet.photos.first.key, height: 120, width: 120, crop: :thumb %>
+      </div>
 
 
-  <%= link_to "All applications for #{@application.pet.name}", pet_applications_path(@application.pet) %>
-   <br>
-  <% if @application.approved == false && @application.reviewed == false %>
+      <h3> <%= @application.pet.name %> </h3>
 
-     <br>
-      <%= render "reject_application", pet: @application.pet %>
-     <br>
-      <%= render "approve_application", pet: @application.pet %>
-     <br>
+      <p> Species: <%= @pet.species %></p>
+      <p> Breed: <%= @pet.breed %></p>
+      <p> Sex: <%= @pet.sex %></p>
+      <p> Age: <%= @pet.age %></p>
+      <p> Description: <%= @pet.description %></p>
+      <p> Outdoor space: <%= @pet.outdoor_space ? "Yes" : "No" %></p>
+      <p> Children friendly? <%= @pet.children ? "Yes" : "No" %></p>
+      <p> Can they live with other cats? <%= @pet.other_cats ? "Yes" : "No" %></p>
+      <p> Can they live with other cats? <%= @pet.other_dogs ? "Yes" : "No" %></p>
+      <p> Hours Alone: Can be left alone for <%= @pet.hours_alone %> hours</p>
+      <p> Medical Conditions: <%= @pet.medical_conditions %></p>
+    </div>
 
-  <% elsif @application.approved == true && @application.reviewed == true %>
-    <br>
-    <p> This application has been approved  </p>
+    <div class = "pet-application-cards">
 
-    <%= render "undo_approve_application", pet: @application.pet %>
-    <br>
-
-  <% else @application.approved == false && @application.reviewed == true %>
-    <br>
-    <p> This application has been rejected  </p>
-
-    <%= render "unreject_application", pet: @application.pet %>
-    <br>
-
-  <% end  %>
+      <h2> User Details </h2>
+      <div class = "application_profile_picture ">
+        <%= cl_image_tag @application.user.photo.key, height: 120, width: 120, crop: :thumb %>
+      </div>
+      <h3> <%= @application.user.first_name %> <%= @application.user.last_name %></h3>
+      <p> Age: <%= @application.user.age %> </p>
+      <p> Biography: <%= @application.user.biography %> </p>
+      <p> Occupation: <%= @application.user.occupation %> </p>
+      <p> Type of dwelling: <%= @application.user.type_of_dwelling %> </p>
+      <p> Outdoor space? <%= @application.user.outdoor_space %> </p>
+      <p> Other cats: <%= @application.user.other_cats ? "Yes" : "No" %> </p>
+      <p> Other dogs? <%= @application.user.other_dogs ? "Yes" : "No" %> </p>
+      <p> Children? <%= @application.user.children ? "Yes" : "No" %> </p>
+      <p> Hours at home?: <%= @application.user.hours_alone %> </p>
+    </div>
+  </div>
 
 
 
