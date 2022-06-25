@@ -1,4 +1,4 @@
 meta_product_name: "Happy Tails"
 meta_title: "Happy Tails - Find your local Happy Tail"
 meta_description: "The goodest way to get those tails waggin'"
-meta_image: "Cat and dog-rafiki ogimage.png" # should exist in `app/assets/images/`
+meta_image: "og:image.jpg" # should exist in `app/assets/images/`
