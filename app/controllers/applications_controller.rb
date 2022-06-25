@@ -44,18 +44,22 @@ class ApplicationsController < ApplicationController
 
   def approve_application
     @application.update(approved: true, reviewed: true)
+    redirect_to @application
   end
 
   def unapprove_application
     @application.update(approved: false, reviewed: false)
+    redirect_to @application
   end
 
   def reject_application
     @application.update(approved: false, reviewed: true)
+    redirect_to @application
   end
 
   def unreject_application
     @application.update(approved: false, reviewed: false)
+    redirect_to @application
   end
 
   private
