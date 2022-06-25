@@ -1,13 +1,23 @@
 
 <div class="application-show-container">
   <h1 class = "application-show-heading"> Application on <%= @application.pet.name %> </h1>
+    <div class="pet-title-status">
+      <% if @application.approved == false && @application.reviewed == false %>
+        <h2 class="application-status-in-progress"> In progress </h2>
+      <% elsif @application.approved == true && @application.reviewed == true %>
+        <h2 class="application-status-accepted"> Accepted </h2>
+      <% else @application.approved == false && @application.reviewed == true %>
+         <h2 class="application-status-declined"> Declined </h2>
+      <% end  %> </p>
+    </div>
+
    <div class = "application-align-item-center">
-      <div class="application-justify-center">
+      <%# <div class="application-justify-center">
         <div class= "application-button-margin">
           <%= link_to "Back to #{@application.pet.name}",
           pet_path(@application.pet), class: 'btn-red' %>
-        </div>
-      </div>
+        <%# </div>
+      </div>  %>
 
       <% if @application.approved == false && @application.reviewed == false %>
         <div class="application-justify-center">
@@ -21,9 +31,7 @@
         </div>
       <% elsif @application.approved == true && @application.reviewed == true %>
         <div class="application-justify-center">
-          <%# <div class="application-button-margin">
-            <p> This application has been approved  </p>
-          </div> %>
+
           <div class="application-button-margin">
             <%= render "undo_approve_application", pet: @application.pet %>
           </div>
@@ -32,9 +40,7 @@
 
       <% else @application.approved == false && @application.reviewed == true %>
         <div class="application-justify-center">
-          <%# <div class="application-button-margin">
-            <p> This application has been rejected  </p>
-          </div> %>
+
           <div class="application-button-margin">
             <%= render "unreject_application", pet: @application.pet %>
           </div>
@@ -63,6 +69,13 @@
       <p> Can they live with other cats? <%= @pet.other_dogs ? "Yes" : "No" %></p>
       <p> Hours Alone: Can be left alone for <%= @pet.hours_alone %> hours</p>
       <p> Medical Conditions: <%= @pet.medical_conditions %></p>
+      <div class="application-justify-center">
+        <div class= "application-button-margin">
+          <%= link_to "Back to #{@application.pet.name}",
+          pet_path(@application.pet), class: 'btn-red' %>
+        </div>
+      </div>
+
     </div>
 
     <div class = "pet-application-cards">
@@ -81,8 +94,20 @@
       <p> Other dogs? <%= @application.user.other_dogs ? "Yes" : "No" %> </p>
       <p> Children? <%= @application.user.children ? "Yes" : "No" %> </p>
       <p> Hours at home?: <%= @application.user.hours_alone %> </p>
+
+      <%= link_to "PROFILE", profile_path(@application.user), class: 'btn-red' %>
+      <%= link_to "MESSAGE", class: 'btn-blue' %>
+
+
     </div>
   </div>
+
+  <div class="application-justify-center">
+    <div class= "application-button-margin">
+      <%= link_to "Back to #{@application.pet.name}",
+      pet_path(@application.pet), class: 'btn-red' %>
+    </div>
+   </div>
 
 
 

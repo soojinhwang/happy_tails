@@ -66,6 +66,8 @@
 
   color: #3F3F3F;
 
+  margin: 20px;
+
 }
 
 .application-justify-center {
@@ -95,4 +97,33 @@
     border-radius: 50%;
 
   }
+}
+
+
+.application-status-in-progress {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: #FFD87E;
+}
+
+.application-status-accepted{
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: #97B8A5;
+
+}
+
+.application-status-declined {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: #F18B7E;
 }
