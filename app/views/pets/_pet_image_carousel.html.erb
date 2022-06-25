@@ -1,5 +1,4 @@
-<div class="wrapper-show">
-  <div class="pet-image-wrapper">
+<div class="wrapper-show-pet">
   <% if @pet.photos.size == 1 %>
     <img src="<%= cl_image_path @pet.photos.first.key %>" class="d-block w-100" alt="photo">
   <% elsif @pet.photos.size > 1 %>
@@ -13,7 +12,7 @@
       <div class="carousel-inner">
         <% @pet.photos.each_with_index do |photo, index| %>
           <div class="carousel-item <%= "active" if index.zero? %>">
-            <img src="<%= cl_image_path photo.key %>" class="d-block w-100" alt="<%= index.ordinalize %> image">
+            <img src="<%= cl_image_path photo.key, height: 600, width: 900, crop: :fill %>" class="d-block w-100" alt="<%= index.ordinalize %> image">
           </div>
         <% end %>
       </div>
@@ -28,5 +27,4 @@
       </button>
     </div>
   <% end %>
-  </div>
 </div>
