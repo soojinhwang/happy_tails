@@ -6,6 +6,9 @@
   border-radius: 8px;
   margin-top: 20px;
   margin-left: 20px;
+  a {
+    text-decoration: none;
+  }
 }
 
 .pet_card_hero{
@@ -29,6 +32,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .pet_card_hero_text_reserved{
@@ -45,6 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .pet_card_hero_text_adopted{
@@ -61,6 +70,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .pet_card_info{
@@ -68,6 +78,7 @@
 }
 
 .pet_card_info_name {
+
   font-family: 'Playfair Display';
   font-style: italic;
   font-weight: 600;
@@ -75,6 +86,8 @@
   line-height: 32px;
   color: #3F3F3F;
   padding: 0px 8px;
+  text-decoration: none;
+
 }
 
 .pet_card_info_text {
