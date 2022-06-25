@@ -8,6 +8,11 @@
   margin-left: 20px;
   a {
     text-decoration: none;
+
+  }
+  &:hover {
+    text-decoration: none;
+    transform: scale(1.02);
   }
 }
 
