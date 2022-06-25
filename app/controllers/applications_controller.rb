@@ -9,6 +9,7 @@ class ApplicationsController < ApplicationController
   end
 
   def show
+    @conversation = Conversation.create(name: "Conversation")
     @pet = @application.pet
     if @application.approved == true
       @application.pet.adoption_status = "Adopted"
@@ -30,8 +31,6 @@ class ApplicationsController < ApplicationController
       redirect_to pet_path(@pet), alert: @application.errors.full_messages
     end
   end
-
-
 
 
   def destroy

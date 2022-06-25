@@ -1,5 +1,7 @@
+<!--
+
 <div class="container conversation" data-controller="conversation-subscription" data-conversation-subscription-conversation-id-value="<%= @conversation.id %>">
-  <h1 class="conversation-title">Conversation <%= @conversation.name %></h1>
+  <h1><%= @conversation.name %></h1>
 
   <div class="messages" data-conversation-subscription-target="messages">
     <% @conversation.messages.each do |message| %>
@@ -12,3 +14,6 @@
     <%= f.submit "Send", class: "btn-yellow" %>
   <% end %>
 </div>
+
+
+-->

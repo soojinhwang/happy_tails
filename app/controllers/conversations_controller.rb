@@ -1,6 +1,5 @@
 class ConversationsController < ApplicationController
   def index
-    # @conversations = Conversation.where(sender: current_user).or(Conversation.where(recipient: current_user))
   end
 
   def show
@@ -15,12 +14,11 @@ class ConversationsController < ApplicationController
   end
 
   def create
-
   end
 
-  # private
+  private
 
-  # def conversation_params
-  #   params.require(:conversation).permit(:)
-  # end
+  def conversation_params
+    params.require(:conversation).permit(:name)
+  end
 end
