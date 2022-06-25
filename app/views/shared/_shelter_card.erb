@@ -1,8 +1,8 @@
 <div class="shelter_card">
-    <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :thumb %>
+    <%= cl_image_tag application.user.photo.key, height: 120, width: 120, crop: :thumb %>
   <div class="card_infos">
     <div class="card_infos_text">
-      <h2> <%=current_user.first_name %> </h2>
+      <h2> <%= application.user.first_name %> <%= application.user.last_name %> </h2>
       <h2>APPLCATION CREATED ON:
       <br>XX XX XX</h2>
     </div>
