@@ -1,8 +1,8 @@
 @media(max-width: 500px) {
 }
 
-.conversations-container {
-  height: 100%;
+#conversation-container {
+  min-height: calc(100vh - 240px);
 }
 
 .conversation-title {

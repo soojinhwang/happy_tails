@@ -1,6 +1,6 @@
 <div id="message-<%= message.id %>" class="<%= message.user == current_user ? "sender-message" : "receiver-message" %>">
   <small>
-    <h6><em><%= message.user.first_name %></em></h6>
+    <h6><%= message.user.first_name %></h6>
   </small>
   <div class="messages-bottom">
     <p><%= message.content.capitalize %></p>

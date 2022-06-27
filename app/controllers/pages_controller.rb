@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-
   def my_pets
     @my_pets = current_user.shelter.pets
     @my_pets.each do |pet|

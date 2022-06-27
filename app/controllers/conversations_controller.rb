@@ -6,6 +6,7 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @message = Message.new
     @messages = @conversation.messages.order(id: :asc)
+    # @application = Application.where(id: @conversation.name.to_i)
   end
 
   def new
