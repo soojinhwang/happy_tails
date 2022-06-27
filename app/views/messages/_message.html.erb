@@ -1,7 +1,11 @@
-<div id="message-<%= message.id %>">
+<div id="message-<%= message.id %>" class="<%= message.user == current_user ? "sender-message" : "receiver-message" %>">
   <small>
-    <strong><%= message.user.first_name %></strong>
-    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+    <h6><em><%= message.user.first_name %></em></h6>
   </small>
-  <p><%= message.content %></p>
+  <div class="messages-bottom">
+    <p><%= message.content.capitalize %></p>
+      <small>
+        <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i>
+      </small>
+  </div>
 </div>
