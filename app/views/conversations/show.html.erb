@@ -1,4 +1,7 @@
-<div class="container conversation" data-controller="conversation-subscription" data-conversation-subscription-conversation-id-value="<%= @conversation.id %>">
+<div class="container conversation"
+     data-controller="conversation-subscription"
+     data-conversation-subscription-conversation-id-value="<%= @conversation.id %>">
+
   <h1 class="conversation-title">Conversation <%= @conversation.name %></h1>
 
   <div class="messages" data-conversation-subscription-target="messages">
@@ -7,8 +10,11 @@
     <% end %>
   </div>
 
-  <%= simple_form_for [@conversation, @message], remote: true, html: {data: {action: "ajax:success->conversation-subscription#resetForm"}, class: "#"} do |f| %>
-    <%= f.input :content, label: false, placeholder: "Write your message", wrapper_html: {class: "#"} %>
+  <%= simple_form_for [@conversation, @message],
+      remote: true,
+      html: {data: {action: "ajax:success->conversation-subscription#resetForm"},
+      class: "d-flex"} do |f| %>
+    <%= f.input :content, label: false, placeholder: "Write your message", wrapper_html: {class: "flex-grow-1"} %>
     <%= f.submit "Send", class: "btn-yellow" %>
   <% end %>
 </div>
