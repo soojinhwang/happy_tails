@@ -1,6 +1,19 @@
+@media(max-width: 500px) {
+}
+
+.conversations-container {
+  height: 100%;
+}
+
 .conversation-title {
 
   h1 {
-
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: 48px;
+    color: $dark-gray;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 }
