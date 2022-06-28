@@ -6,7 +6,7 @@
 .application-flex {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 20px 0 40px;
 
 }
@@ -17,6 +17,7 @@
   box-shadow: 0px 4px 12px rgba(63, 63, 63, 0.3);
   border-radius: 8px;
   padding: 20px;
+  width: 45%;
 
 
   // margin: 10px;
@@ -70,15 +71,19 @@
 
 }
 
-.application-justify-center {
-  text-align: center;
-  display: flex;
 
-}
 
 .application-button-margin {
+
+  text-align: center;
   margin: 50px 0;
 }
+
+
+.user-application-button-margin {
+  text-align: center;
+}
+
 
 .application-align-item-center {
   align-items: center;
@@ -126,4 +131,26 @@
   margin-bottom: 0px;
   text-transform: uppercase;
   color: #F18B7E;
+}
+
+.application-title-status {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  h2 {
+    font-family: 'Lexend';
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+  }
+}
+
+.application-justify-center {
+  display: flex;
+  justify-content: space-between;
+
 }
