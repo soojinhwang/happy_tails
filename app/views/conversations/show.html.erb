@@ -1,0 +1,28 @@
+<div class="container conversation"
+     id="conversation-container"
+     data-controller="conversation-subscription"
+     data-conversation-subscription-conversation-id-value="<%= @conversation.id %>">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-8">
+      <div class="conversation-title">
+        <h1><em>Conversation</em></h1>
+      </div>
+      <div class="messages-container">
+        <div class="messages" data-conversation-subscription-target="messages">
+          <% @conversation.messages.each do |message| %>
+            <%= render "messages/message", message: message %>
+          <% end %>
+        </div>
+      </div>
+      <div class="message-form-container">
+        <%= simple_form_for [@conversation, @message],
+            remote: true,
+            html: {data: {action: "ajax:success->conversation-subscription#resetForm"} },
+            wrapper: :inline_form do |f| %>
+          <%= f.input :content, label: false, placeholder: "Write your message", class: "message-input", autofocus: true %>
+          <%= f.submit "Send", class: "btn-yellow" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
