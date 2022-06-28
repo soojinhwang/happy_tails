@@ -46,7 +46,7 @@ katie = User.create!(email: "katie@gmail.com",
                     first_name: "Katie",
                     last_name: "Hopper")
 file = URI.open('https://images.unsplash.com/photo-1645378999488-63138abdecd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
-katie.photo.attach(io: file, filename: 'jane_profile.png', content_type: 'image/png')
+katie.photo.attach(io: file, filename: 'katie_profile.png', content_type: 'image/png')
 puts "Created Katie"
 
 puts "Creating adopter user... "
@@ -123,9 +123,9 @@ city = Shelter.create!(name: "London Inner City Shelter",
                        user: lucy)
 
 croydon = Shelter.create!(name: "Croyon Animal Shelter",
-                       address: "136 Cherry Orchard Rd, Croydon CR0 6BB",
-                       description: "Croydon Animal Samaritans provide shelter and homing for neglected cats, dogs and pets. We cover south London and Surrey areas.",
-                       user: katie)
+                          address: "136 Cherry Orchard Rd, Croydon CR0 6BB",
+                          description: "Croydon Animal Samaritans provide shelter and homing for neglected cats, dogs and pets. We cover south London and Surrey areas.",
+                          user: katie)
 
 puts "Created croydon shelter"
 

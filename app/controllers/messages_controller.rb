@@ -5,7 +5,6 @@ class MessagesController < ApplicationController
     @message.conversation = @conversation
     @message.user = current_user
     if @message.save
-      binding.pry
       ConversationChannel.broadcast_to(
         @conversation,
         render_to_string(partial: "message", locals: { message: @message })
