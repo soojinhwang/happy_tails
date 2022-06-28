@@ -41,6 +41,14 @@ file = URI.open('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ix
 lucy.photo.attach(io: file, filename: 'lucy_profile.png', content_type: 'image/png')
 puts "Created lucy"
 
+katie = User.create!(email: "katie@gmail.com",
+                    password: "123456",
+                    first_name: "Katie",
+                    last_name: "Hopper")
+file = URI.open('https://images.unsplash.com/photo-1645378999488-63138abdecd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+katie.photo.attach(io: file, filename: 'jane_profile.png', content_type: 'image/png')
+puts "Created Katie"
+
 puts "Creating adopter user... "
 
 mike = User.create!(email: "mike@gmail.com",
@@ -113,6 +121,14 @@ city = Shelter.create!(name: "London Inner City Shelter",
                        address: "12 Roger St, London WC1N 2JU",
                        description: "Several animal lovers with many years’ rescue experience and a shared vision for London formed the shelter to merge resources to help animals in need, especially those overlooked and in the most need of medical attention and long-term fostering.",
                        user: lucy)
+
+croydon = Shelter.create!(name: "Croyon Animal Shelter",
+                       address: "136 Cherry Orchard Rd, Croydon CR0 6BB",
+                       description: "Croydon Animal Samaritans provide shelter and homing for neglected cats, dogs and pets. We cover south London and Surrey areas.",
+                       user: katie)
+
+puts "Created croydon shelter"
+
 puts "Created city shelter"
 puts "All shelters created"
 
@@ -344,6 +360,110 @@ abla.photos.attach(io: file, filename: 'abla_3.jpg', content_type: 'image/jpg')
 file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001F1L7EAK.jpeg')
 abla.photos.attach(io: file, filename: 'abla_4.jpg', content_type: 'image/jpg')
 puts "Created abla"
+
+bruno = Pet.create!(adoption_status: "Available",
+                  name: "Bruno",
+                  species: "Dog",
+                  breed: "Bulldog",
+                  sex: "Male",
+                  age: "4 years",
+                  colour: "Brown",
+                  description: "He is a charming big boy but has been a little worried in kennels and it has taken a bit of time to make friends. However once bonded with people he is a very friendly, fun and affectionate dog with a lot of love to give.",
+                  outdoor_space: false,
+                  other_cats: true,
+                  other_dogs: false,
+                  children: true,
+                  hours_alone: 6,
+                  medical_conditions: "None known",
+                  shelter: croydon)
+
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FEuPEAW.jpeg')
+bruno.photos.attach(io: file, filename: 'bruno_1.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FEuyEAG.jpeg')
+bruno.photos.attach(io: file, filename: 'bruno_2.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FEvIEAW.jpeg')
+bruno.photos.attach(io: file, filename: 'bruno_3.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FEvSEAW.jpeg')
+bruno.photos.attach(io: file, filename: 'bruno_4.jpg', content_type: 'image/jpg')
+puts "Created bruno"
+
+reggie = Pet.create!(adoption_status: "Available",
+                  name: "Reggie",
+                  species: "Dog",
+                  breed: "Spaniel",
+                  sex: "Male",
+                  age: "10 months",
+                  colour: "White-Ginger",
+                  description: "Reggie is a lively youngster dog who loves being outdoors but can find other aspects of the world quite overwhelming. He loves his food and this can be used practically in his ongoing training.",
+                  outdoor_space: false,
+                  other_cats: false,
+                  other_dogs: false,
+                  children: true,
+                  hours_alone: 4,
+                  medical_conditions: "None known",
+                  shelter: croydon)
+
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001EkRPEA0.jpeg')
+reggie.photos.attach(io: file, filename: 'reggie_1.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001EkRUEA0.jpeg')
+reggie.photos.attach(io: file, filename: 'reggie_2.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001EkReEAK.jpeg')
+reggie.photos.attach(io: file, filename: 'reggie_3.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001ElDAEA0.jpeg')
+reggie.photos.attach(io: file, filename: 'reggie_4.jpg', content_type: 'image/jpg')
+
+ozzy = Pet.create!(adoption_status: "Available",
+                  name: "ozzy ",
+                  species: "Cat",
+                  breed: "Domestic Short-hair",
+                  sex: "Male",
+                  age: "11 years",
+                  colour: "Gold-Brown",
+                  description: "Sweet Ozzy is a relaxed and refined cat who is looking for the perfect retirement home to spend his golden years.
+                  He is a sociable and gentle fellow who will approach to give head bumps and makes puddings while getting strokes, even getting on your lap when it takes his fancy.",
+                  outdoor_space: false,
+                  other_cats: true,
+                  other_dogs: false,
+                  children: true,
+                  hours_alone: 3,
+                  medical_conditions: "None known",
+                  shelter: croydon)
+
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FVU7EAO.jpeg')
+ozzy .photos.attach(io: file, filename: 'ozzy _1.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FVUHEA4.jpeg')
+ozzy .photos.attach(io: file, filename: 'ozzy _2.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FVUMEA4.jpeg')
+ozzy .photos.attach(io: file, filename: 'ozzy _3.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FVUREA4.jpeg')
+ozzy .photos.attach(io: file, filename: 'ozzy _4.jpg', content_type: 'image/jpg')
+puts "Created ozzy "
+
+troy = Pet.create!(adoption_status: "Available",
+                  name: "troy ",
+                  species: "Cat",
+                  breed: "Domestic Short-hair",
+                  sex: "Male",
+                  age: "11 years",
+                  colour: "Black",
+                  description: "Troy is a typically lively and energetic young kitten who loves being around people. He may be a little shy at first but this does not last long! He simply cannot resist enjoying some strokes and cheek scratches while happily purring away in delight!",
+                  outdoor_space: true,
+                  other_cats: true,
+                  other_dogs: false,
+                  children: true,
+                  hours_alone: 4,
+                  medical_conditions: "None known",
+                  shelter: croydon)
+
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FYdXEAW.jpeg')
+troy .photos.attach(io: file, filename: 'troy _1.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FYdcEAG.jpeg')
+troy .photos.attach(io: file, filename: 'troy _2.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FYdJEAW.jpeg')
+troy .photos.attach(io: file, filename: 'troy _3.jpg', content_type: 'image/jpg')
+file = URI.open('https://www.battersea.org.uk/sites/default/files/animal_images/00P8e000001FYdXEAW.jpeg')
+troy .photos.attach(io: file, filename: 'troy _4.jpg', content_type: 'image/jpg')
+puts "Created troy "
 
 puts "All pets created"
 
