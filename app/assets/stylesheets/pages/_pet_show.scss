@@ -85,7 +85,8 @@
 }
 
 .pet-images-shelter-info {
- display: flex;
+  display: flex;
+  justify-content: space-between;
 //  margin-right: 0px;
 //  margin-bottom: 80px;
 
@@ -98,29 +99,19 @@
   }
 }
 
-.carousel {
-  // width: 80vw;
-  // flex-grow: 1;
-}
-
 .pet-shelter-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-left: 24px;
-  height: 100%;
 
-  .btn-light-gray {
-    // margin-top: 40px;
-  }
-
-  .btn-yellow {
-    // margin-top: 40px;
-  }
-
-  .btn-blue {
-    // margin-top: 40px;
+  p {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
   }
 }
 
@@ -178,6 +169,7 @@
 
 .pet-applications {
   margin-top: 40px;
+  margin-bottom: 40px;
 
 h3 {
     font-family: 'Playfair Display';
@@ -185,6 +177,15 @@ h3 {
     font-size: 36px;
     color: $dark-gray;
     margin-bottom: 24px;
+    text-decoration: none;
+  }
+}
+
+.pet-application-card-container {
+  display: flex;
+
+
+  a {
     text-decoration: none;
   }
 }

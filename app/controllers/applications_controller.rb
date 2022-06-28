@@ -21,8 +21,6 @@ class ApplicationsController < ApplicationController
     @application.approved = false
     @application.reviewed = false
 
-
-
     @pet = Pet.find(params[:pet_id])
     @application.pet = @pet
     @application.user = current_user
@@ -44,18 +42,22 @@ class ApplicationsController < ApplicationController
 
   def approve_application
     @application.update(approved: true, reviewed: true)
+    redirect_to @application
   end
 
   def unapprove_application
     @application.update(approved: false, reviewed: false)
+    redirect_to @application
   end
 
   def reject_application
     @application.update(approved: false, reviewed: true)
+    redirect_to @application
   end
 
   def unreject_application
     @application.update(approved: false, reviewed: false)
+    redirect_to @application
   end
 
   private
