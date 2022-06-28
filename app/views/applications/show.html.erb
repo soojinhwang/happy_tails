@@ -2,7 +2,7 @@
 <div class="application-show-container">
   <h1 class = "application-show-heading"> Application on <%= @application.pet.name %> </h1>
     <div class="application-title-status ">
-      <div>
+
         <% if @application.approved == false && @application.reviewed == false %>
           <h2 class="application-status-in-progress"> In progress </h2>
         <% elsif @application.approved == true && @application.reviewed == true %>
@@ -10,7 +10,7 @@
         <% else @application.approved == false && @application.reviewed == true %>
           <h2 class="application-status-declined"> Declined </h2>
         <% end  %>
-      </div>
+
     </div>
 
    <div class = "application-align-item-center">
