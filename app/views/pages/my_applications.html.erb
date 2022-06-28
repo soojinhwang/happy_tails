@@ -2,6 +2,12 @@
 
 
   <h1> My Applications </h1>
+
+  <p> Total Applications: <%= @total_applications %></p>
+  <p> Sucessful Applications: <%= @successful_applications.count %></p>
+  <p> Unsucessful Applications: <%= @unsccessful_applications.count %></p>
+  <p> Applications in progress: <%= @application_in_progress.count %></p>
+
   <%  @my_applications.each do |application| %>
 
         <% if application.pet.photos.attached? %>

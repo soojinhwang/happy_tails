@@ -19,5 +19,23 @@ class PagesController < ApplicationController
 
   def my_applications
     @my_applications = current_user.applications
+
+    @total_applications = @my_applications.count
+
+    @successful_applications = []
+
+    @application_in_progress = []
+
+    @unsccessful_applications = []
+
+    @my_applications.each do |application|
+      if application.approved == true && application.reviewed == true
+        @successful_applications.push(application)
+      elsif application.approved == false && application.reviewed == false
+        @application_in_progress.push(application)
+      else application.approved == false && application.reviewed == true
+        @unsuccessful_applications.push(application)
+      end
+    end
   end
 end
