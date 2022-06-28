@@ -13,6 +13,12 @@ class ApplicationsController < ApplicationController
     if @application.approved == true
       @application.pet.adoption_status = "Adopted"
     end
+
+    if Conversation.where(name: "#{@application.id}").length > 0
+      @conversation = Conversation.where(name: "#{@application.id}")[0]
+    else
+      @conversation = Conversation.create(name: "#{@application.id}")
+    end
   end
 
   def create
@@ -30,8 +36,6 @@ class ApplicationsController < ApplicationController
       redirect_to pet_path(@pet), alert: @application.errors.full_messages
     end
   end
-
-
 
 
   def destroy
@@ -63,14 +67,10 @@ class ApplicationsController < ApplicationController
   private
 
   def find_pet
-
-   @pet = Pet.find(params[:pet_id])
-
+    @pet = Pet.find(params[:pet_id])
   end
 
   def find_application
     @application = Application.find(params[:id])
   end
-
-
 end

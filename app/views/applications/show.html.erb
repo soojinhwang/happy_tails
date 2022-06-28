@@ -10,7 +10,6 @@
         <% else @application.approved == false && @application.reviewed == true %>
           <h2 class="application-status-declined"> Declined </h2>
         <% end  %>
-
     </div>
 
    <div class = "application-align-item-center">
@@ -202,7 +201,7 @@
 
 
       <div class="user-application-button-margin">
-          <%= link_to "MESSAGE", class: 'btn-blue' %>
+          <%= link_to "MESSAGE", conversation_path(@conversation), class: "btn-blue" %>
       </div>
     </div>
   </div>

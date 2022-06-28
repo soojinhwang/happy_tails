@@ -33,6 +33,8 @@
         <% elsif @pet.adoption_status == "Adopted" %>
           <%= render 'shelter_info_card', class: "shelter-info-card" %>
           <p><em><%= @pet.name%> has already found a home!</em></p>
+        <% elsif user_signed_in? && current_user.shelter.present? %>
+          <%= render 'shelter_info_card', class: "shelter-info-card" %>
         <% else %>
             <%= render 'shelter_info_card', class: "shelter-info-card" %>
             <%= render "application_form", pet: @pet %>
