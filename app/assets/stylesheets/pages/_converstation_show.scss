@@ -19,6 +19,10 @@
   }
 }
 
+.messages-container {
+  overflow: hidden;
+}
+
 .form-input-flex {
   display: flex;
   justify-content: space-between;
