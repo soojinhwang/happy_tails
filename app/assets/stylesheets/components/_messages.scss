@@ -1,0 +1,55 @@
+.sender-message {
+  background-color: $blue;
+  border-radius: 8px 0px 8px 8px;
+  padding: 16px;
+  width: 480px;
+  margin: 8px 0px;
+  float: right;
+
+  h6 {
+    font-family: 'Lexend';
+    font-weight: 700;
+    font-size: 16px;
+    color: $dark-gray;
+    text-transform: uppercase;
+  }
+}
+
+.receiver-message {
+  background-color: $light-gray;
+  border-radius: 0px 8px 8px 8px;
+  padding: 16px;
+  width: 480px;
+  margin: 8px 0px;
+  float: left;
+
+  h6 {
+    font-family: 'Lexend';
+    font-weight: 700;
+    font-size: 16px;
+    color: $dark-gray;
+    text-transform: uppercase;
+  }
+}
+
+.messages-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  p {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 20px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
+
+  i {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 12px;
+    color: $gray;
+    margin-bottom: 0px;
+  }
+}
