@@ -1,4 +1,6 @@
-<div id="message-<%= message.id %>" class="<%= message.user == current_user ? "sender-message" : "receiver-message" %>">
+<div id="message-<%= message.id %>" class="<%= current_user == message.user ? "sender-message" : "receiver-message" %>">
+<%= message.user %>
+<%= current_user %>
   <small>
     <h6><%= message.user.first_name %></h6>
   </small>
