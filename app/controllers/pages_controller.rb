@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    @pets = Pet.where(adoption_status: "Available")
   end
 
   def my_pets
