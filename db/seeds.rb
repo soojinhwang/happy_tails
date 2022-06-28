@@ -320,10 +320,18 @@ memphis = Pet.create!(adoption_status: "Reserved",
                       medical_conditions: "None known",
                       shelter: city)
 
-file = URI.open('https://www.lifetimepetcover.co.uk/assets/uploads/dog_220392.jpg')
+file = URI.open('https://res.cloudinary.com/soojinhwang/image/upload/v1656441499/pet%20pics/9cozum9ajd9meu3pzd8tim63l5t8_mqaynr.jpg')
 memphis.photos.attach(io: file, filename: 'memphis_1.jpg', content_type: 'image/jpg')
-file = URI.open('https://www.lifetimepetcover.co.uk/assets/uploads/lurcher_profile_1349006.jpg')
+file = URI.open('https://res.cloudinary.com/soojinhwang/image/upload/v1656441499/pet%20pics/uxdfc592z0ndlwk3yb7856iuncxy_bkezhp.jpg')
 memphis.photos.attach(io: file, filename: 'memphis_2.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/soojinhwang/image/upload/v1656441499/pet%20pics/090zsyi4x8mh0anc8funikc4ignk_hqx0q0.jpg')
+memphis.photos.attach(io: file, filename: 'memphis_3.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/soojinhwang/image/upload/v1656441499/pet%20pics/r5c323jjqhbqy8bnab8n2j4kcquy_islgem.jpg')
+memphis.photos.attach(io: file, filename: 'memphis_4.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/soojinhwang/image/upload/v1656441499/pet%20pics/xrwykqpvides179zla9x9zobzmd7_b9yowq.jpg')
+memphis.photos.attach(io: file, filename: 'memphis_5.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/soojinhwang/image/upload/v1656441499/pet%20pics/xrhsestwmtjx6mstevtv3xokhje7_mzadnh.jpg')
+memphis.photos.attach(io: file, filename: 'memphis_6.jpg', content_type: 'image/jpg')
 
 puts "Created memphis"
 
