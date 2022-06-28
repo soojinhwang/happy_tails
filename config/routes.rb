@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get '/profile/details', action: :edit, controller: 'users'
   patch '/profile', action: :update, controller: 'users'
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :pets do
     resources :applications, except: [ :destroy, :show ]
   end
@@ -21,4 +20,8 @@ Rails.application.routes.draw do
   patch '/unapprove_application/:id', action: :unapprove_application, controller: 'applications', as: :unapprove_application
   patch '/reject_application/:id', action: :reject_application, controller: 'applications', as: :reject_application
   patch '/unreject_application/:id', action: :unreject_application, controller: 'applications', as: :unreject_application
+
+  resources :conversations, only: [ :show ] do
+    resources :messages, only: :create
+  end
 end

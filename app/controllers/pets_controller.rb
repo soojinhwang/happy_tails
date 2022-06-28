@@ -102,6 +102,7 @@ class PetsController < ApplicationController
                                 :age,
                                 :colour,
                                 :medical_conditions,
+                                :children,
                                 :hours_alone,
                                 :other_cats,
                                 :other_dogs,
