@@ -12,8 +12,6 @@ export default class extends Controller {
     )
   }
 
-  // { received: data => this.messagesTarget.insertAdjacentHTML("beforeend", data) }
-
   #insertMessageAndScrollDown(data) {
     this.messagesTarget.insertAdjacentHTML("beforeend", data)
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
