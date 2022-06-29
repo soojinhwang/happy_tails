@@ -118,7 +118,7 @@
   font-size: 20px;
   margin-bottom: 0px;
   text-transform: uppercase;
-  color: #3650ba;
+  color: $gray;
 }
 
 .my-application-sucessful {
@@ -148,6 +148,11 @@
   color: #FFD87E;
 }
 
-.my-booking-margin {
+.my-application-margin {
   margin: 40px;
+}
+
+.empty-application-banner {
+  width: 45vw;
+  height: 35vw;
 }

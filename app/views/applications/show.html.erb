@@ -88,12 +88,6 @@
         </tr>
 
         <tr class="pet-details-item">
-          <td><i class="fa-solid fa-pen"></i></td>
-          <td><h6> PET DESCRIPTION</h6></td>
-          <td><p><%= @pet.description %></p></td>
-        </tr>
-
-        <tr class="pet-details-item">
           <td><i class="fa-solid fa-stethoscope"></i></td>
           <td><h6>MEDICAL CONDITIONS</h6></td>
           <td><p><%= @pet.medical_conditions %></p></td>
@@ -144,7 +138,7 @@
 
     <div class = "pet-application-cards">
 
-      <h2> User Details </h2>
+      <h2> Applicant Details </h2>
       <div class = "application_profile_picture ">
         <%= cl_image_tag @application.user.photo.key, height: 120, width: 120, crop: :thumb %>
       </div>

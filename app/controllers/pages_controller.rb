@@ -17,6 +17,13 @@ class PagesController < ApplicationController
   end
 
   def my_applications
+
+    # if Conversation.where(name: "#{@application.id}").length > 0
+    #   @conversation = Conversation.where(name: "#{@application.id}")[0]
+    # else
+    #   @conversation = Conversation.create(name: "#{@application.id}")
+    # end
+
     @my_applications = current_user.applications
 
     @total_applications = @my_applications.count
