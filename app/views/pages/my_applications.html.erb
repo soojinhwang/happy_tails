@@ -9,8 +9,16 @@
   </div>
 
   <% if @total_applications == 0 %>
-    <p> no application</p>
-
+    <div class="banner my-booking-margin">
+      <div class="banner-text">
+        <h1><em> You currently have no applications ... </em></h1>
+        <p> When not browse through our lists of pets that are waiting to be a part of your home!</p>
+        <div class="banner-text-buttons">
+          <%= link_to "FIND A PET", pets_path, class: "btn-red" %>
+        </div>
+      </div>
+      <%= image_tag "homepage_adopt.png" %>
+    </div>
   <% else %>
     <div class = "my-applications-center">
      <div class="row mb3 my-applications-center">
