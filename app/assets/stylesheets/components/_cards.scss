@@ -101,23 +101,34 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: #3F3F3F;
+  color: $dark-gray;
   padding: 0px 8px;
+
+  h5 {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: $dark-gray;
+  }
 }
-.bottom_section{
+
+.bottom_section {
   width:100%;
   display:flex;
   justify-content: space-between;
   align-items: flex-start;
 }
+
 .pet_card_icons {
   i {
     font-size: 24px;
   }
 }
 
-.opaque-icon{
-  opacity: 0.5;
+.opaque-icon {
+  color: $light-gray;
 }
 
 // Shelter Card

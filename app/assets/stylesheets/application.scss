@@ -3,6 +3,7 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 @import "config/form_page";
+@import "config/application_show_page";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -10,18 +11,11 @@
 @import "font-awesome";
 
 // Your CSS partials
+
+@import "pages/conversation_show";
 @import "pages/home";
 @import "pages/index";
 @import "pages/pet_show";
 @import "pets/new";
 
 @import "components/index";
-@import "components/navbar";
-@import "components/footer";
-@import "components/buttons";
-@import "components/shelter_info_card";
-@import "components/cards";
-@import "components/pet_image_carousel";
-@import  "components/search";
-@import "components/filters";
-@import "components/button_search"

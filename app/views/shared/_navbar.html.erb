@@ -13,7 +13,6 @@
       <div class="nav-links-right">
         <%= link_to "HOME", root_path, class: "nav-link"%>
         <%= link_to "SEE ALL PETS", pets_path, class: "nav-link" %>
-        <%= link_to "DONATE", root_path, class: "btn-gray-border" %>
         <%= link_to "LIST A PET", new_pet_path, class: "btn-yellow" %>
         <div class="nav-item dropdown">
           <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :thumb,
@@ -26,11 +25,7 @@
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <!-- The paths for the below need to be worked out properly in the routes etc (currently all link to pets index) -->
             <%= link_to "Profile", profile_path, class: "dropdown-item" %>
-            <%= link_to "Dashboard", pets_path, class: "dropdown-item" %>
             <%= link_to "My pets", my_pets_path, class: "dropdown-item" %>
-            <%= link_to "Applications", pets_path, class: "dropdown-item" %>
-
-            <%= link_to "Messages", pets_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
@@ -52,7 +47,6 @@
             <!-- The paths for the below need to be worked out properly in the routes etc (currently all link to pets index) -->
             <%= link_to "Profile", profile_path, class: "dropdown-item" %>
             <%= link_to "My applications",  my_applications_path, class: "dropdown-item" %>
-            <%= link_to "Messages", pets_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

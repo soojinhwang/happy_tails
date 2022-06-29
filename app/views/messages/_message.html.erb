@@ -1,5 +1,11 @@
-<div class="messages" data-chatroom-subscription-target="messages">
-  <% @chatroom.messages.each do |message| %>
-    <%= render "messages/message", message: message %>
-  <% end %>
+<div id="message-<%= message.id %>" class="<%= current_user == message.user ? "sender-message" : "receiver-message" %>">
+  <small>
+    <h6><%= message.user.first_name %></h6>
+  </small>
+  <div class="messages-bottom">
+    <p><%= message.content.capitalize %></p>
+      <small>
+        <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i>
+      </small>
+  </div>
 </div>

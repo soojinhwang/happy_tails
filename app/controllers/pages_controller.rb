@@ -2,19 +2,18 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    @pets = Pet.where(adoption_status: "Available")
   end
-
 
   def my_pets
     @my_pets = current_user.shelter.pets
-
     @my_pets.each do |pet|
       pet.applications.any? do |application|
-         if application.approved == true
+        if application.approved == true
           application.pet.adoption_status = "Adopted"
-         end
+        end
       end
-   end
+    end
   end
 
   def my_applications
