@@ -100,7 +100,7 @@
                   <p><strong>APPLICATION STATUS:</strong> <% if application.approved == false && application.reviewed == false %>
                                             <br>In progress
                                           <% elsif application.approved == true && application.reviewed == true %>
-                                            <br>Accepted
+                                            <br>Approved
                                           <% else application.approved == false && application.reviewed == true %>
                                             <br>Declined
                                           <% end  %>
