@@ -1,0 +1,149 @@
+.my_application_cards {
+  overflow: hidden;
+  height: 100%;
+  width: 350px;
+  background: white;
+  box-shadow: 0px 4px 12px rgba(63, 63, 63, 0.3);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  padding: 40px 24px;
+  margin: 24px 0;
+
+
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+
+  h2 {
+    font-family: 'Playfair Display';
+   font-style: italic;
+    font-weight: 600;
+    font-size: 24px;
+    color: $dark-gray;
+    text-align: center;
+    text-transform: uppercase;
+
+  }
+
+  p {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 20px;
+    color: $dark-gray;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 15px;
+
+  }
+}
+
+.my_application_cards img {
+  height: 120px;
+  border: 3px solid $gray;
+  border-radius: 50%;
+  margin-bottom: 0;
+}
+
+
+.tick-color-green {
+  color: rgb(40, 226, 40);
+  font-size: 50px;
+  position: relative;
+  left: 42px;
+  top: -140px;
+}
+
+.cross-color-red {
+
+  color: red;
+  font-size: 50px;
+  position: relative;
+  left: 42px;
+  top: -140px;
+}
+
+.hourglass-color-gold {
+  color: gold;
+  font-size: 50px;
+  position: relative;
+  left: 42px;
+  top: -140px;
+}
+
+.my_application-button-margin {
+  margin: 10px;
+}
+
+.my-application-heading {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 64px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: #3F3F3F;
+
+  margin: 20px;
+
+}
+
+.my-applications-center {
+  text-align: center;
+
+}
+
+.my-application-data {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+
+  p {
+    text-transform: uppercase;
+  }
+}
+
+.my-application-total {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: #3650ba;
+}
+
+.my-application-sucessful {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: #97B8A5;
+}
+
+.my-application-unsucessful {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: #F18B7E;
+}
+
+.my-application-in-progress {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: #FFD87E;
+}

@@ -12,7 +12,15 @@
         <% end  %>
     </div>
 
+    <div class = "application-align-item-center">
+      <% if @application.user == current_user && @application.reviewed == false %>
+          <%= link_to "Cancel Application", application_path(@application), method: :delete,
+          data: { confirm: "Are you sure you want to cancel your application for #{@application.pet.name}?"}, class: "btn-light-gray" %>
+      <% end %>
+    </div>
+
    <div class = "application-align-item-center">
+    <% if @application.pet.shelter == current_user.shelter %>
       <% if @application.approved == false && @application.reviewed == false %>
         <div class="application-justify-center">
 
@@ -40,6 +48,7 @@
           </div>
         </div>
       <% end  %>
+    <% end %>
     </div>
   <div class = "application-flex">
 
@@ -201,7 +210,9 @@
 
 
       <div class="user-application-button-margin">
+        <% if @application.pet.shelter == current_user.shelter %>
           <%= link_to "MESSAGE", conversation_path(@conversation), class: "btn-blue" %>
+        <% end %>
       </div>
     </div>
   </div>

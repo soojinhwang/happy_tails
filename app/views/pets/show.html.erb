@@ -26,13 +26,13 @@
         <% if current_user == @pet.shelter.user %>
           <%= render 'shelter_info_card', class: "shelter-info-card" %>
           <%= link_to "EDIT PET", edit_pet_path(@pet), class: "btn-light-gray" %>
-        <% elsif user_signed_in? && @user_has_applied %>
-          <%= render 'shelter_info_card', class: "shelter-info-card" %>
-          <%= link_to "Cancel Application", application_path(@user_application), method: :delete,
-                              data: { confirm: "Are you sure you want to cancel your application for #{@pet.name}?"}, class: "btn-red" %>
         <% elsif @pet.adoption_status == "Adopted" %>
           <%= render 'shelter_info_card', class: "shelter-info-card" %>
           <p><em><%= @pet.name%> has already found a home!</em></p>
+        <% elsif user_signed_in? && @user_has_applied %>
+          <%= render 'shelter_info_card', class: "shelter-info-card" %>
+          <%= link_to "Cancel Application", application_path(@user_application), method: :delete,
+          data: { confirm: "Are you sure you want to cancel your application for #{@pet.name}?"}, class: "btn-light-gray" %>
         <% elsif user_signed_in? && current_user.shelter.present? %>
           <%= render 'shelter_info_card', class: "shelter-info-card" %>
         <% else %>

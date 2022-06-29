@@ -25,7 +25,7 @@ class PagesController < ApplicationController
 
     @application_in_progress = []
 
-    @unsccessful_applications = []
+    @unsuccessful_applications = []
 
     @my_applications.each do |application|
       if application.approved == true && application.reviewed == true
