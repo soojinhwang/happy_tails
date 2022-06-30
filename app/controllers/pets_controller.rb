@@ -3,7 +3,6 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    #if  params[:query].present?
       @pets = Pet.all
       @pets = @pets.search_by_name_and_species(params[:query]) if params[:query].present?
       @pets = @pets.where("adoption_status =  ? ", params[:adoption_status]) if params[:adoption_status].present?
@@ -20,19 +19,6 @@ class PetsController < ApplicationController
            end
         end
       end
-
-    # else
-    #   @pets = Pet.all
-
-    #    @pets.each do |pet|
-    #      pet.applications.any? do |application|
-    #         if application.approved == true
-    #          application.pet.adoption_status = "Adopted"
-    #         end
-    #      end
-    #   end
-
-    #end
   end
 
   def show
@@ -49,7 +35,6 @@ class PetsController < ApplicationController
         application.pet.adoption_status = "Adopted"
       end
     end
-    # @conversation = Conversation.new
   end
 
   def new
