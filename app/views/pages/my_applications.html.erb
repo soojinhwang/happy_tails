@@ -22,11 +22,10 @@
   <% else %>
     <div class = "my-applications-center">
      <div class="row mb3 my-applications-center">
-      <div class = "my-application-card-container">
+
         <% @my_applications.each do |application| %>
           <div class="col-4">
             <div class="my_application_cards">
-
                 <% if application.pet.photos.attached? %>
                   <%= cl_image_tag application.pet.photos.first.key, height: 120, width: 120, crop: :thumb %>
                 <% else %>
@@ -62,7 +61,6 @@
             </div>
           </div>
         <% end %>
-      </div>
      </div>
     </div>
   <% end %>
