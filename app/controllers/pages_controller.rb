@@ -6,7 +6,22 @@ class PagesController < ApplicationController
   end
 
   def my_pets
-    @my_pets = current_user.shelter.pets
+    @my_pets = current_user.shelter.pets.order(
+      Arel.sql(
+        %q(
+          CASE adoption_status
+          WHEN 'Available' THEN 1
+          WHEN 'Reserved'  THEN 2
+          WHEN 'Adopted'  THEN 3
+          END
+        )
+      )
+    )
+
+    @available_pets = @my_pets.where(adoption_status: "Available")
+    @reserved_pets = @my_pets.where(adoption_status: "Reserved")
+    @adopted_pets = @my_pets.where(adoption_status: "Adopted")
+
     @my_pets.each do |pet|
       pet.applications.any? do |application|
         if application.approved == true
@@ -17,13 +32,6 @@ class PagesController < ApplicationController
   end
 
   def my_applications
-
-    # if Conversation.where(name: "#{@application.id}").length > 0
-    #   @conversation = Conversation.where(name: "#{@application.id}")[0]
-    # else
-    #   @conversation = Conversation.create(name: "#{@application.id}")
-    # end
-
     @my_applications = current_user.applications
 
     @total_applications = @my_applications.count

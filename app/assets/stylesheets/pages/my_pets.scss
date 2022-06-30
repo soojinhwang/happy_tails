@@ -1,0 +1,42 @@
+.my-pets-data {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 0px 30px;
+}
+
+.my-pets-total {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: $gray;
+}
+
+.my-available-pets {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: $green;
+}
+
+.my-reserved-pets {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: $yellow;
+}
+
+.my-adopted-pets {
+  font-family: 'Lexend';
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  color: $dark-red;
+}
