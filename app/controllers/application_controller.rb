@@ -33,5 +33,3 @@ class ApplicationController < ActionController::Base
     end
   end
 end
-
-# http://www.happy-tails.fun/applications/2
