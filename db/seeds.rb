@@ -291,7 +291,7 @@ carrot.photos.attach(io: file, filename: 'carrot_7.jpg', content_type: 'image/jp
 
 puts "Created carrot"
 
-spike = Pet.create!(adoption_status: "Reserved",
+spike = Pet.create!(adoption_status: "Adopted",
                     name: "Spike",
                     species: "Cat",
                     breed: "Domestic Shorthair",

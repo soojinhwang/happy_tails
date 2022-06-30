@@ -43,6 +43,12 @@
   }
 }
 
+.my-applications-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+}
+
 .my_application_cards img {
   height: 120px;
   border: 3px solid $gray;
