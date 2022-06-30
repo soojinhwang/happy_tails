@@ -10,7 +10,7 @@
   align-items: center;
   transition: 0.3s ease-in-out;
   padding: 40px 24px;
-  margin: 24px 0;
+  margin: 24px 0 0;
 
 
 
@@ -78,17 +78,17 @@
   position: relative;
   left: 42px;
   top: -140px;
-  text-shadow: 0 0 4px #000;
+  border: #000;
 }
 
 .cross-color-red {
 
-  color: $red;
+  color: $dark-red;
   font-size: 50px;
   position: relative;
   left: 42px;
   top: -140px;
-  text-shadow: 0 0 4px #000;
+  border: #000;
 }
 
 .hourglass-color-gold {
@@ -97,7 +97,7 @@
   position: relative;
   left: 42px;
   top: -140px;
-  text-shadow: 0 0 4px #000;
+  border: #000;
 }
 
 .my_application-button-margin {
