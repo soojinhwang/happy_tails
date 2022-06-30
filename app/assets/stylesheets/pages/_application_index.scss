@@ -1,17 +1,22 @@
 .application-index-pet-heading {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin: 40px 20px;
+  align-items: center;
+
+  div {
+    margin: 10px 20px;
+  }
 }
 
 .application-index-container {
-  margin: 20px 10px;
+  margin: 40px 10px 10px;
 }
 
 .application-index-pet-name {
   font-family: 'Playfair Display';
   font-style: italic;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 36px;
   line-height: 48px;
   /* identical to box height */
@@ -26,19 +31,15 @@
   display: flex;
   justify-content: center;
   img {
-    height: 120px;
-    width: 120px;
+    height: 140px;
+    width: 140px;
     border: 3px solid $gray;
     border-radius: 50%;
 
   }
 }
 
-
-.application-index-pet-name {
-  align-items: center;
-}
-
-.application-index-view-button {
-  align-items: center;
+.application-hr {
+  height: 3px;
+  margin-top: 76px;
 }
