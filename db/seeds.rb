@@ -790,7 +790,7 @@ puts "Creating applications..."
 
 app1 = Application.create!(user: derek,
                            pet: luna,
-                           date: Date.today,
+                           date: DateTime.parse("7th Jan 2022"),
                            approved: true,
                            reviewed: true)
 
@@ -798,7 +798,7 @@ puts "application 1 created!"
 
 app2 = Application.create!(user: derek,
                            pet: spike,
-                           date: Date.today,
+                           date: DateTime.parse("7th Jan 2022"),
                            approved: false,
                            reviewed: true)
 
@@ -806,7 +806,7 @@ puts "application 2 created!"
 
 app3 = Application.create!(user: jenny,
                            pet: memphis,
-                           date: Date.today,
+                           date: DateTime.parse("14th Jun 2022"),
                            approved: false,
                            reviewed: true)
 
@@ -814,7 +814,7 @@ puts "application 3 created!"
 
 app4 = Application.create!(user: jenny,
                            pet: lila,
-                           date: Date.today,
+                           date: DateTime.parse("14th Jun 2022"),
                            approved: false,
                            reviewed: true)
 
@@ -822,7 +822,7 @@ puts "application 4 created!"
 
 app5 = Application.create!(user: mike,
                             pet: blanca,
-                            date: DateTime.parse("04/01/2022"),
+                            date: DateTime.parse("4th Jan 2022"),
                             approved: false,
                             reviewed: true)
 
@@ -830,11 +830,10 @@ puts "application 5 created!"
 
 app6 = Application.create!(user: mike,
                            pet: spike,
-                           date: DateTime.parse("04/01/2022"),
+                           date: DateTime.parse("4th Jan 2022"),
                            approved: true,
                            reviewed: true)
 
 puts "application 6 created!"
-
 
 puts "All applications created"
