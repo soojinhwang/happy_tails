@@ -1,23 +1,19 @@
 .search-component{
   display: flex;
-
 }
 
 .input-width {
   flex-grow: 1;
-
 }
 
 .form-control {
   background-color: white;
-
 }
 
 .form-control::placeholder {
-  color: black;
-
+  color: $dark-gray;
 }
 
-.btn.btn-primary {
-  color: black;
+select {
+  color: $dark-gray;
 }
