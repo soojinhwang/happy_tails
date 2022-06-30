@@ -6,7 +6,29 @@ class PagesController < ApplicationController
   end
 
   def my_pets
-    @my_pets = current_user.shelter.pets.order(
+    @my_pets = current_user.shelter.pets
+
+
+
+    @my_pets.each do |pet|
+      pet.applications.any? do |application|
+        if application.approved == true
+          application.pet.adoption_status = "Adopted"
+          pet.save!
+        end
+      end
+    end
+
+
+
+    @available_pets = @my_pets.where(adoption_status: "Available")
+    @reserved_pets = @my_pets.where(adoption_status: "Reserved")
+    @adopted_pets = @my_pets.where(adoption_status: "Adopted")
+
+
+
+
+    @my_pets.order(
       Arel.sql(
         %q(
           CASE adoption_status
@@ -18,17 +40,6 @@ class PagesController < ApplicationController
       )
     )
 
-    @available_pets = @my_pets.where(adoption_status: "Available")
-    @reserved_pets = @my_pets.where(adoption_status: "Reserved")
-    @adopted_pets = @my_pets.where(adoption_status: "Adopted")
-
-    @my_pets.each do |pet|
-      pet.applications.any? do |application|
-        if application.approved == true
-          application.pet.adoption_status = "Adopted"
-        end
-      end
-    end
   end
 
   def my_applications
