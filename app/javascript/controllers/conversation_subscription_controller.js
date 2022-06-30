@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import consumer from "../channels/consumer"
 
 export default class extends Controller {
-  static values = { conversationId: Number }
+  static values = { conversationId: Number, userName: String }
   static targets = ["messages"]
 
   connect() {
@@ -12,9 +12,20 @@ export default class extends Controller {
     )
   }
 
+  // #insertMessageAndScrollDown(data) {
+  //   this.messagesTarget.insertAdjacentHTML("beforeend", data)
+  //   this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+  // }
+
   #insertMessageAndScrollDown(data) {
-    this.messagesTarget.insertAdjacentHTML("beforeend", data)
-    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+    let newData = "";
+    if (data.includes(`<h6>${this.userNameValue}</h6>`)) {
+      newData = data;
+    } else {
+      newData = data.replace("sender-message", "receiver-message");
+    }
+    this.messagesTarget.insertAdjacentHTML("beforeend", newData);
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight);
   }
 
   resetForm(event) {

@@ -1,7 +1,8 @@
 <div class="container conversation"
      id="conversation-container"
      data-controller="conversation-subscription"
-     data-conversation-subscription-conversation-id-value="<%= @conversation.id %>">
+     data-conversation-subscription-conversation-id-value="<%= @conversation.id %>"
+     data-conversation-subscription-user-name-value ="<%= current_user.first_name %>">
 
       <div class="conversation-title">
         <h1><em>Conversation</em></h1>
