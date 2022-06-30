@@ -1,55 +1,56 @@
 <div class="container">
   <h1 class= "my-application-heading"> All Applications </h1>
 
-  <% @my_pets.each do |pet|  %>
-    <% if pet.applications.any? %>
-      <div class="application-index-container">
-          <div class="application-index-pet-heading">
-            <div class = "application-index-profile-picture">
-              <hr>
-              <% if pet.photos.attached? %>
-              <%= cl_image_tag pet.photos.first.key, height: 140, width: 140, crop: :thumb %>
-              <% else %>
-              <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
-              <% end %>
+
+
+
+    <% @my_pets.each do |pet|  %>
+      <% if pet.applications.any? %>
+        <div class="application-index-container">
+            <div class="application-index-pet-heading">
+              <div class = "application-index-profile-picture">
+                <hr class="application-hr">
+                <% if pet.photos.attached? %>
+                <%= cl_image_tag pet.photos.first.key, height: 140, width: 140, crop: :thumb %>
+                <% else %>
+                <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
+                <% end %>
+              </div>
+              <div>
+              <h2 class= "application-index-pet-name"><%=pet.name%></h2>
+              </div>
+              <div class = "application-index-view-button">
+              <%= link_to "View #{pet.name}",
+              pet_path(pet), class: 'btn-yellow my_application-button-margin ' %>
+              </div>
             </div>
-            <div>
-            <h2 class= "application-index-pet-name"><%=pet.name%></h2>
-            </div>
-            <div class = "application-index-view-button">
-            <%= link_to "View #{pet.name}",
-            pet_path(pet), class: 'btn-yellow my_application-button-margin ' %>
-            </div>
-          </div>
-          <div class = "my-applications-center">
-            <div class="row mb3 my-applications-center">
+
+            <div class="applications-index-grid application-index-margin-bottom">
               <% pet.applications.each do |application| %>
-                  <div class="col-4">
-                    <div class="my_application_cards">
-                      <% if application.user.photo.attached? %>
-                        <%= cl_image_tag application.user.photo.key, height: 120, width: 120, crop: :thumb %>
-                      <% end %>
+                <div class="application-index-cards">
+                  <% if application.user.photo.attached? %>
+                    <%= cl_image_tag application.user.photo.key, height: 120, width: 120, crop: :thumb %>
+                  <% end %>
 
-                      <% if application.approved == false && application.reviewed == false %>
-                        <i class="fa-solid fa-hourglass hourglass-color-gold"></i>
-                      <% elsif application.approved == true && application.reviewed == true %>
-                        <i class="fa-solid fa-check tick-color-green"></i>
-                      <% else application.approved == false && application.reviewed == true %>
-                        <i class="fa-solid fa-xmark cross-color-red"></i>
-                      <% end  %>
+                  <% if application.approved == false && application.reviewed == false %>
+                    <i class="fa-solid fa-hourglass hourglass-color-gold"></i>
+                  <% elsif application.approved == true && application.reviewed == true %>
+                    <i class="fa-solid fa-check tick-color-green"></i>
+                  <% else application.approved == false && application.reviewed == true %>
+                    <i class="fa-solid fa-xmark cross-color-red"></i>
+                  <% end  %>
 
-                      <h2> <%= application.user.first_name%> <%= application.user.last_name%> </h2>
-                      <p> Application date: <%= application.date %></p>
+                  <h2> <%= application.user.first_name%> <%= application.user.last_name%> </h2>
+                  <p> Application date: <%= application.date %></p>
 
-                      <%= link_to "View application",
-                      application_path(application), class: 'btn-red my_application-button-margin ' %>
-                    </div>
-                  </div>
+                  <%= link_to "View application",
+                  application_path(application), class: 'btn-red my_application-button-margin ' %>
+                </div>
               <% end %>
-              <hr class="application-hr">
             </div>
-          </div>
-      </div>
+
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+
 </div>
