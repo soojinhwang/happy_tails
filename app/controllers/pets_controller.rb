@@ -3,7 +3,20 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
-      @pets = Pet.all
+
+    @pets = Pet.all
+    @pets = Pet.order(
+      Arel.sql(
+        %q(
+          CASE adoption_status
+          WHEN 'Available' THEN 1
+          WHEN 'Reserved'  THEN 2
+          WHEN 'Adopted'  THEN 3
+          END
+        )
+      )
+    )
+
       @pets = @pets.search_by_name_and_species(params[:query]) if params[:query].present?
       @pets = @pets.where("adoption_status =  ? ", params[:adoption_status]) if params[:adoption_status].present?
       @pets = @pets.where("species =  ? ", params[:species]) if params[:species].present?

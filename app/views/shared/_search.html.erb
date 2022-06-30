@@ -18,7 +18,7 @@
           <%= select_tag :adoption_status, options_for_select(["Available", "Reserved", "Adopted"]),
                                     include_blank: false,
                                     value: params[:adoption_status],
-                                    prompt: "adoption status",
+                                    prompt: "Adoption status",
                                     data: {
                                       search_decks_target: 'filter',
                                       action: 'change->search-decks#filter' }%>
@@ -30,7 +30,7 @@
           <%= select_tag :species, options_for_select(["Cat", "Dog"]),
                                   include_blank: false,
                                   value: params[:species],
-                                  prompt: "species",
+                                  prompt: "Species",
                                   data: {
                                     search_decks_target: 'filter',
                                     action: 'change->search-decks#filter' }%>
@@ -39,10 +39,10 @@
 
       <div class="col-3 mb-2">
         <div class="filters">
-          <%= select_tag :outdoor_space, options_for_select([ "yes", "no"]),
+          <%= select_tag :outdoor_space, options_for_select([ "Yes", "No"]),
                                   include_blank: false,
                                   value: params[:outdoor_space],
-                                    prompt: "outdoor space",
+                                    prompt: "Garden required",
                                   data: {
                                     search_decks_target: 'filter',
                                     action: 'change->search-decks#filter' }%>
@@ -52,10 +52,10 @@
     <div class="row mb-4 align-items-center">
       <div class="col-3 mb-2">
         <div class="filters">
-          <%= select_tag :other_cats, options_for_select([ "yes", "no"]),
+          <%= select_tag :other_cats, options_for_select([ "Yes", "No"]),
                                   include_blank: false,
                                   value: params[:other_cats],
-                                    prompt: "can live with cats",
+                                    prompt: "Can live with cats",
                                   data: {
                                     search_decks_target: 'filter',
                                     action: 'change->search-decks#filter' }%>
@@ -64,10 +64,10 @@
 
       <div class="col-3 mb-2">
         <div class="filters">
-          <%= select_tag :other_dogs, options_for_select(["yes", "no"]),
+          <%= select_tag :other_dogs, options_for_select(["Yes", "No"]),
                                   include_blank: false,
                                   value: params[:other_dogs],
-                                    prompt: "can live with dogs",
+                                    prompt: "Can live with dogs",
                                   data: {
                                     search_decks_target: 'filter',
                                     action: 'change->search-decks#filter' }%>
@@ -76,10 +76,10 @@
 
       <div class="col-3 mb-2">
         <div class="filters">
-          <%= select_tag :children, options_for_select(["yes", "no"]),
+          <%= select_tag :children, options_for_select(["Yes", "No"]),
                                   include_blank: false,
                                   value: params[:children],
-                                    prompt: "can live with kids",
+                                    prompt: "Can live with kids",
                                   data: {
                                     search_decks_target: 'filter',
                                     action: 'change->search-decks#filter' }%>
