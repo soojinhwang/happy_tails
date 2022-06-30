@@ -3,7 +3,9 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    #if  params[:query].present?
+    # if  params[:query].present?
+
+    # required to list pets in order of Available, Reserved and Adopted
     @pets = Pet.order(
       Arel.sql(
         %q(

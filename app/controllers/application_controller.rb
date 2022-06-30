@@ -21,7 +21,15 @@ class ApplicationController < ActionController::Base
     store_location_for(:user, request.fullpath)
   end
 
+  # def default_url_options
+  #   { host: ENV["happy-tails.fun"] || "localhost:3000" }
+  # end
+
   def default_url_options
-    { host: ENV["happy-tails.fun"] || "localhost:3000" }
+    if Rails.env.production?
+      { host: "happy-tails.fun" }
+    else
+      { host: "localhost:3000" }
+    end
   end
 end
