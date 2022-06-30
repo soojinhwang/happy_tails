@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   patch '/profile', action: :update, controller: 'users'
 
   resources :pets do
-    resources :applications, except: [ :destroy, :show ]
+    resources :applications, except: [ :index, :destroy, :show ]
   end
 
   resources :shelters
-  resources :applications, only: [ :destroy, :show ]
+  resources :applications, only: [ :index, :destroy, :show ]
   resources :users, only: [ :edit, :update, :show ]
   patch '/approve_application/:id', action: :approve_application, controller: 'applications', as: :approve_application
   patch '/unapprove_application/:id', action: :unapprove_application, controller: 'applications', as: :unapprove_application

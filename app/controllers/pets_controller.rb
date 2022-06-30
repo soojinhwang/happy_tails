@@ -3,9 +3,9 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    # if  params[:query].present?
 
-    # required to list pets in order of Available, Reserved and Adopted
+    @pets = Pet.all
+
     @pets = Pet.order(
       Arel.sql(
         %q(
@@ -33,19 +33,6 @@ class PetsController < ApplicationController
            end
         end
       end
-
-    # else
-    #   @pets = Pet.all
-
-    #    @pets.each do |pet|
-    #      pet.applications.any? do |application|
-    #         if application.approved == true
-    #          application.pet.adoption_status = "Adopted"
-    #         end
-    #      end
-    #   end
-
-    #end
   end
 
   def show
@@ -62,7 +49,6 @@ class PetsController < ApplicationController
         application.pet.adoption_status = "Adopted"
       end
     end
-    # @conversation = Conversation.new
   end
 
   def new

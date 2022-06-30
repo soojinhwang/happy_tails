@@ -26,6 +26,7 @@
             <!-- The paths for the below need to be worked out properly in the routes etc (currently all link to pets index) -->
             <%= link_to "Profile", profile_path, class: "dropdown-item" %>
             <%= link_to "My pets", my_pets_path, class: "dropdown-item" %>
+            <%= link_to "All applications", applications_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
