@@ -11,5 +11,24 @@
   margin-top: 40px;
   margin-bottom: 40px;
 
-  color: #3F3F3F;
+  color: $dark-gray;
+}
+
+.pet-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+@media(max-width: 992px) {
+  .pet-cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  .pet-cards-container {
+    grid-template-columns: 1fr;
+  }
 }
