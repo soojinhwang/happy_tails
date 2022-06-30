@@ -47,7 +47,22 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
+  margin-bottom: 40px;
 }
+
+@media(max-width: 992px) {
+  .my-applications-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  .my-applications-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 .my_application_cards img {
   height: 120px;
