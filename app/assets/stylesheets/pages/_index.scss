@@ -1,2 +1,7 @@
 // Import page-specific CSS files here.
+@import "conversation_show";
 @import "home";
+@import "pets_index";
+@import "pet_show";
+
+@import "../pets/new";

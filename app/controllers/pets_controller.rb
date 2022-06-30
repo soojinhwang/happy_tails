@@ -4,7 +4,8 @@ class PetsController < ApplicationController
 
   def index
     #if  params[:query].present?
-      @pets = Pet.all
+      @pets = Pet.order(:adoption_status)
+
       @pets = @pets.search_by_name_and_species(params[:query]) if params[:query].present?
       @pets = @pets.where("adoption_status =  ? ", params[:adoption_status]) if params[:adoption_status].present?
       @pets = @pets.where("species =  ? ", params[:species]) if params[:species].present?
@@ -12,6 +13,8 @@ class PetsController < ApplicationController
       @pets = @pets.where("other_cats =  ? ", params[:other_cats]) if params[:other_cats].present?
       @pets = @pets.where("other_dogs =  ? ", params[:other_dogs]) if params[:other_dogs].present?
       @pets = @pets.where("children =  ? ", params[:children]) if params[:children].present?
+
+
 
       @pets.each do |pet|
         pet.applications.any? do |application|
