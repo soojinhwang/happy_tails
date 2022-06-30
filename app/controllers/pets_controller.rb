@@ -4,7 +4,17 @@ class PetsController < ApplicationController
 
   def index
     #if  params[:query].present?
-      @pets = Pet.all
+    @pets = Pet.order(
+      Arel.sql(
+        %q(
+          CASE adoption_status
+          WHEN 'Available' THEN 1
+          WHEN 'Reserved'  THEN 2
+          WHEN 'Adopted'  THEN 3
+          END
+        )
+      )
+    )
 
       @pets = @pets.search_by_name_and_species(params[:query]) if params[:query].present?
       @pets = @pets.where("adoption_status =  ? ", params[:adoption_status]) if params[:adoption_status].present?
