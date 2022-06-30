@@ -151,7 +151,7 @@
   font-size: 20px;
   margin-bottom: 0px;
   text-transform: uppercase;
-  color: #97B8A5;
+  color: $green;
 }
 
 .my-application-unsucessful {
@@ -160,7 +160,7 @@
   font-size: 20px;
   margin-bottom: 0px;
   text-transform: uppercase;
-  color: #F18B7E;
+  color: $dark-red;
 }
 
 .my-application-in-progress {
@@ -169,7 +169,7 @@
   font-size: 20px;
   margin-bottom: 0px;
   text-transform: uppercase;
-  color: #FFD87E;
+  color: $yellow;
 }
 
 .my-application-margin {
