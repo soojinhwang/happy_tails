@@ -1,11 +1,15 @@
 class ApplicationsController < ApplicationController
 
-  before_action :find_pet, only: [ :index, :create ]
+  before_action :find_pet, only: [ :create ]
   before_action :find_application, only: [ :show, :destroy, :approve_application, :unapprove_application, :reject_application, :unreject_application]
 
 
   def index
-    @pets = Pet.all
+
+    @my_pets = current_user.shelter.pets
+
+
+
   end
 
   def show
