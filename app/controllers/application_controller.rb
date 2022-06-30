@@ -27,9 +27,11 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     if Rails.env.production?
-      { host: "happy-tails.fun" }
+      { host: "www.happy-tails.fun" }
     else
       { host: "localhost:3000" }
     end
   end
 end
+
+# http://www.happy-tails.fun/applications/2
