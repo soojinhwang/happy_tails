@@ -228,8 +228,8 @@ wanda = Pet.create!(adoption_status: "Available",
                     sex: "Female",
                     age: "5 years",
                     colour: "Tabby",
-                    description: "Wanda is a very sweet cat who born with a brain abnormality, which means her head wobbles and she's unsteady on her feet.
-                                  Having said that, she is a independent and tenacious but also very friendly and affectionate.
+                    description: "Wanda is a very sweet cat who was born with a brain abnormality, which means her head wobbles and she's unsteady on her feet.
+                                  Having said that, she is independent and tenacious but also very friendly and affectionate.
                                   Wanda loves being stroked and having a chit-chat.
                                   She has an adorable spot-light on the tip of her tail which truly makes her unique.",
                     outdoor_space: false,
@@ -263,8 +263,8 @@ carrot = Pet.create!(adoption_status: "Available",
                      age: "4 years",
                      colour: "White and ginger",
                      description: "Carrot is a big lad who has a heart as big as his cheeks.
-                                   He adores spending time on his human friends laps and will leave you in a thick layer of white fur.
-                                   Carrot also enjoy basking in the sunshine in the garden.
+                                   He adores spending time on his human friends' laps and will leave you in a thick layer of white fur.
+                                   Carrot also enjoys basking in the sunshine in the garden.
                                    He doesn't get along with other animals but he's happy to spend time with teenagers.",
                      outdoor_space: true,
                      other_cats: true,
@@ -436,8 +436,8 @@ frankie = Pet.create!(adoption_status: "Available",
                       age: "4 years",
                       colour: "Cream and black",
                       description: "Frankie is a very friendly cat with a super affectionate nature.
-                                    He loves to demand a fuss from people by using hisadorable meow!
-                                    Frankie is looking for a family who are around to give him plenty of love and affectionate.
+                                    He loves to demand a fuss from people by using his adorable meow!
+                                    Frankie is looking for a family who is around to give him plenty of love and affection.
                                     He also needs owners who can keep on top of his coat maintenance and groom him regularly to ensure his luscious locks remain knot-free.",
                       outdoor_space: false,
                       other_cats: false,
@@ -701,7 +701,7 @@ lila = Pet.create!(adoption_status: "Reserved",
                    description: "Lila is a very sweet little girl who has a worried side and can be easily overwhelmed in new environments.
                                  She will need new owners who can build her confidence, get her used to the outside world and gradually socialise her with other dogs.
                                  Once bonded, Lila is super affectionate, eager to please and has so much to give.
-                                 New owners would benefit from having experience with rescue dogs so they can help Lila with her nervous side,",
+                                 New owners would benefit from having experience with rescue dogs so they can help Lila with her nervous side",
                    outdoor_space: false,
                    other_cats: true,
                    other_dogs: false,
@@ -759,8 +759,8 @@ bella = Pet.create!(adoption_status: "Adopted",
                     age: "2 years",
                     colour: "Brown",
                     description: "Bella is a young dog who is full of enthusiasm and love for life.
-                                  She loves her food and toys but does have a sensitive side which a new owner will need to help her with.
-                                  Bella does need a home with more than one owner who can work together on her needs.
+                                  She loves her food and toys, but also has a sensitive side which a new owner will need to help her with.
+                                  Bella needs a home with more than one owner who can work together on her needs.
                                   She also must have a private garden so she can spend time building a bond with her new family before she has to face the big wide world.",
                     outdoor_space: true,
                     other_cats: false,
