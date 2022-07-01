@@ -30,6 +30,7 @@ class PetsController < ApplicationController
         pet.applications.any? do |application|
            if application.approved == true
             application.pet.adoption_status = "Adopted"
+            application.pet.save!
            end
         end
       end
@@ -47,6 +48,7 @@ class PetsController < ApplicationController
     @pet.applications.any? do |application|
       if application.approved == true
         application.pet.adoption_status = "Adopted"
+        application.pet.save!
       end
     end
   end

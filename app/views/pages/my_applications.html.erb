@@ -2,10 +2,10 @@
 
   <h1 class = "my-application-heading"> My Applications </h1>
   <div class = "my-application-data">
-    <div class = "my-application-total" > <p> All Applications: <%= @total_applications %></p> </div>
-    <div class = "my-application-sucessful" > <p> Sucessful Applications: <%= @successful_applications.count %></p> </div>
-    <div class = "my-application-in-progress"> <p> Applications in progress: <%= @application_in_progress.count %></p> </div>
-    <div class = "my-application-unsucessful" > <p> Unsucessful Applications: <%= @unsuccessful_applications.count %></p> </div>
+    <div class = "my-application-total" > <p> Total Applications: <%= @total_applications %></p> </div>
+    <div class = "my-application-sucessful" > <p> Sucessful : <%= @successful_applications.count %></p> </div>
+    <div class = "my-application-in-progress"> <p> Pending: <%= @application_in_progress.count %></p> </div>
+    <div class = "my-application-unsucessful" > <p> Unsucessful: <%= @unsuccessful_applications.count %></p> </div>
   </div>
 
   <% if @total_applications == 0 %>
@@ -21,46 +21,48 @@
     </div>
   <% else %>
 
-     <div class= "my-applications-grid">
-        <% @my_applications.each do |application| %>
+      <div class = "center-my-application">
+        <div class= "my-applications-grid">
+            <% @my_applications.each do |application| %>
 
-            <div class="my_application_cards">
-                <% if application.pet.photos.attached? %>
-                  <%= cl_image_tag application.pet.photos.first.key, height: 120, width: 120, crop: :thumb %>
-                <% else %>
-                  <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
-                <% end %>
+                <div class="my_application_cards">
+                    <% if application.pet.photos.attached? %>
+                      <%= cl_image_tag application.pet.photos.first.key, height: 120, width: 120, crop: :thumb %>
+                    <% else %>
+                      <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
+                    <% end %>
 
-                <% if application.approved == false && application.reviewed == false %>
-                  <i class="fa-solid fa-hourglass hourglass-color-gold"></i>
-                <% elsif application.approved == true && application.reviewed == true %>
-                  <i class="fa-solid fa-check tick-color-green"></i>
-                <% else application.approved == false && application.reviewed == true %>
-                  <i class="fa-solid fa-xmark cross-color-red"></i>
-                <% end  %>
+                    <% if application.approved == false && application.reviewed == false %>
+                      <i class="fa-solid fa-hourglass hourglass-color-gold"></i>
+                    <% elsif application.approved == true && application.reviewed == true %>
+                      <i class="fa-solid fa-check tick-color-green"></i>
+                    <% else application.approved == false && application.reviewed == true %>
+                      <i class="fa-solid fa-xmark cross-color-red"></i>
+                    <% end  %>
 
-                <h2> <%= application.pet.name %> </h2>
-                <p> Shelter: <%= application.pet.shelter.name %> </p>
-                <p> Application date: <%= application.date %></p>
+                    <h2> <%= application.pet.name %> </h2>
+                    <p> Shelter: <%= application.pet.shelter.name %> </p>
+                    <p> Application date: <%= application.date %></p>
 
 
-                <%= link_to "View #{application.pet.name}",
-                pet_path(application.pet), class: 'btn-yellow my_application-button-margin ' %>
+                    <%= link_to "View #{application.pet.name}",
+                    pet_path(application.pet), class: 'btn-yellow my_application-button-margin ' %>
 
-                <%= link_to "View application",
-                application_path(application), class: 'btn-red my_application-button-margin ' %>
+                    <%= link_to "View application",
+                    application_path(application), class: 'btn-red my_application-button-margin ' %>
 
-                <% if Conversation.where(name: "#{application.id}").length > 0 %>
-                  <% @conversation = Conversation.where(name: "#{application.id}")[0] %>
-                <% else %>
-                  <% @conversation = Conversation.create(name: "#{application.id}") %>
-                <% end %>
+                    <% if Conversation.where(name: "#{application.id}").length > 0 %>
+                      <% @conversation = Conversation.where(name: "#{application.id}")[0] %>
+                    <% else %>
+                      <% @conversation = Conversation.create(name: "#{application.id}") %>
+                    <% end %>
 
-                <%= link_to "MESSAGE SHELTER", conversation_path(@conversation), class: "btn-blue my_application-button-margin" %>
-            </div>
+                    <%= link_to "MESSAGE SHELTER", conversation_path(@conversation), class: "btn-blue my_application-button-margin" %>
+                </div>
 
-        <% end %>
-     </div>
+            <% end %>
+        </div>
+      </div>
 
   <% end %>
 
