@@ -3,10 +3,9 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
+    # @pets = Pet.all
 
-    @pets = Pet.all
-
-    @pets = Pet.order(
+    @pets = Pet.all.order(
       Arel.sql(
         %q(
           CASE adoption_status
