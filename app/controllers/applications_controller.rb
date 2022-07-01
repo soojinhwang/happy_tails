@@ -3,13 +3,8 @@ class ApplicationsController < ApplicationController
   before_action :find_pet, only: [ :create ]
   before_action :find_application, only: [ :show, :destroy, :approve_application, :unapprove_application, :reject_application, :unreject_application]
 
-
   def index
-
     @my_pets = current_user.shelter.pets
-
-
-
   end
 
   def show
@@ -40,7 +35,6 @@ class ApplicationsController < ApplicationController
       redirect_to pet_path(@pet), alert: @application.errors.full_messages
     end
   end
-
 
   def destroy
     @pet = @application.pet
