@@ -102,6 +102,21 @@
     text-align: center;
     margin-bottom: 40px;
   }
+
+  h6 {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 16px;
+    color: $gray;
+    text-decoration: none;
+    margin-top: 40px;
+    text-align: right;
+    padding-right: 24px;
+  }
+
+  h6:hover {
+    color: $dark-gray;
+  }
 }
 
 .pet-sample-cards-container {
