@@ -1,0 +1,59 @@
+.user-details {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba($color: #3F3F3F4D, $alpha: 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+  padding: 0px 40px;
+  width: fit-content;
+
+  h2 {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 36px;
+    color: $dark-gray;
+    margin: 24px 0px;
+  }
+
+  img {
+    height: 120px;
+    width: 120px;
+    border: 1px solid $dark-gray;
+    border-radius: 50%;
+    margin-bottom: 24px;
+  }
+
+  .btn-yellow {
+    margin: 24px 0px;
+  }
+}
+
+.user-details-table {
+  width: 100%;
+
+  tr {
+    height: 40px;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    vertical-align: middle;
+  }
+
+  h6 {
+    font-family: 'Lexend';
+    font-weight: 600;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
+
+  p {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-gray;
+    margin-bottom: 0px;
+  }
+}

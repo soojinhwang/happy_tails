@@ -1,24 +1,72 @@
 <div class="container">
-
-  <h2> <%= @user.first_name %>  </h2>
-
-  <% if @user.photo.attached? %>
+  <div class="user-details">
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <% if @user.photo.attached? %>
       <%= cl_image_tag @user.photo.key, height: 150, width: 150, crop: :fill %>
     <% else %>
       <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="object-fit: contain;">
-  <% end %>
-
-  <p> First Name: <%= @user.first_name %> </p>
-  <p> Last Name: <%= @user.last_name %></p>
-  <p> Age: <%= @user.age %> </p>
-  <p> Biography: <%= @user.biography %> </p>
-  <p> Occupation: <%= @user.occupation %> </p>
-  <p> Type of dwelling: <%= @user.type_of_dwelling %> </p>
-  <p> Outdoor space?: <%= @user.outdoor_space %> </p>
-  <p> Other cats: <%= @user.other_cats ? "Yes" : "No" %> </p>
-  <p> Other dogs?: <%= @user.other_dogs ? "Yes" : "No" %> </p>
-  <p> Children?: <%= @user.children ? "Yes" : "No" %> </p>
-  <p> Hours at home?: <%= @user.hours_alone %> </p>
-  <p> Previous experience: <%= @user.previous_experience%></p>
-  <a class="btn btn-ghost" href="#">Edit</a>
+    <% end %>
+    <div class="user-details-text">
+      <% if current_user.shelter.present? %>
+        <table class="user-details-table">
+          <tr>
+            <td style="width:10vw"><h6>SHELTER NAME</h6></td>
+            <td style="width:20vw"><p><%= @user.shelter.name %></p></td>
+          </tr>
+          <tr>
+            <td><h6>ADDRESS</h6></td>
+            <td><p><%= @user.shelter.address %></p></td>
+          </tr>
+          <tr>
+            <td><h6>DESCRIPTION</h6></td>
+            <td><p><%= @user.shelter.description %></p></td>
+          </tr>
+        </table>
+      <% else %>
+        <table class="user-details-table">
+          <tr>
+            <td style="width:20vw"><h6>AGE</h6></td>
+            <td style="width:20vw"><p><%= @user.age %></p></td>
+          </tr>
+          <tr>
+            <td><h6>OCCUPATION</h6></td>
+            <td><p><%= @user.occupation %></p></td>
+          </tr>
+          <tr>
+            <td><h6>BIOGRAPHY</h6></td>
+            <td><p><%= @user.biography %></p></td>
+          </tr>
+          <tr>
+            <td><h6>TYPE OF DWELLING</h6></td>
+            <td><p><%= @user.type_of_dwelling %></p></td>
+          </tr>
+          <tr>
+            <td><h6>HAS A GARDEN</h6></td>
+            <td><p><%= @user.outdoor_space ? "Yes" : "No" %></p></td>
+          </tr>
+          <tr>
+            <td><h6>HAS A CAT</h6></td>
+            <td><p><%= @user.other_cats ? "Yes" : "No" %></p></td>
+          </tr>
+          <tr>
+            <td><h6>HAS A DOG</h6></td>
+            <td><p><%= @user.other_dogs ? "Yes" : "No" %></p></td>
+          </tr>
+          <tr>
+            <td><h6>HAS CHILDREN</h6></td>
+            <td><p><%= @user.children ? "Yes" : "No" %></p></td>
+          </tr>
+          <tr>
+            <td><h6>AVERAGE NO. OF HOURS AWAY FROM HOME</h6></td>
+            <td><p><%= @user.hours_alone %> a day</p></td>
+          </tr>
+          <tr>
+            <td><h6>PREVIOUS EXPERIENCE</h6></td>
+            <td><p><%= @user.previous_experience%></p></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+    <%= link_to "EDIT", "#", class: "btn-yellow" %>
+  </div>
 </div>
